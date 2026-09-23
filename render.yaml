@@ -32,8 +32,12 @@ services:
         sync: false
       - key: STRIPE_WEBHOOK_SECRET
         sync: false
-              - key: FREE_TEST_ATTEMPTS_LIMIT
-        value: "1"
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
       - key: DJANGO_SUPERUSER_USERNAME
         sync: false
       - key: DJANGO_SUPERUSER_EMAIL
