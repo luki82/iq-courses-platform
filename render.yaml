@@ -1,0 +1,34 @@
+databases:
+  - name: iq-courses-db
+    plan: free
+    databaseName: iq_courses
+    user: iq_courses
+
+services:
+  - type: web
+    name: iq-courses-platform
+    runtime: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn config.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: PYTHON_VERSION
+        value: "3.12.4"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: iq-courses-db
+          property: connectionString
+      - key: FREE_TEST_ATTEMPTS_LIMIT
+        value: "1"
+      - key: STRIPE_PUBLIC_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false

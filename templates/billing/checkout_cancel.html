@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout cancelled{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+  <h1>Checkout cancelled</h1>
+  <p class="fs-5">No charge was made. You can try again any time.</p>
+  <a href="{% url 'billing:pricing' %}" class="btn btn-primary">Back to plans</a>
+</div>
+{% endblock %}

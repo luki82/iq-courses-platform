@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{ course.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ course.title }}</h1>
+<p class="text-muted">{{ course.description }}</p>
+
+{% if not is_enrolled %}
+  <form method="post" action="{% url 'courses:enroll' course.slug %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary mb-4">Enroll for free</button>
+  </form>
+{% endif %}
+
+{% for module in modules %}
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <strong>{{ module.title }}</strong>
+    {% if module.is_free_preview %}
+      <span class="badge bg-success">Free</span>
+    {% else %}
+      <span class="badge bg-warning text-dark">Premium</span>
+    {% endif %}
+  </div>
+  <ul class="list-group list-group-flush">
+    {% for lesson in module.lessons.all %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span>
+        {% if lesson.id in completed_lesson_ids %}&check;{% endif %}
+        {{ lesson.title }}
+      </span>
+      {% if is_enrolled %}
+        {% if lesson.is_free or has_premium %}
+          <a href="{% url 'courses:lesson_detail' course.slug lesson.id %}" class="btn btn-sm btn-outline-primary">Open</a>
+        {% else %}
+          <a href="{% url 'billing:pricing' %}" class="btn btn-sm btn-outline-secondary">🔒 Premium</a>
+        {% endif %}
+      {% else %}
+        <span class="text-muted small">Enroll to access</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endfor %}
+{% endblock %}

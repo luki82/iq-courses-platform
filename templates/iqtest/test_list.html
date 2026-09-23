@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}IQ Tests{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">IQ Test Categories</h1>
+<p class="text-muted">
+  Take a free test in any open category. Your first result comes with a full
+  breakdown; after that, upgrade to Premium to keep seeing detailed scores and
+  unlock Premium-only categories.
+</p>
+
+<div class="row g-3 mt-2">
+  {% for category in categories %}
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ category.name }}
+          {% if category.is_premium %}<span class="badge bg-warning text-dark">Premium</span>{% endif %}
+        </h5>
+        <p class="card-text">{{ category.description }}</p>
+        <p class="text-muted small">{{ category.question_count }} question{{ category.question_count|pluralize }}</p>
+        <a href="{% url 'iqtest:take_test' category.slug %}" class="btn btn-primary">Start Test</a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>No categories yet -- run <code>python manage.py seed_iqtest</code> to add sample questions.</p>
+  {% endfor %}
+</div>
+{% endblock %}

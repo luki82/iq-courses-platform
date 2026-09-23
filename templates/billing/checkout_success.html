@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Payment successful{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+  <h1>Thanks! 🎉</h1>
+  <p class="fs-5">Your payment went through. Premium access is activated on your account.</p>
+  <a href="{% url 'core:home' %}" class="btn btn-primary">Back to home</a>
+</div>
+{% endblock %}

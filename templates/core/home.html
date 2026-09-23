@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 text-center">
+  <h1 class="display-5 fw-bold">Test your mind. Grow your skills.</h1>
+  <p class="col-lg-8 mx-auto fs-5">
+    Take a free IQ-style test and start a course today. Upgrade to Premium
+    whenever you want full results and the complete course library.
+  </p>
+  <a href="{% url 'iqtest:test_list' %}" class="btn btn-primary btn-lg me-2">Take a free test</a>
+  <a href="{% url 'courses:course_list' %}" class="btn btn-outline-primary btn-lg">Browse courses</a>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <h2 class="h4">Popular test categories</h2>
+    <ul class="list-group">
+      {% for category in categories %}
+      <li class="list-group-item d-flex justify-content-between">
+        <a href="{% url 'iqtest:take_test' category.slug %}">{{ category.name }}</a>
+        {% if category.is_premium %}<span class="badge bg-warning text-dark">Premium</span>{% endif %}
+      </li>
+      {% empty %}
+      <li class="list-group-item text-muted">No categories yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h2 class="h4">Featured courses</h2>
+    <ul class="list-group">
+      {% for course in courses %}
+      <li class="list-group-item">
+        <a href="{% url 'courses:course_detail' course.slug %}">{{ course.title }}</a>
+      </li>
+      {% empty %}
+      <li class="list-group-item text-muted">No courses yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Courses</h1>
+<div class="row g-3">
+  {% for course in courses %}
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{ course.title }}</h5>
+        <p class="card-text">{{ course.description }}</p>
+        <p class="text-muted small">{{ course.lesson_count }} lesson{{ course.lesson_count|pluralize }}</p>
+        <a href="{% url 'courses:course_detail' course.slug %}" class="btn btn-primary">View course</a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>No courses yet -- run <code>python manage.py seed_courses</code> to add a sample course.</p>
+  {% endfor %}
+</div>
+{% endblock %}

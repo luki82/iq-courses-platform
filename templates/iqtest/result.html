@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Your result{% endblock %}
+
+{% block content %}
+<h1>Result: {{ attempt.category.name }}</h1>
+
+<div class="card mb-4">
+  <div class="card-body text-center">
+    <h2 class="display-5">{{ attempt.score }} / {{ attempt.total_questions }}</h2>
+    <p class="fs-5">{{ attempt.percentage }}% correct</p>
+    {% if attempt.detail_unlocked %}
+      <p class="fs-4">Estimated IQ score: <strong>{{ attempt.iq_score }}</strong></p>
+    {% endif %}
+  </div>
+</div>
+
+{% if attempt.detail_unlocked %}
+  <h3>Answer breakdown</h3>
+  {% for answer in answers %}
+  <div class="card mb-2">
+    <div class="card-body">
+      <p class="fw-semibold mb-1">
+        {{ answer.question.text }}
+        {% if answer.is_correct %}
+          <span class="badge bg-success">Correct</span>
+        {% else %}
+          <span class="badge bg-danger">Incorrect</span>
+        {% endif %}
+      </p>
+      <p class="mb-1">Your answer: {{ answer.choice.text|default:"No answer" }}</p>
+      {% if answer.question.explanation %}
+        <p class="text-muted small mb-0">{{ answer.question.explanation }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+{% else %}
+  <div class="card border-warning">
+    <div class="card-body text-center">
+      <h3>Unlock your full breakdown</h3>
+      <p>Upgrade to Premium to see your estimated IQ score, correct answers, and explanations for every question.</p>
+      <a href="{% url 'billing:pricing' %}" class="btn btn-warning">See Premium plans</a>
+    </div>
+  </div>
+{% endif %}
+
+<p class="text-muted small mt-4">
+  This is a simplified self-assessment for entertainment and skill-practice purposes,
+  not a clinically validated IQ test.
+</p>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}My profile{% endblock %}
+
+{% block content %}
+<h1>Hi, {{ user.username }}</h1>
+
+<div class="card mb-4">
+  <div class="card-body">
+    {% if profile.has_premium_access %}
+      <p class="mb-0">
+        <span class="badge bg-success">Premium</span>
+        {% if profile.premium_until %}until {{ profile.premium_until|date:"M j, Y" }}{% else %}(unlimited){% endif %}
+      </p>
+    {% else %}
+      <p class="mb-2">You're on the free plan.</p>
+      <a href="{% url 'billing:pricing' %}" class="btn btn-warning btn-sm">Upgrade to Premium</a>
+    {% endif %}
+  </div>
+</div>
+
+<h2 class="h5">Recent test attempts</h2>
+<ul class="list-group mb-4">
+  {% for attempt in attempts %}
+  <li class="list-group-item d-flex justify-content-between">
+    <a href="{% url 'iqtest:result_detail' attempt.pk %}">{{ attempt.category.name }}</a>
+    <span>{{ attempt.score }}/{{ attempt.total_questions }}</span>
+  </li>
+  {% empty %}
+  <li class="list-group-item text-muted">No attempts yet.</li>
+  {% endfor %}
+</ul>
+
+<h2 class="h5">My courses</h2>
+<ul class="list-group">
+  {% for enrollment in enrollments %}
+  <li class="list-group-item">
+    <a href="{% url 'courses:course_detail' enrollment.course.slug %}">{{ enrollment.course.title }}</a>
+  </li>
+  {% empty %}
+  <li class="list-group-item text-muted">Not enrolled in any courses yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
