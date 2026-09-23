@@ -32,3 +32,11 @@ services:
         sync: false
       - key: STRIPE_WEBHOOK_SECRET
         sync: false
+              - key: FREE_TEST_ATTEMPTS_LIMIT
+        value: "1"
+      - key: DJANGO_SUPERUSER_USERNAME
+        sync: false
+      - key: DJANGO_SUPERUSER_EMAIL
+        sync: false
+      - key: DJANGO_SUPERUSER_PASSWORD
+        sync: false
