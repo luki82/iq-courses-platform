@@ -1,16 +1,13 @@
 databases:
   - name: iq-courses-db
     plan: basic-256mb
-    region: singapore
     databaseName: iq_courses
     user: iq_courses
-
 services:
   - type: web
     name: iq-courses-platform
     runtime: python
     plan: starter
-    region: singapore
     buildCommand: "./build.sh"
     startCommand: "gunicorn config.wsgi:application"
     envVars:
