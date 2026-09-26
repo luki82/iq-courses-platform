@@ -8,14 +8,18 @@ from ielts.models import IELTSLesson, IELTSQuestion
 
 class Command(BaseCommand):
     help = (
-        "Loads one IELTS lesson module from a JSON file (matching the Claude-generated "
-        "schema: module_title, tier, skill, lesson_title, passage_or_prompt, diagram_type, "
+        "Loads IELTS lesson module(s) from JSON (matching the Claude-generated schema: "
+        "module_title, tier, skill, lesson_title, passage_or_prompt, diagram_type, "
         "diagram_config, questions[], band_9_sample) into the database. "
-        "Usage: python manage.py load_ielts_lesson path/to/lesson.json"
+        "Accepts either a single JSON file or a directory of JSON files. "
+        "Safe to run repeatedly (e.g. on every deploy) -- a lesson with a title that "
+        "already exists is skipped unless --update is passed. "
+        "Usage: python manage.py load_ielts_lesson ielts_content/ "
+        "or: python manage.py load_ielts_lesson ielts_content/one_lesson.json"
     )
 
     def add_arguments(self, parser):
-        parser.add_argument("json_path", type=str, help="Path to a lesson JSON file.")
+        parser.add_argument("json_path", type=str, help="Path to a lesson JSON file or a directory of them.")
         parser.add_argument(
             "--update",
             action="store_true",
@@ -25,8 +29,32 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         path = Path(options["json_path"])
         if not path.exists():
-            raise CommandError(f"File not found: {path}")
+            raise CommandError(f"Path not found: {path}")
 
+        if path.is_dir():
+            files = sorted(path.glob("*.json"))
+            if not files:
+                self.stdout.write(self.style.WARNING(f"No .json files found in {path}"))
+                return
+            loaded, skipped, failed = 0, 0, 0
+            for file in files:
+                try:
+                    result = self._load_file(file, options["update"])
+                    if result:
+                        loaded += 1
+                    else:
+                        skipped += 1
+                except CommandError as exc:
+                    failed += 1
+                    self.stderr.write(self.style.ERROR(f"{file.name}: {exc}"))
+            self.stdout.write(
+                self.style.SUCCESS(f"Done: {loaded} loaded, {skipped} skipped, {failed} failed.")
+            )
+        else:
+            self._load_file(path, options["update"])
+
+    def _load_file(self, path: Path, update: bool) -> bool:
+        """Loads a single JSON file. Returns True if a lesson was created, False if skipped."""
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError as exc:
@@ -46,14 +74,14 @@ class Command(BaseCommand):
 
         existing = IELTSLesson.objects.filter(title=data["lesson_title"]).first()
         if existing:
-            if not options["update"]:
+            if not update:
                 self.stdout.write(
                     self.style.WARNING(
                         f"Lesson '{data['lesson_title']}' already exists (id={existing.pk}) -- "
                         "skipping. Pass --update to replace it."
                     )
                 )
-                return
+                return False
             existing.delete()
 
         lesson = IELTSLesson.objects.create(
@@ -71,7 +99,8 @@ class Command(BaseCommand):
         for i, q in enumerate(data["questions"], start=1):
             for key in ("prompt", "question_type", "correct_answer", "explanation"):
                 if key not in q:
-                    raise CommandError(f"Question {i} is missing required key '{key}'")
+                    lesson.delete()
+                    raise CommandError(f"Question {i} in {path.name} is missing required key '{key}'")
             questions.append(
                 IELTSQuestion(
                     lesson=lesson,
@@ -91,3 +120,4 @@ class Command(BaseCommand):
                 f"{len(questions)} question(s)."
             )
         )
+        return True
