@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "iqtest",
     "courses",
     "billing",
+    "ielts",
 ]
 
 MIDDLEWARE = [

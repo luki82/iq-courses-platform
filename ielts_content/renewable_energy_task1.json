@@ -1,0 +1,100 @@
+{
+  "module_title": "IELTS Writing Task 1: Data Description and Trend Language",
+  "tier": "TIER_2",
+  "skill": "WRITING_T1",
+  "lesson_title": "Australian Renewable Energy Generation (2015-2025)",
+  "passage_or_prompt": "The chart below shows the amount of electricity generated from solar and wind power in Australia between 2015 and 2025, measured in terawatt-hours (TWh). Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words. Note: the figures shown are illustrative practice data, not official government statistics.",
+  "diagram_type": "chartjs",
+  "diagram_config": {
+    "type": "line",
+    "data": {
+      "labels": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+      "datasets": [
+        {
+          "label": "Solar (TWh)",
+          "data": [4, 6, 9, 12, 16, 21, 27, 33, 38, 42, 46],
+          "borderColor": "#f59e0b",
+          "backgroundColor": "rgba(245, 158, 11, 0.15)",
+          "fill": true,
+          "tension": 0.3,
+          "pointRadius": 4,
+          "pointBackgroundColor": "#f59e0b"
+        },
+        {
+          "label": "Wind (TWh)",
+          "data": [10, 12, 14, 16, 19, 22, 25, 28, 31, 34, 37],
+          "borderColor": "#0ea5e9",
+          "backgroundColor": "rgba(14, 165, 233, 0.15)",
+          "fill": true,
+          "tension": 0.3,
+          "pointRadius": 4,
+          "pointBackgroundColor": "#0ea5e9"
+        }
+      ]
+    },
+    "options": {
+      "responsive": true,
+      "plugins": {
+        "title": {
+          "display": true,
+          "text": "Australian Solar and Wind Electricity Generation, 2015-2025 (TWh)"
+        },
+        "legend": {
+          "display": true,
+          "position": "bottom"
+        },
+        "tooltip": {
+          "mode": "index",
+          "intersect": false
+        }
+      },
+      "scales": {
+        "x": {
+          "title": {
+            "display": true,
+            "text": "Year"
+          }
+        },
+        "y": {
+          "title": {
+            "display": true,
+            "text": "Electricity Generated (TWh)"
+          },
+          "beginAtZero": true
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Which sentence most accurately and appropriately describes the overall trend for solar power between 2015 and 2025, using Band 6-6.5 level trend vocabulary?",
+      "question_type": "multiple_choice",
+      "options": [
+        "Solar power generation rose dramatically overall, with the sharpest increases occurring in the middle years of the period.",
+        "Solar power generation went up and down a lot before finally becoming stable.",
+        "Solar power generation stayed roughly the same throughout the entire period.",
+        "Solar power generation increased slightly before falling back to its 2015 level."
+      ],
+      "correct_answer": "Solar power generation rose dramatically overall, with the sharpest increases occurring in the middle years of the period.",
+      "explanation": "The data shows solar climbing from 4 TWh (2015) to 46 TWh (2025), an overall rise of over tenfold, with the steepest year-on-year gains between 2019 and 2022 (16-27 TWh). The correct option uses accurate, task-appropriate trend language ('rose dramatically') and correctly locates the period of fastest growth, which examiners look for under the Task Achievement criterion for accurately identifying key features. The other options misrepresent the trend (no fall, no plateau, not merely 'slight')."
+    },
+    {
+      "id": 2,
+      "prompt": "Complete the sentence with the single best comparative word or phrase: 'In 2015, wind power generation ______ solar power generation, but by 2023 this position had reversed.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "exceeded",
+      "explanation": "In 2015, wind (10 TWh) was more than double solar (4 TWh), so wind 'exceeded' (or 'was higher than' / 'surpassed') solar at that point. By 2023, solar (38 TWh) had overtaken wind (31 TWh), so the relationship reverses. Band 6-6.5 answers should use precise comparative verbs like 'exceeded', 'surpassed', or 'was ahead of' rather than vague phrasing such as 'was more', which under-uses available Lexical Resource marks."
+    },
+    {
+      "id": 3,
+      "prompt": "True, False, or Not Given: According to the chart, wind power generation overtook solar power generation at some point after 2020.",
+      "question_type": "true_false_ng",
+      "options": ["True", "False", "Not Given"],
+      "correct_answer": "False",
+      "explanation": "The data shows the opposite relationship: solar overtook wind, not the other way around. Wind led solar from 2015 through 2021, but solar clearly surpassed wind by 2022-2023 (solar 33-38 TWh vs wind 28-31 TWh) and remained ahead through 2025. Students often reverse comparison direction under time pressure; this question specifically tests careful reading of which series is higher at the crossover point, a common Band 6 error area."
+    }
+  ],
+  "band_9_sample": "The line graph illustrates the volume of electricity generated from two renewable sources, solar and wind power, in Australia over an eleven-year period from 2015 to 2025, measured in terawatt-hours.\n\nOverall, both forms of renewable energy generation increased substantially over the period, but solar power grew at a considerably faster rate than wind power and overtook it roughly two-thirds of the way through the timeframe. Notably, wind power began as the dominant source before being surpassed by solar in the early 2020s.\n\nIn 2015, wind power generation stood at 10 TWh, more than double the 4 TWh produced by solar at that time. Over the following years, wind power rose steadily but modestly, reaching 22 TWh by 2020 and climbing to 37 TWh by the end of the period, an increase of well under fourfold overall.\n\nSolar power, by contrast, expanded far more dramatically. From its low base of 4 TWh in 2015, output nearly quadrupled to 16 TWh by 2019, before accelerating even further to reach 27 TWh in 2021. This rapid growth meant that solar generation overtook wind generation for the first time in 2022, when it reached 33 TWh compared to wind's 28 TWh. From that point onward, solar maintained its lead, ultimately reaching 46 TWh in 2025, some 9 TWh ahead of wind's final figure of 37 TWh.\n\nIn summary, while both renewable sources contributed an increasing share of Australia's electricity generation throughout the period, solar power's steeper trajectory allowed it to close a substantial early gap and finish as the leading renewable source by 2025."
+}

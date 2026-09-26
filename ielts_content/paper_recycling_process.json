@@ -1,0 +1,38 @@
+{
+  "module_title": "IELTS Writing Task 1: Describing a Process Diagram",
+  "tier": "TIER_1",
+  "skill": "WRITING_T1",
+  "lesson_title": "The Industrial Paper Recycling Process",
+  "passage_or_prompt": "The diagram below shows the process of how waste paper is recycled into new paper products. Summarise the information by describing the main stages of the process. Write at least 150 words.",
+  "diagram_type": "mermaid",
+  "diagram_config": {
+    "mermaid_syntax": "graph LR\n    A[Collection of waste paper] --> B[Sorting and grading by type]\n    B --> C[Pulping: mixed with water and chemicals]\n    C --> D[Cleaning and de-inking]\n    D --> E[Rolling and drying into new paper sheets]"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Fill in the blank: 'Waste paper is first collected from homes and offices. ______, it is sorted and graded according to its type and quality.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Subsequently",
+      "explanation": "'Subsequently' is a formal sequencing connector meaning 'after that', and it correctly links the first stage (collection) to the second stage (sorting). At Band 4.5-5.5, using varied connectors like 'Subsequently', 'Next', or 'After this' instead of repeating 'and then' repeatedly improves the Coherence and Cohesion score. Note the comma directly after the connector, which is the standard punctuation pattern for sentence-initial linking adverbs."
+    },
+    {
+      "id": 2,
+      "prompt": "Fill in the blank: '______ the paper can be cleaned and de-inked, it must first be broken down into pulp by mixing it with water and chemicals.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Prior to",
+      "explanation": "'Prior to' means 'before' and is used here to show that the pulping stage happens before the cleaning/de-inking stage. Note the grammatical pattern: 'Prior to' is normally followed by a noun phrase or a gerund (e.g., 'prior to cleaning'), so using it directly before a full clause is a common Band 5 learner error worth flagging -- a stronger version would be 'Prior to being cleaned and de-inked, the paper must first be broken down into pulp.' This question tests recognition of the connector's core meaning even where the surrounding grammar could be refined."
+    },
+    {
+      "id": 3,
+      "prompt": "Fill in the blank: '______ the pulp has been cleaned, it is rolled and dried to produce sheets of new paper, completing the recycling process.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Once",
+      "explanation": "'Once' functions as a time connector meaning 'as soon as' or 'after', correctly signalling that cleaning must be finished before the final rolling and drying stage begins. Other acceptable Band 4.5-5.5 alternatives here would include 'After' or 'When'. This question also reinforces the passive voice construction ('has been cleaned'), which is essential for describing processes since the paper is the object being acted upon at every stage, not the agent performing the action."
+    }
+  ],
+  "band_9_sample": "The diagram illustrates the five main stages involved in recycling waste paper into new paper products.\n\nOverall, the process begins with the collection of used paper and ends with the production of new paper sheets, passing through several treatment stages in between.\n\nIn the first stage, waste paper is collected from various sources such as homes, offices, and businesses. Subsequently, the collected paper is sorted and graded according to its type and quality, which ensures that only suitable material moves forward to the next stage.\n\nPrior to being cleaned, the sorted paper must first be broken down into pulp. This is achieved by mixing it with water and chemicals, a stage which softens the paper fibres and prepares them for further processing. After this, the resulting pulp is cleaned and de-inked in order to remove any remaining ink, staples, or other impurities.\n\nOnce the pulp has been thoroughly cleaned, it is passed through rollers and dried. This final stage transforms the wet pulp into flat, dry sheets of new paper, completing the recycling cycle.\n\nIn summary, the process converts waste paper into new paper through five clearly sequenced stages: collection, sorting, pulping, cleaning, and finally rolling and drying."
+}

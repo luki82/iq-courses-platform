@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}IELTS Preparation{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">IELTS Preparation</h1>
+<p class="text-muted">
+  Lessons across Reading, Listening, Writing, and Speaking, organised by tier.
+  Tier 1 lessons are free for everyone; Tier 2 and Tier 3 require Premium.
+</p>
+
+<div class="row g-3 mt-2">
+  {% for lesson in lessons %}
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title mb-1">
+          {{ lesson.title }}
+          {% if lesson.requires_premium %}
+            <span class="badge bg-warning text-dark">Premium</span>
+          {% else %}
+            <span class="badge bg-success">Free</span>
+          {% endif %}
+        </h5>
+        <p class="text-muted small mb-2">{{ lesson.get_tier_display }} &middot; {{ lesson.get_skill_display }}</p>
+        <a href="{% url 'ielts:lesson_detail' lesson.slug %}" class="btn btn-primary btn-sm">Open lesson</a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>
+    No IELTS lessons yet -- load one with
+    <code>python manage.py load_ielts_lesson path/to/lesson.json</code>.
+  </p>
+  {% endfor %}
+</div>
+{% endblock %}

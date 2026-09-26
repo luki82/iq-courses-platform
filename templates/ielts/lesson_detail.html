@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}{{ lesson.title }}{% endblock %}
+
+{% block content %}
+<p class="text-muted small mb-1">{{ lesson.get_tier_display }} &middot; {{ lesson.get_skill_display }}</p>
+<h1 class="mb-3">{{ lesson.title }}</h1>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h6 class="text-muted text-uppercase small mb-2">Passage / Prompt</h6>
+    <p style="white-space: pre-line;">{{ lesson.passage_or_prompt }}</p>
+  </div>
+</div>
+
+{% if lesson.diagram_type == "chartjs" %}
+  {{ lesson.diagram_config|json_script:"diagram-config" }}
+  <div class="card mb-4">
+    <div class="card-body">
+      <canvas id="lessonChart" height="120"></canvas>
+    </div>
+  </div>
+{% elif lesson.diagram_type == "mermaid" %}
+  {{ lesson.diagram_config.mermaid_syntax|json_script:"mermaid-syntax" }}
+  <div class="card mb-4">
+    <div class="card-body">
+      <div id="lessonMermaid" class="mermaid"></div>
+    </div>
+  </div>
+{% elif lesson.diagram_type == "cloudinary" and lesson.diagram_config.image_url %}
+  <div class="card mb-4">
+    <div class="card-body text-center">
+      <img src="{{ lesson.diagram_config.image_url }}" alt="{{ lesson.title }}" class="img-fluid rounded">
+    </div>
+  </div>
+{% endif %}
+
+<h4 class="mb-3">Practice Questions</h4>
+{% for question in questions %}
+<div class="card mb-3" x-data="{ revealed: false }">
+  <div class="card-body">
+    <p class="fw-semibold">{{ forloop.counter }}. {{ question.prompt }}</p>
+
+    {% if question.options %}
+    <ul class="list-unstyled mb-3">
+      {% for option in question.options %}
+      <li>{{ option }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <button type="button" class="btn btn-sm btn-outline-primary" x-show="!revealed" @click="revealed = true">
+      Reveal answer &amp; explanation
+    </button>
+
+    <div x-show="revealed" x-cloak>
+      <p class="mb-1"><strong>Correct answer:</strong> {{ question.correct_answer }}</p>
+      <p class="mb-0 text-muted">{{ question.explanation }}</p>
+    </div>
+  </div>
+</div>
+{% empty %}
+<p class="text-muted">No questions added yet.</p>
+{% endfor %}
+
+{% if lesson.band_9_sample %}
+<div class="card mb-4" x-data="{ open: false }">
+  <div class="card-header d-flex justify-content-between align-items-center" style="cursor: pointer;" @click="open = !open">
+    <strong>Band 9 Model Answer</strong>
+    <span x-text="open ? '▲' : '▼'"></span>
+  </div>
+  <div class="card-body" x-show="open" x-cloak style="white-space: pre-line;">{{ lesson.band_9_sample }}</div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+{% if lesson.diagram_type == "chartjs" %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script>
+  const diagramConfig = JSON.parse(document.getElementById('diagram-config').textContent);
+  new Chart(document.getElementById('lessonChart'), diagramConfig);
+</script>
+{% elif lesson.diagram_type == "mermaid" %}
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  const syntax = JSON.parse(document.getElementById('mermaid-syntax').textContent);
+  document.getElementById('lessonMermaid').textContent = syntax;
+  mermaid.initialize({ startOnLoad: false });
+  mermaid.run({ nodes: [document.getElementById('lessonMermaid')] });
+</script>
+{% endif %}
+{% endblock %}

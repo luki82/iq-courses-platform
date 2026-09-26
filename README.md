@@ -8,13 +8,17 @@ A Django site with two products behind a single freemium paywall:
   categories -- they need to upgrade.
 - **Courses** (`courses` app) -- courses made of modules and lessons. Each
   course's first module is a free preview; the rest requires Premium.
+- **IELTS Preparation** (`ielts` app) -- lesson modules across Reading,
+  Listening, Writing, and Speaking, split into three tiers. Tier 1 lessons
+  are free; Tier 2 and Tier 3 require Premium.
 - **Billing** (`billing` app) -- Stripe Checkout integration that unlocks
   Premium access for a configurable number of days per purchase.
 - **Accounts** (`accounts` app) -- signup/login and a `Profile` model that
   tracks each user's premium status and free-attempt usage.
 
 The freemium rule is centered on one property: `request.user.profile.has_premium_access`.
-Both apps check it (plus their own free-preview flags) before showing paid content.
+All three content apps check it (plus their own free-preview/tier flags) before
+showing paid content.
 
 ---
 
@@ -61,6 +65,8 @@ Use `/admin/` to add:
 - **Courses app > Courses / Modules / Lessons** -- build out your course
   content. Tick a Module's `is_free_preview` to make it free; leave it
   unticked to require Premium.
+- **IELTS app > IELTS lessons / questions** -- add lessons directly in admin,
+  or load them from JSON (see section 5 below).
 - **Billing app > Plans** -- create at least one Plan (name, price for
   display, duration in days). You'll attach it to a real Stripe Price next.
 
@@ -126,11 +132,19 @@ provisions a free Postgres database and a web service together.
    for you automatically.
 4. Deploy. Render runs `build.sh` (installs dependencies, collects static
    files, runs migrations) then starts `gunicorn config.wsgi:application`.
-5. Once live, create an admin user for the production site:
-   Render dashboard > your service > **Shell** tab, then:
-   ```bash
-   python manage.py createsuperuser
-   ```
+5. Once live, create an admin user for the production site. Render's free
+   web services don't include Shell/SSH access, so instead of running
+   `createsuperuser` in a shell, set these three env vars on the service
+   (Environment tab) and redeploy -- `build.sh` runs
+   `python manage.py create_admin` automatically, which creates the account
+   (or, if it already exists, updates its password when
+   `DJANGO_SUPERUSER_RESET_PASSWORD=1` is also set):
+   - `DJANGO_SUPERUSER_USERNAME`
+   - `DJANGO_SUPERUSER_EMAIL`
+   - `DJANGO_SUPERUSER_PASSWORD`
+
+   (If you're on a paid instance type with Shell access, `python manage.py
+   createsuperuser` in the Shell tab still works too.)
 6. Update your Stripe webhook endpoint to point at your real Render URL
    (`https://<your-service>.onrender.com/billing/webhook/`).
 
@@ -147,7 +161,29 @@ redeploy in production. For a real launch, wire up a cloud storage backend
 
 ---
 
-## 5. Project layout
+## 5. Loading IELTS lesson content
+
+IELTS lesson modules (Reading/Listening/Writing/Speaking, split into
+TIER_1/2/3) are generated as JSON -- see `ielts_content/*.json` for examples
+-- and loaded with:
+
+```bash
+python manage.py load_ielts_lesson ielts_content/renewable_energy_task1.json
+python manage.py load_ielts_lesson ielts_content/paper_recycling_process.json
+python manage.py load_ielts_lesson ielts_content/autonomous_vehicles_reading.json
+```
+
+Re-running the same file skips it (a lesson with that title already exists);
+pass `--update` to delete and reload it instead. Diagrams render client-side:
+`diagram_type: "chartjs"` renders via Chart.js, `"mermaid"` via Mermaid.js,
+and `"cloudinary"` displays `diagram_config.image_url` directly (this
+project doesn't have Cloudinary wired in -- point that URL at wherever you
+actually host the image). Questions use Alpine.js for a click-to-reveal
+answer/explanation panel.
+
+---
+
+## 6. Project layout
 
 ```
 config/         Project settings, root URLs, WSGI/ASGI
@@ -155,12 +191,14 @@ accounts/       Signup/login, Profile (premium status, free-usage counters)
 core/           Home page
 iqtest/         Categories, Questions, Choices, TestAttempt, Answer, views, templates
 courses/        Course, Module, Lesson, Enrollment, LessonProgress, views, templates
+ielts/          IELTSLesson, IELTSQuestion (Reading/Listening/Writing/Speaking, tiered), views, templates
 billing/        Plan, Purchase, Stripe Checkout + webhook
 templates/      Shared base.html + each app's templates
 static/         CSS (Bootstrap 5 via CDN + a small custom stylesheet)
+ielts_content/  Example lesson JSON files for `load_ielts_lesson`
 ```
 
-## 6. Where the freemium rule lives
+## 7. Where the freemium rule lives
 
 - `accounts.models.Profile.has_premium_access` -- the single source of truth
   for "is this user currently paying".
@@ -170,6 +208,9 @@ static/         CSS (Bootstrap 5 via CDN + a small custom stylesheet)
 - `courses.views.lesson_detail` / `course_detail.html` -- a lesson is
   visible if `lesson.is_free` (its module is a free preview) or the user has
   premium access.
+- `ielts.models.IELTSLesson.requires_premium` -- TIER_1 lessons are always
+  free; TIER_2 and TIER_3 require premium (`ielts.views.lesson_detail`
+  redirects to the pricing page otherwise).
 
-Adjust `FREE_TEST_ATTEMPTS_LIMIT`, which categories/modules are marked
+Adjust `FREE_TEST_ATTEMPTS_LIMIT`, which categories/modules/lessons are marked
 premium, and Plan pricing/duration to match whatever access model you want.
