@@ -11,3 +11,17 @@ main {
 .card {
   border-radius: 0.75rem;
 }
+
+/* iQ brand: lorrank greens, from the logo */
+.navbar-iq {
+  background-color: #16301F;
+}
+
+.navbar-iq .nav-link {
+  color: #F5F1E6;
+}
+
+.navbar-iq .nav-link:hover,
+.navbar-iq .nav-link:focus {
+  color: #C4DC7A;
+}
