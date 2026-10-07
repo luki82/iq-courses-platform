@@ -1,0 +1,46 @@
+{
+  "module_title": "IELTS Writing Task 2: Discuss Both Views",
+  "tier": "TIER_2",
+  "skill": "WRITING_T2",
+  "lesson_title": "Remote Work: Benefit or Burden?",
+  "passage_or_prompt": "You should spend about 40 minutes on this task.\n\nSome people believe that working from home benefits both employees and employers. Others think that it has a negative effect on teamwork and productivity.\n\nDiscuss both these views and give your own opinion.\n\nWrite at least 250 words.\n\nSTRATEGY FOR BAND 6.0-6.5 AND ABOVE\n- You must discuss BOTH views AND give your own opinion. Missing any one of these limits your Task Response score.\n- Give each view its own body paragraph with a clear topic sentence.\n- State your opinion in the introduction, then confirm it in the conclusion.",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Which thesis statement correctly answers ALL parts of the question?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. This essay will discuss working from home.",
+        "B. Working from home is good.",
+        "C. Although remote work can weaken team relationships, this essay will argue that its benefits outweigh its drawbacks when it is properly managed.",
+        "D. There are many advantages and disadvantages of working from home."
+      ],
+      "correct_answer": "C. Although remote work can weaken team relationships, this essay will argue that its benefits outweigh its drawbacks when it is properly managed.",
+      "explanation": "C acknowledges the other view AND gives a clear, qualified opinion. A and D give no opinion; B is too simple and ignores the second view."
+    },
+    {
+      "id": 2,
+      "prompt": "Fill in the blank with a phrase that introduces the opposing view: '______ that remote work isolates staff and makes collaboration harder.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Critics argue",
+      "explanation": "Phrases like 'Critics argue', 'Opponents claim' or 'It is often said' show that you are reporting a view, not necessarily agreeing with it. This keeps your own position clear."
+    },
+    {
+      "id": 3,
+      "prompt": "A Band 7+ body paragraph should contain:",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Several different ideas, each mentioned briefly",
+        "B. One main idea that is explained and supported with a specific example",
+        "C. Only memorised phrases",
+        "D. Statistics from real research only"
+      ],
+      "correct_answer": "B. One main idea that is explained and supported with a specific example",
+      "explanation": "Examiners reward ideas that are 'extended and supported'. Listing many undeveloped ideas is one of the most common reasons candidates get stuck at Band 6."
+    }
+  ],
+  "band_9_sample": "The shift towards working from home has divided opinion. Although remote work can weaken team relationships, I would argue that its benefits outweigh its drawbacks when it is properly managed.\n\nCritics argue that remote work isolates staff and makes collaboration harder. Spontaneous conversations in corridors and kitchens often lead to new ideas, and these are difficult to replicate over video calls. Newer employees may also struggle to learn from experienced colleagues when they cannot simply ask a question across the desk. For organisations that depend on creativity, this loss of informal contact can be significant.\n\nOn the other hand, supporters point to clear gains for both sides. Employees save the time and expense of commuting, which many use to rest, exercise or spend time with family, and this frequently improves motivation. Employers, meanwhile, can reduce office costs and recruit from a far wider area, rather than being limited to candidates who live within travelling distance.\n\nIn my view, the problems raised by critics are real but manageable. Many companies now adopt a hybrid model, bringing teams together on set days for collaborative work while allowing focused tasks to be completed at home. This approach preserves much of the social value of the office without sacrificing the flexibility that staff value.\n\nIn conclusion, while working from home presents genuine challenges for teamwork, I believe a carefully designed hybrid arrangement allows employers and employees alike to enjoy most of its advantages."
+}

@@ -1,0 +1,57 @@
+{
+  "module_title": "IELTS Listening Part 1: Forms and Personal Details",
+  "tier": "TIER_1",
+  "skill": "LISTENING",
+  "lesson_title": "Joining a Community Gym",
+  "passage_or_prompt": "LISTENING PRACTICE (transcript). Cover the transcript, ask someone to read it aloud to you once -- or read it once quickly -- then answer the questions. In the real test you hear the recording only ONCE.\n\nRECEPTIONIST: Good morning, Riverside Community Gym. How can I help?\nCALLER: Hi, I'd like to join the gym, please.\nRECEPTIONIST: Sure. Can I take your name?\nCALLER: It's Daniela Kowalski.\nRECEPTIONIST: Could you spell your surname?\nCALLER: K-O-W-A-L-S-K-I.\nRECEPTIONIST: Thanks. And your address?\nCALLER: 42 Hannan Street.\nRECEPTIONIST: Is that Hannan with two Ns in the middle?\nCALLER: Yes, H-A-N-N-A-N.\nRECEPTIONIST: Great. We have two memberships -- the standard one at 15 dollars a week, or off-peak at 11 dollars, which is weekdays before 4 pm only.\nCALLER: I work during the day, so I'll need the standard one.\nRECEPTIONIST: No problem. And when would you like to start?\nCALLER: Could I start on Monday? Oh, actually, no -- Monday is a public holiday. Let's say Tuesday.\nRECEPTIONIST: Tuesday the 3rd, then. Please bring a towel and a padlock for the lockers.\nCALLER: Will do. Thanks!",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Surname: ______",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Kowalski",
+      "explanation": "Spelling is tested often in Part 1. Practise the English alphabet, especially letters that sound alike (A/E/I, G/J). A misspelt answer is marked wrong."
+    },
+    {
+      "id": 2,
+      "prompt": "Address: 42 ______ Street",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Hannan",
+      "explanation": "The receptionist checks 'two Ns in the middle'. Listen for corrections and confirmations -- they often give the exact spelling."
+    },
+    {
+      "id": 3,
+      "prompt": "Weekly cost of chosen membership: $______",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "15",
+      "explanation": "Two prices are mentioned: 15 and 11. The caller works in the day, so she can't use off-peak (before 4 pm). This is a classic distractor -- the speaker mentions two options and you must choose the one that is selected."
+    },
+    {
+      "id": 4,
+      "prompt": "Start day: ______",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Tuesday",
+      "explanation": "She first says Monday, then changes her mind ('Oh, actually, no'). Words like 'actually', 'sorry' and 'I mean' signal that the first answer is about to change."
+    },
+    {
+      "id": 5,
+      "prompt": "What two things should she bring?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. A towel and a water bottle",
+        "B. A padlock and photo ID",
+        "C. A towel and a padlock",
+        "D. Photo ID and a towel"
+      ],
+      "correct_answer": "C. A towel and a padlock",
+      "explanation": "The final line: 'Please bring a towel and a padlock for the lockers.' Answers in IELTS Listening come in the same order as the questions, so the last question is usually near the end."
+    }
+  ],
+  "band_9_sample": ""
+}

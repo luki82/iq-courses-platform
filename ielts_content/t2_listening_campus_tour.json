@@ -1,0 +1,61 @@
+{
+  "module_title": "IELTS Listening Part 2: Maps and Directions",
+  "tier": "TIER_2",
+  "skill": "LISTENING",
+  "lesson_title": "A Tour of the New Library",
+  "passage_or_prompt": "LISTENING PRACTICE (transcript). Have someone read this aloud once, or read it once at speaking speed, then answer without looking back.\n\nGUIDE: Welcome to the new Westbrook Library. We're standing at the main entrance, facing north. Directly in front of you is the information desk -- that's where you'll collect your library card. To your left, along the west wall, you'll find the cafe, which opens at seven, an hour before the library itself. Now, many people expect the children's section to be on the ground floor, but we've actually put it upstairs, away from the noise of the entrance. In its place on the ground floor, to the right of the information desk, is the newspapers and magazines area. Behind the information desk, at the back of the building, there are six study rooms. These can be booked for up to two hours at a time -- originally the limit was three, but demand has been so high that we've had to reduce it. Finally, the computer lab is in the north-east corner, next to the lifts. Printing costs twenty cents a page.",
+  "diagram_type": "mermaid",
+  "diagram_config": {
+    "mermaid_syntax": "graph TD\n    S[\"Study rooms (back, north)\"] --- B[\"B - Information desk\"]\n    D[\"D - north-east corner\"] --- C[\"C - east side\"]\n    A[\"A - west wall\"] --- B\n    B --- C\n    B --- E[\"Main entrance (south) - YOU ARE HERE, facing north\"]"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "What is at location A (west wall)?",
+      "question_type": "multiple_choice",
+      "options": [
+        "Cafe",
+        "Children's section",
+        "Computer lab",
+        "Study rooms"
+      ],
+      "correct_answer": "Cafe",
+      "explanation": "'To your left, along the west wall, you'll find the cafe.' You are facing north, so left = west. In map questions, always note which way the speaker is facing."
+    },
+    {
+      "id": 2,
+      "prompt": "Where is the children's section?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Ground floor, east side",
+        "B. Upstairs",
+        "C. Next to the cafe",
+        "D. Behind the information desk"
+      ],
+      "correct_answer": "B. Upstairs",
+      "explanation": "The speaker uses a common distractor pattern: 'many people expect ... but we've actually put it upstairs'. The word 'but' signals that the expected answer is wrong."
+    },
+    {
+      "id": 3,
+      "prompt": "Study rooms can be booked for a maximum of ______ hours.",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "2",
+      "explanation": "Both 'two' and 'three' are said. Three was the ORIGINAL limit; it has been reduced to two. Listen for time markers like 'originally', 'used to' and 'now'."
+    },
+    {
+      "id": 4,
+      "prompt": "What is in the north-east corner (location D)?",
+      "question_type": "multiple_choice",
+      "options": [
+        "Newspapers and magazines",
+        "Computer lab",
+        "Information desk",
+        "Cafe"
+      ],
+      "correct_answer": "Computer lab",
+      "explanation": "'The computer lab is in the north-east corner, next to the lifts.' Newspapers are to the right of the desk (east side, location C), which is a nearby distractor."
+    }
+  ],
+  "band_9_sample": ""
+}

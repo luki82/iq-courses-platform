@@ -1,0 +1,46 @@
+{
+  "module_title": "IELTS Speaking Part 2: The Long Turn",
+  "tier": "TIER_2",
+  "skill": "SPEAKING",
+  "lesson_title": "Describe a Skill You Learned as an Adult",
+  "passage_or_prompt": "In Part 2 you get a task card, one minute to prepare (with paper and pencil), and then you speak for 1-2 minutes without interruption.\n\nTASK CARD\nDescribe a skill you learned as an adult.\nYou should say:\n- what the skill is\n- when and how you learned it\n- what difficulties you had\nand explain how this skill has helped you.\n\nONE-MINUTE PLAN: write 3-4 key words for each bullet, NOT full sentences.\nExample notes: driving / 25, after moving / instructor, 20 lessons / reverse parking, nervous / independence, job.\n\nTIP: Use past tenses for the story, then switch to the present perfect to explain the result ('It has given me...').",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "What should you do in the one-minute preparation time?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Write a full script to read out",
+        "B. Write key words for each bullet point",
+        "C. Sit silently and think",
+        "D. Ask the examiner questions"
+      ],
+      "correct_answer": "B. Write key words for each bullet point",
+      "explanation": "There isn't time for a full script, and reading aloud sounds unnatural. Key words keep you on track and help you cover every bullet."
+    },
+    {
+      "id": 2,
+      "prompt": "Fill in the blank with the correct tense: 'Since then, it ______ (make) my life much easier.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "has made",
+      "explanation": "'Since then' connects a past event to the present, so the present perfect ('has made') is needed. Accurate tense control across a story is a key Band 6.5-7 feature."
+    },
+    {
+      "id": 3,
+      "prompt": "You finish speaking after 50 seconds. What is the best thing to do?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Stop and wait",
+        "B. Add more detail about a bullet point, such as a specific difficulty or feeling",
+        "C. Start talking about a different topic",
+        "D. Repeat what you already said"
+      ],
+      "correct_answer": "B. Add more detail about a bullet point, such as a specific difficulty or feeling",
+      "explanation": "Aim to speak until the examiner stops you. Expanding on a bullet point -- especially with feelings, a short story or a comparison -- is the most natural way to extend your answer."
+    }
+  ],
+  "band_9_sample": "I'd like to talk about learning to drive, which I didn't actually do until I was twenty-five.\n\nI grew up in a big city with excellent public transport, so I never really needed a car. But when I moved to a regional town for work, I quickly realised that without a licence I was stuck -- the buses only ran a few times a day. So I booked a course with a local instructor and took about twenty lessons over three months.\n\nTo be honest, it was harder than I expected. Most of my friends had learned as teenagers, and I felt a bit embarrassed being a beginner at my age. Reverse parking was my nightmare -- I must have practised it a hundred times in an empty car park before I could do it without hitting the kerb. And I was so nervous before my test that I barely slept the night before.\n\nLuckily, I passed on my first attempt, and since then it has made my life so much easier. I can get to work without relying on anyone, I've been able to apply for jobs that require a licence, and I've explored parts of the country I would never have seen otherwise. More than anything, though, it taught me that it's never too late to learn something new -- you just have to accept feeling a bit awkward at the start."
+}

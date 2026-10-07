@@ -48,9 +48,14 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 
-# Optional: adds a couple of sample IQ categories/questions and a sample course
+# Optional: sample IQ questions, plus the real plans, courses and IELTS lessons
+# (build.sh runs all of these except seed_iqtest on every Render deploy)
 python manage.py seed_iqtest
-python manage.py seed_courses
+python manage.py seed_plans
+python manage.py seed_english_esl
+python manage.py seed_workplace_english
+python manage.py seed_school_english
+python manage.py load_ielts_lesson ielts_content/
 
 python manage.py runserver
 ```
@@ -74,23 +79,35 @@ Use `/admin/` to add:
 
 ## 2. Stripe setup (payments)
 
-1. Create a [Stripe account](https://dashboard.stripe.com/register) (test
-   mode is fine to start).
-2. In the Stripe dashboard, create a **Product** (e.g. "Premium Access") with
-   a one-time **Price** (e.g. $9.99). Copy its Price ID (`price_...`).
-3. In Django admin, edit your Plan and paste that Price ID into
-   `stripe_price_id`.
-4. In `.env` (locally) or Render's environment variables (in production), set:
-   - `STRIPE_PUBLIC_KEY` -- from Stripe dashboard > Developers > API keys
-   - `STRIPE_SECRET_KEY` -- same page
-   - `STRIPE_WEBHOOK_SECRET` -- see next step
-5. Add a webhook endpoint in Stripe pointing at
-   `https://<your-domain>/billing/webhook/`, subscribed to the
-   `checkout.session.completed` event. Stripe will show you a signing secret
-   (`whsec_...`) -- that's `STRIPE_WEBHOOK_SECRET`.
+Plans are created automatically on deploy by `python manage.py seed_plans`
+(A$14.99 / 30 days, A$34.99 / 90 days, A$99 / 365 days). Checkout charges each
+plan's `price_cents` directly, so you do **not** need to create Products or
+Prices in Stripe. Change prices, wording or durations in Django admin >
+Billing > Plans -- redeploys won't overwrite your edits. (If you'd rather use a
+Stripe Price, paste its `price_...` ID into the plan and it takes priority.)
 
-Until these are set, the "Upgrade" button shows a friendly "payments aren't
-configured yet" message instead of erroring.
+To switch payments on, set three environment variables on Render (or in
+`.env` locally):
+
+1. `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY` -- Stripe dashboard >
+   Developers > API keys (`pk_...` / `sk_...`).
+2. Add a webhook endpoint in Stripe: Developers > Webhooks > Add endpoint,
+   URL `https://<your-domain>/billing/webhook/`, events
+   `checkout.session.completed` and `checkout.session.async_payment_succeeded`.
+   Copy its signing secret (`whsec_...`) into `STRIPE_WEBHOOK_SECRET`.
+
+Use test-mode keys first and pay with card `4242 4242 4242 4242` (any future
+expiry, any CVC). Then swap in live keys and create a separate live-mode
+webhook -- test and live webhooks have different signing secrets.
+
+How access is granted: after payment, the success page confirms the session
+with Stripe and unlocks Premium immediately; the webhook is the backstop if
+the buyer closes the tab. Both paths are idempotent, so a purchase is never
+counted twice. In production (`DEBUG=False`) unsigned webhooks are rejected,
+so the webhook does nothing until `STRIPE_WEBHOOK_SECRET` is set.
+
+Until the keys are set, the "Upgrade" button shows a friendly "payments
+aren't switched on yet" message instead of erroring.
 
 To test locally, use the [Stripe CLI](https://stripe.com/docs/stripe-cli):
 `stripe listen --forward-to localhost:8000/billing/webhook/`.

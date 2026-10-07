@@ -1,0 +1,46 @@
+{
+  "module_title": "IELTS Speaking Part 3: Abstract Discussion",
+  "tier": "TIER_3",
+  "skill": "SPEAKING",
+  "lesson_title": "Technology, Education and Society",
+  "passage_or_prompt": "Part 3 lasts 4-5 minutes. The examiner asks deeper, more abstract questions linked to your Part 2 topic. Band 7+ answers analyse, compare, speculate and give balanced views.\n\nTHE 'ARE' + 'BALANCE' METHOD\nAnswer -> Reason -> Example, then add a contrasting point or a prediction.\n\nPRACTICE QUESTIONS (answer aloud for 45-60 seconds each):\n1. Do you think adults learn differently from children?\n2. Will online learning ever fully replace classroom teaching?\n3. Should employers be responsible for training their staff, or is that the individual's job?\n4. How might technology change the skills people need in the next twenty years?\n\nUSEFUL LANGUAGE\nSpeculating: 'It's quite likely that...', 'I'd imagine...', 'There's a good chance...'\nBalancing: 'That said...', 'On the flip side...', 'It depends to some extent on...'\nGeneralising: 'By and large...', 'Generally speaking...', 'In most cases...'",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Which opening shows the most Band 7+ features for: 'Will online learning replace classrooms?'",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Yes, definitely, because online is better.",
+        "B. I don't know, maybe.",
+        "C. I doubt it will replace them entirely. Online learning is brilliant for flexibility, but I'd imagine schools will remain important for the social side of education.",
+        "D. Online learning is learning which is online."
+      ],
+      "correct_answer": "C. I doubt it will replace them entirely. Online learning is brilliant for flexibility, but I'd imagine schools will remain important for the social side of education.",
+      "explanation": "C gives a clear position, a balanced contrast ('but') and speculative language ('I'd imagine'). Part 3 rewards developed, nuanced answers rather than simple yes/no responses."
+    },
+    {
+      "id": 2,
+      "prompt": "Fill in the blank with a hedging phrase: '______, older learners tend to be more motivated, because they have chosen to study rather than being required to.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Generally speaking",
+      "explanation": "Hedging phrases ('Generally speaking', 'By and large', 'In most cases') make generalisations sound careful and academic. Overgeneralising ('All adults...') can sound naive at Band 7+."
+    },
+    {
+      "id": 3,
+      "prompt": "The examiner interrupts you mid-answer with a follow-up question. This means:",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Your answer was wrong",
+        "B. You will lose marks",
+        "C. Nothing negative -- examiners in Part 3 often interrupt to explore your ideas further",
+        "D. The test is over"
+      ],
+      "correct_answer": "C. Nothing negative -- examiners in Part 3 often interrupt to explore your ideas further",
+      "explanation": "Part 3 is a two-way discussion. Being interrupted is normal and often means the examiner wants to push you to a higher level. Stay calm and engage with the new question."
+    }
+  ],
+  "band_9_sample": "Q: Do you think adults learn differently from children?\n\nA: I think they do, in a few important ways. Generally speaking, adults are more self-directed -- they've usually chosen to learn something for a practical reason, like a job or moving to a new country, so their motivation tends to be stronger and more focused. Children, on the other hand, often learn through play and repetition, and they're far less self-conscious about making mistakes, which is a huge advantage, especially with languages. That said, I'd argue the gap is narrowing. With so much learning now happening through apps and short online courses, adults are increasingly learning in bite-sized, game-like ways that look a lot like how children learn. So perhaps the real difference isn't age itself, but how much fear of failure we carry with us."
+}

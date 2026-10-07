@@ -1,0 +1,46 @@
+{
+  "module_title": "IELTS Writing Task 2: The Opinion Essay",
+  "tier": "TIER_1",
+  "skill": "WRITING_T2",
+  "lesson_title": "Should Children Learn to Cook at School?",
+  "passage_or_prompt": "You should spend about 40 minutes on this task.\n\nSome people think that schools should teach children how to cook. Others believe this is the responsibility of parents.\n\nTo what extent do you agree or disagree?\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.\n\nA SIMPLE 4-PARAGRAPH PLAN\n1. Introduction: paraphrase the question + give your opinion clearly.\n2. Body 1: first reason + explanation + example.\n3. Body 2: second reason (or the other view and why you disagree with it).\n4. Conclusion: restate your opinion in different words.",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Which sentence is the best paraphrase of the question for an introduction?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Some people think that schools should teach children how to cook.",
+        "B. It is sometimes argued that cooking lessons belong in the school curriculum rather than at home.",
+        "C. Cooking is very important nowadays.",
+        "D. I will talk about cooking in this essay."
+      ],
+      "correct_answer": "B. It is sometimes argued that cooking lessons belong in the school curriculum rather than at home.",
+      "explanation": "A copies the question word for word (examiners don't count copied words). C is too general and D is a weak 'announcement'. B uses new vocabulary ('curriculum', 'belong') to show the same idea."
+    },
+    {
+      "id": 2,
+      "prompt": "Fill in the blank: '______, cooking classes teach children basic maths, such as measuring and weighing ingredients.' (choose a suitable linking word)",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "Furthermore",
+      "explanation": "'Furthermore' (or 'In addition', 'Moreover') adds a new supporting point. Using a range of linking words accurately helps your Coherence and Cohesion score -- but don't start every sentence with one."
+    },
+    {
+      "id": 3,
+      "prompt": "In an 'agree or disagree' essay, where should your opinion appear?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Only in the conclusion",
+        "B. In the introduction and the conclusion",
+        "C. Nowhere -- stay neutral",
+        "D. Only in the second body paragraph"
+      ],
+      "correct_answer": "B. In the introduction and the conclusion",
+      "explanation": "The examiner must see a clear position throughout. State it in the introduction, support it in the body, and restate it in the conclusion. A hidden or changing opinion lowers your Task Response score."
+    }
+  ],
+  "band_9_sample": "It is sometimes argued that cooking lessons belong in the school curriculum rather than at home. In my view, while parents play an important role, schools are better placed to make sure that every child learns this essential skill.\n\nThe main reason is fairness. Not all parents have the time, confidence or resources to teach cooking. Many families rely on two incomes, and long working hours leave little opportunity for lessons in the kitchen. If cooking is left entirely to parents, some children will grow up able to prepare healthy meals while others depend on takeaway food. Teaching it at school gives every student the same foundation.\n\nFurthermore, cooking classes support other parts of the curriculum. Measuring and weighing ingredients reinforces basic mathematics, reading recipes builds literacy, and learning about nutrition connects directly to health education. In this way, a single practical subject reinforces several academic ones.\n\nAdmittedly, parents can pass on family recipes and cultural traditions that a school cannot. However, this is an argument for parents adding to what schools teach, not for schools ignoring the subject altogether.\n\nIn conclusion, although home cooking has its own value, I strongly believe that schools should take responsibility for teaching children to cook, as this is the only way to guarantee that all young people gain a skill they will use every day of their lives."
+}

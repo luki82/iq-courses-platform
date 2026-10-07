@@ -9,8 +9,16 @@ class Plan(models.Model):
     slug = models.SlugField(unique=True)
     description = models.CharField(max_length=255, blank=True)
     price_display = models.CharField(max_length=50, help_text="Display only, e.g. '$9.99/month'.")
+    price_cents = models.PositiveIntegerField(
+        default=0,
+        help_text="Amount charged at checkout, in cents (e.g. 1499 = $14.99). "
+        "Used when no Stripe price ID is set.",
+    )
+    currency = models.CharField(max_length=3, default="aud", help_text="Three-letter currency code, e.g. aud.")
     stripe_price_id = models.CharField(
-        max_length=255, blank=True, help_text="Price ID from Stripe (looks like price_...)."
+        max_length=255,
+        blank=True,
+        help_text="Optional. A Price ID from Stripe (price_...). If set, it overrides price_cents.",
     )
     duration_days = models.PositiveIntegerField(
         default=30, help_text="How many days of premium access one purchase grants."

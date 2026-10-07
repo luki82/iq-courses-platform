@@ -1,0 +1,59 @@
+{
+  "module_title": "IELTS Writing Task 2: Problem and Solution at Band 7+",
+  "tier": "TIER_3",
+  "skill": "WRITING_T2",
+  "lesson_title": "Skills Shortages in Regional Areas",
+  "passage_or_prompt": "You should spend about 40 minutes on this task.\n\nIn many countries, regional and rural areas struggle to attract skilled workers such as doctors, teachers and engineers.\n\nWhat are the causes of this problem, and what measures could be taken to solve it?\n\nWrite at least 250 words.\n\nBAND 7+ FOCUS\n- Lexical Resource: precise, topic-specific collocations ('attract and retain staff', 'professional isolation', 'financial incentives').\n- Grammatical Range: a mix of complex structures used accurately -- conditionals, relative clauses, passives.\n- Task Response: every solution should clearly answer a cause you identified.",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Which phrase is the most precise collocation for a Band 7+ essay?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. get workers to come and stay",
+        "B. attract and retain skilled professionals",
+        "C. make people want the jobs",
+        "D. bring lots of workers"
+      ],
+      "correct_answer": "B. attract and retain skilled professionals",
+      "explanation": "'Attract and retain' is the natural collocation used in workforce discussions. Band 7 requires 'less common lexical items' used with awareness of collocation -- not rare words for their own sake."
+    },
+    {
+      "id": 2,
+      "prompt": "Complete the conditional: 'If governments ______ (offer) targeted incentives, more graduates would consider a rural placement.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "offered",
+      "explanation": "Second conditional: If + past simple, would + base verb. Conditionals are an excellent way to present solutions while demonstrating grammatical range."
+    },
+    {
+      "id": 3,
+      "prompt": "Which body-paragraph plan best matches Band 7+ Task Response?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Body 1: three causes. Body 2: five unrelated solutions.",
+        "B. Body 1: two causes, each explained. Body 2: one solution for each cause, explaining how it would work.",
+        "C. Body 1: personal story. Body 2: conclusion.",
+        "D. One very long body paragraph."
+      ],
+      "correct_answer": "B. Body 1: two causes, each explained. Body 2: one solution for each cause, explaining how it would work.",
+      "explanation": "Linking each solution to a specific cause shows logical progression and fully addresses both parts of the question. Depth beats breadth at Band 7+."
+    },
+    {
+      "id": 4,
+      "prompt": "'Professional isolation' as a cause of regional skills shortages refers to:",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Living far from shops",
+        "B. Having limited access to colleagues, mentoring and career development",
+        "C. Working alone in an office",
+        "D. Not having internet access"
+      ],
+      "correct_answer": "B. Having limited access to colleagues, mentoring and career development",
+      "explanation": "Using topic vocabulary precisely, and explaining it, shows the examiner you control meaning -- a key difference between Band 6.5 and Band 7+."
+    }
+  ],
+  "band_9_sample": "In many nations, towns and rural districts far from major cities face persistent shortages of doctors, teachers and engineers. This essay will argue that the problem stems largely from limited career prospects and a lack of lifestyle amenities, and that it can be eased through targeted incentives and improved professional support.\n\nThe first cause is professional isolation. Skilled workers in regional areas often have limited access to colleagues, mentoring and specialised training, which can slow their career progression. A young doctor, for instance, may worry that a placement in a small hospital will deny her the varied caseload and senior supervision available in a city. The second cause relates to lifestyle and family. Partners may struggle to find suitable employment, and families may be concerned about access to schooling, healthcare and cultural activities, all of which make relocation a difficult decision.\n\nThese causes suggest two corresponding solutions. To address professional isolation, governments and employers could fund structured rotation programmes, in which regional staff spend regular periods in metropolitan institutions and receive remote mentoring between visits. This would allow them to develop their careers without abandoning the communities they serve. To tackle lifestyle concerns, financial incentives such as housing assistance, relocation allowances and help finding work for partners could be offered. If governments offered such packages consistently, many more graduates would consider a rural placement, and those who came would be more likely to stay.\n\nIn conclusion, regional skills shortages arise mainly from career-related and personal concerns. Measures that connect regional professionals to wider networks while making relocation financially and socially attractive offer the most realistic path to attracting and retaining the workers these communities need."
+}

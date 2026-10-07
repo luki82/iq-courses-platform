@@ -1,0 +1,69 @@
+{
+  "module_title": "IELTS Academic Reading: Finding Information Fast",
+  "tier": "TIER_1",
+  "skill": "READING",
+  "lesson_title": "Bees in the City",
+  "passage_or_prompt": "A. In recent years, beekeeping has become surprisingly popular in large cities. Hives can now be found on office rooftops, in community gardens and even on the balconies of apartment buildings. Supporters say that urban beekeeping helps to protect bees, whose numbers have fallen in many parts of the world.\n\nB. Cities can, in fact, be good places for bees. Parks, street trees and private gardens contain a wide variety of flowering plants, and these often flower at different times of the year. In contrast, large farms frequently grow a single crop, which provides food for bees for only a few weeks. In addition, city gardens are often treated with fewer agricultural chemicals than farmland.\n\nC. However, some scientists warn that too many hives in one area can cause problems. Honeybees compete with wild bees for the same flowers, and if there are not enough flowers to go around, wild species may suffer. For this reason, some researchers argue that planting more flowers is more helpful than adding more hives.\n\nD. Beginners are advised to take a short course before buying a hive. Beekeeping requires regular checks for disease, and in many places beekeepers must register their hives with the local authority. Most courses can be completed in a single weekend.",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Urban beekeeping has become more common in recent years.",
+      "question_type": "true_false_ng",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "correct_answer": "True",
+      "explanation": "Paragraph A says beekeeping 'has become surprisingly popular in large cities'. 'More common' is a paraphrase of 'popular'. Tip: in True/False/Not Given, look for the same IDEA in different words, not the same words."
+    },
+    {
+      "id": 2,
+      "prompt": "Large farms usually provide food for bees all year round.",
+      "question_type": "true_false_ng",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "correct_answer": "False",
+      "explanation": "Paragraph B says a single crop provides food 'for only a few weeks'. This directly contradicts 'all year round', so the answer is False, not Not Given."
+    },
+    {
+      "id": 3,
+      "prompt": "Honey produced in cities tastes better than honey from the countryside.",
+      "question_type": "true_false_ng",
+      "options": [
+        "True",
+        "False",
+        "Not Given"
+      ],
+      "correct_answer": "Not Given",
+      "explanation": "The passage never mentions the taste of honey. When a topic is simply not discussed, the answer is Not Given. Don't use your own knowledge or opinion."
+    },
+    {
+      "id": 4,
+      "prompt": "According to some researchers, planting more ______ helps bees more than adding hives. (ONE WORD)",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "flowers",
+      "explanation": "Paragraph C: 'planting more flowers is more helpful than adding more hives'. Always check the word limit -- 'ONE WORD' means 'more flowers' would be marked wrong."
+    },
+    {
+      "id": 5,
+      "prompt": "How long do most beginner beekeeping courses take?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. One day",
+        "B. One weekend",
+        "C. One week",
+        "D. One month"
+      ],
+      "correct_answer": "B. One weekend",
+      "explanation": "Paragraph D: 'Most courses can be completed in a single weekend.' This is a scanning question -- look for time words, then read that sentence carefully."
+    }
+  ],
+  "band_9_sample": ""
+}

@@ -5,7 +5,8 @@ from .models import Plan, Purchase
 
 @admin.register(Plan)
 class PlanAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug", "price_display", "duration_days", "is_active")
+    list_display = ("name", "slug", "price_display", "price_cents", "currency", "duration_days", "is_active")
+    list_editable = ("is_active",)
     prepopulated_fields = {"slug": ("name",)}
 
 
@@ -13,3 +14,5 @@ class PlanAdmin(admin.ModelAdmin):
 class PurchaseAdmin(admin.ModelAdmin):
     list_display = ("user", "plan", "status", "created_at", "completed_at")
     list_filter = ("status", "plan")
+    search_fields = ("user__username", "user__email", "stripe_checkout_session_id")
+    readonly_fields = ("created_at", "completed_at")

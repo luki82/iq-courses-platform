@@ -3,33 +3,52 @@
 {% block title %}Premium plans{% endblock %}
 
 {% block content %}
-<h1 class="mb-3">Go Premium</h1>
-<p class="text-muted">
-  Unlock every IQ test category with full detailed results, plus every course
-  module.
+<h1 class="mb-2">Go Premium</h1>
+<p class="text-muted mb-1">
+  One payment unlocks everything on iQ for the length of your plan &mdash; no subscription,
+  nothing renews automatically.
 </p>
+<ul class="text-muted small mb-4">
+  <li>Every paid module in Workplace English and English for School Students</li>
+  <li>All IELTS Tier 2 and Tier 3 lessons, with Band 9 model answers</li>
+  <li>Every IQ test category with full detailed results</li>
+</ul>
+
+{% if has_premium %}
+  <div class="alert alert-success">
+    You have Premium{% if premium_until %} until {{ premium_until|date:"j F Y" }}{% endif %}.
+    Buying another plan adds its days on top.
+  </div>
+{% endif %}
 
 <div class="row g-3">
   {% for plan in plans %}
   <div class="col-md-4">
     <div class="card h-100 text-center">
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <h5 class="card-title">{{ plan.name }}</h5>
-        <p class="display-6">{{ plan.price_display }}</p>
+        <p class="display-6 mb-1">{{ plan.price_display }}</p>
+        <p class="text-muted small">{{ plan.duration_days }} days of access</p>
         <p class="card-text">{{ plan.description }}</p>
+        <div class="mt-auto">
         {% if user.is_authenticated %}
           <form method="post" action="{% url 'billing:create_checkout_session' plan.slug %}">
             {% csrf_token %}
-            <button type="submit" class="btn btn-warning">Upgrade</button>
+            <button type="submit" class="btn btn-warning">{% if has_premium %}Extend{% else %}Upgrade{% endif %}</button>
           </form>
         {% else %}
           <a href="{% url 'accounts:login' %}?next={% url 'billing:pricing' %}" class="btn btn-warning">Log in to upgrade</a>
         {% endif %}
+        </div>
       </div>
     </div>
   </div>
   {% empty %}
-  <p>No plans configured yet -- add a Plan in the Django admin.</p>
+  <p>No plans are available right now. Please check back soon.</p>
   {% endfor %}
 </div>
+
+<p class="text-muted small mt-4">
+  Payments are processed securely by Stripe. Prices are in Australian dollars.
+</p>
 {% endblock %}

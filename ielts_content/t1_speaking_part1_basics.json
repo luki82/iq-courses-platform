@@ -1,0 +1,46 @@
+{
+  "module_title": "IELTS Speaking Part 1: Everyday Topics",
+  "tier": "TIER_1",
+  "skill": "SPEAKING",
+  "lesson_title": "Talking About Your Hometown and Free Time",
+  "passage_or_prompt": "IELTS Speaking Part 1 lasts about 4-5 minutes. The examiner asks short questions about familiar topics such as your home, work, studies and hobbies.\n\nTHE GOLDEN RULE: answer + reason + example (2-3 sentences).\nToo short: 'Yes, I do.'\nBetter: 'Yes, I do. I really enjoy cooking because it helps me relax after work. Last weekend, for example, I made a curry from my grandmother's recipe.'\n\nPRACTISE ANSWERING THESE ALOUD (record yourself if you can):\n1. Where is your hometown?\n2. What do you like most about it?\n3. What do you usually do in your free time?\n4. Do you prefer spending time alone or with friends?\n5. Is there a new hobby you would like to try?",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Examiner: 'Do you like your hometown?' Which answer is best for Part 1?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Yes.",
+        "B. Yes, I like it.",
+        "C. Yes, I do. It's a small coastal town, so life is quite relaxed, and I love being able to walk to the beach after work.",
+        "D. Yes, I do. Let me tell you about the history of my town, which started in 1850 when..."
+      ],
+      "correct_answer": "C. Yes, I do. It's a small coastal town, so life is quite relaxed, and I love being able to walk to the beach after work.",
+      "explanation": "C gives an answer, a reason and a detail in about 20 seconds. A and B are too short to show your English. D is too long for Part 1 -- save longer answers for Part 2."
+    },
+    {
+      "id": 2,
+      "prompt": "Fill in the blank to show a preference: 'I'd ______ stay home and read than go to a noisy party.'",
+      "question_type": "fill_blank",
+      "options": [],
+      "correct_answer": "rather",
+      "explanation": "'I'd rather + base verb + than' is a natural way to express preference. Using a range of structures like this improves your Grammatical Range score."
+    },
+    {
+      "id": 3,
+      "prompt": "You don't understand a word in the question. What should you do?",
+      "question_type": "multiple_choice",
+      "options": [
+        "A. Stay silent",
+        "B. Guess and answer a different question",
+        "C. Politely ask: 'Sorry, could you repeat the question?'",
+        "D. Say 'I don't know' and wait"
+      ],
+      "correct_answer": "C. Politely ask: 'Sorry, could you repeat the question?'",
+      "explanation": "In Part 1 you can ask the examiner to repeat the question. Asking naturally is much better than giving an irrelevant answer."
+    }
+  ],
+  "band_9_sample": "Model answers (Part 1):\n\nQ: Where is your hometown?\nA: I'm from Kalgoorlie, a mining town in the Goldfields region of Western Australia. It's about six hundred kilometres east of Perth, right on the edge of the desert.\n\nQ: What do you like most about it?\nA: Probably the sense of community. Because it's quite isolated, people really look out for each other, and there's always a local event or a footy match on at the weekend.\n\nQ: What do you usually do in your free time?\nA: I'm a bit of a homebody, to be honest. I like cooking and watching documentaries, but on cooler evenings I'll often go for a long walk to clear my head."
+}

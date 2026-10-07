@@ -1,0 +1,72 @@
+{
+  "module_title": "IELTS Academic Reading: Matching Headings",
+  "tier": "TIER_2",
+  "skill": "READING",
+  "lesson_title": "The Return of the Night Train",
+  "passage_or_prompt": "Choose the correct heading for each paragraph. Read the WHOLE paragraph -- the main idea is not always in the first sentence.\n\nList of headings:\ni. A decline caused by cheaper alternatives\nii. Environmental concerns drive renewed interest\niii. Obstacles that remain\niv. The golden age of sleeper services\nv. Passengers who prefer to fly\nvi. Comfort that wins customers\n\nA. For much of the twentieth century, overnight sleeper trains connected the great cities of Europe. Business travellers boarded after dinner, slept in private compartments and arrived refreshed in the heart of another capital the next morning. For many, the journey itself was part of the attraction.\n\nB. From the 1990s onwards, however, many of these services disappeared. High-speed rail cut daytime journey times, and the rise of low-cost airlines made it possible to cross the continent in an hour or two for a fraction of the price. Rail operators, facing falling passenger numbers, withdrew their sleeper carriages one route at a time.\n\nC. In the last decade the trend has begun to reverse. As travellers have become more aware of the carbon emissions associated with short-haul flights, many have begun to look for lower-impact alternatives. Several governments have also supported new night routes as part of wider climate policies.\n\nD. Yet the revival faces real difficulties. Sleeper carriages are expensive to build, and each one carries far fewer passengers than a daytime train. Trains crossing borders must also deal with different electrical systems, signalling standards and track fees in each country, which raises costs and complicates timetables.",
+  "diagram_type": "none",
+  "diagram_config": {},
+  "questions": [
+    {
+      "id": 1,
+      "prompt": "Paragraph A",
+      "question_type": "multiple_choice",
+      "options": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "v",
+        "vi"
+      ],
+      "correct_answer": "iv",
+      "explanation": "Paragraph A describes the twentieth-century peak of sleeper trains -- a 'golden age'. Heading vi (comfort) is a distractor: comfort is mentioned, but it is a detail, not the main idea of the paragraph."
+    },
+    {
+      "id": 2,
+      "prompt": "Paragraph B",
+      "question_type": "multiple_choice",
+      "options": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "v",
+        "vi"
+      ],
+      "correct_answer": "i",
+      "explanation": "The paragraph explains why services disappeared: high-speed rail and low-cost airlines -- 'cheaper alternatives'. Heading v is a trap: airlines are mentioned, but the paragraph is about the decline of trains, not about passengers' preferences."
+    },
+    {
+      "id": 3,
+      "prompt": "Paragraph C",
+      "question_type": "multiple_choice",
+      "options": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "v",
+        "vi"
+      ],
+      "correct_answer": "ii",
+      "explanation": "'Carbon emissions' and 'climate policies' paraphrase 'environmental concerns', and 'the trend has begun to reverse' matches 'renewed interest'."
+    },
+    {
+      "id": 4,
+      "prompt": "Paragraph D",
+      "question_type": "multiple_choice",
+      "options": [
+        "i",
+        "ii",
+        "iii",
+        "iv",
+        "v",
+        "vi"
+      ],
+      "correct_answer": "iii",
+      "explanation": "The signal phrase 'Yet the revival faces real difficulties' introduces problems -- costs, capacity and cross-border systems. 'Difficulties' paraphrases 'obstacles'."
+    }
+  ],
+  "band_9_sample": ""
+}
