@@ -39,9 +39,11 @@ def fulfil_checkout_session(session) -> Purchase | None:
         return None
 
     with transaction.atomic():
+        # Lock only the purchase row. Don't combine select_for_update with
+        # select_related here: Purchase.plan is nullable, so the join is an
+        # outer join, and PostgreSQL refuses FOR UPDATE on outer joins.
         purchase = (
             Purchase.objects.select_for_update()
-            .select_related("user", "plan")
             .filter(stripe_checkout_session_id=_get(session, "id"))
             .first()
         )
