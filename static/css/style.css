@@ -25,3 +25,64 @@ main {
 .navbar-iq .nav-link:focus {
   color: #C4DC7A;
 }
+
+/* IQ tests: keep line breaks so grid and matrix questions line up */
+.question-text {
+  white-space: pre-wrap;
+}
+
+/* IQ tests: countdown timer, stays visible while scrolling */
+.iq-timer {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 1020;
+  overflow: hidden;
+}
+
+.iq-timer-clock {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.iq-timer-progress {
+  height: 4px;
+  border-radius: 0;
+}
+
+.iq-timer .progress-bar {
+  background-color: #16301F;
+  transition: width 0.25s linear;
+}
+
+.iq-timer--warning .iq-timer-clock {
+  color: #9A6400;
+}
+
+.iq-timer--warning .progress-bar {
+  background-color: #D99A00;
+}
+
+.iq-timer--danger .iq-timer-clock {
+  color: #B02A37;
+}
+
+.iq-timer--danger .progress-bar {
+  background-color: #B02A37;
+}
+
+/* IQ test: paid offer card and how-it-works steps */
+.iq-offer {
+  border: 2px solid #16301F;
+}
+
+.iq-offer-price {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #16301F;
+}
+
+.iq-steps li {
+  margin-bottom: 0.75rem;
+}

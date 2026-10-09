@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Answer, Category, Choice, Question, TestAttempt
+from .models import Answer, Category, Choice, Question, TestAttempt, TestPass
 
 
 class ChoiceInline(admin.TabularInline):
@@ -10,7 +10,7 @@ class ChoiceInline(admin.TabularInline):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug", "is_premium", "question_count")
+    list_display = ("name", "slug", "is_premium", "price_cents", "time_limit_minutes", "question_count")
     prepopulated_fields = {"slug": ("name",)}
 
 
@@ -23,8 +23,16 @@ class QuestionAdmin(admin.ModelAdmin):
 
 @admin.register(TestAttempt)
 class TestAttemptAdmin(admin.ModelAdmin):
-    list_display = ("user", "category", "score", "total_questions", "iq_score", "detail_unlocked", "started_at")
+    list_display = ("user", "category", "score", "total_questions", "iq_score", "time_taken_seconds", "detail_unlocked", "started_at")
     list_filter = ("category", "detail_unlocked")
+
+
+@admin.register(TestPass)
+class TestPassAdmin(admin.ModelAdmin):
+    list_display = ("category", "email", "user", "status", "amount_cents", "currency", "paid_at", "started_at", "attempt")
+    list_filter = ("status", "category")
+    search_fields = ("email", "stripe_checkout_session_id", "token")
+    readonly_fields = ("token", "stripe_checkout_session_id", "created_at", "paid_at", "started_at", "attempt")
 
 
 admin.site.register(Answer)

@@ -13,6 +13,8 @@ from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
+from iqtest import payments as iq_payments
+
 from .models import Plan, Purchase
 
 logger = logging.getLogger(__name__)
@@ -183,6 +185,9 @@ def stripe_webhook(request):
     data_object = _get(_get(event, "data"), "object")
 
     if event_type in ("checkout.session.completed", "checkout.session.async_payment_succeeded"):
-        fulfil_checkout_session(data_object)
+        if iq_payments.is_test_pass_session(data_object):
+            iq_payments.fulfil_test_pass(data_object)
+        else:
+            fulfil_checkout_session(data_object)
 
     return HttpResponse(status=200)

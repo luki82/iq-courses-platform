@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+<div class="mx-auto" style="max-width: 720px;">
+  <h1 class="mb-2">{{ category.name }}</h1>
+  <p class="text-success fw-semibold">Payment received. Your test is ready.</p>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h2 class="h6 mb-2">Your private link</h2>
+      <p class="small text-muted mb-2">
+        Bookmark this link or copy it somewhere safe. It's the only way back to your
+        test and your result if you change device or clear your browser. Anyone with the
+        link can use it, so don't share it.
+      </p>
+      <div class="input-group">
+        <input type="text" class="form-control" id="private-link" value="{{ private_link }}" readonly>
+        <button class="btn btn-outline-secondary" type="button" id="copy-link">Copy</button>
+      </div>
+      {% if test_pass.email %}
+      <p class="small text-muted mt-2 mb-0">Stripe has emailed your receipt to {{ test_pass.email }}.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <h2 class="h5">What to expect</h2>
+  <ul>
+    <li>{{ category.question_count }} multiple-choice questions, each with one correct answer.</li>
+    {% if category.time_limit_minutes %}
+    <li>
+      {{ category.time_limit_minutes }} minutes in total.
+      {% if test_pass.started_at %}
+        <strong>Your timer has already started.</strong>
+      {% else %}
+        The timer starts as soon as you press the button below.
+      {% endif %}
+      It keeps running if you leave the page.
+    </li>
+    <li>When time runs out, your answers so far are submitted automatically. Unanswered questions count as wrong, so guess if you're unsure.</li>
+    {% endif %}
+    <li>One attempt only. After you submit, this link shows your result.</li>
+  </ul>
+
+  <a href="{% url 'iqtest:take_test' category.slug %}" class="btn btn-primary btn-lg mt-2">
+    {% if test_pass.started_at %}Continue my test{% else %}Start the test now{% endif %}
+  </a>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+(function () {
+  var button = document.getElementById("copy-link");
+  var input = document.getElementById("private-link");
+  button.addEventListener("click", function () {
+    input.select();
+    var done = function () { button.textContent = "Copied"; };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(input.value).then(done, function () { document.execCommand("copy"); done(); });
+    } else {
+      document.execCommand("copy");
+      done();
+    }
+  });
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Confirming payment{% endblock %}
+
+{% block content %}
+<div class="text-center py-5 mx-auto" style="max-width: 640px;">
+  {% if test_pass %}
+    <h1>Confirming your payment</h1>
+    <p class="fs-5">Stripe hasn't confirmed your payment yet. This usually takes a few seconds.</p>
+    <p>Refresh this page in a moment. Your test will be ready as soon as the payment clears.</p>
+    <a href="{{ request.get_full_path }}" class="btn btn-primary">Refresh</a>
+  {% else %}
+    <h1>We couldn't find that payment</h1>
+    <p class="fs-5">This link doesn't match a completed payment.</p>
+    <p>If you were charged, reply to your Stripe receipt email and we'll sort it out.</p>
+    <a href="{% url 'iqtest:test_list' %}" class="btn btn-primary">Back to the IQ test</a>
+  {% endif %}
+</div>
+{% endblock %}

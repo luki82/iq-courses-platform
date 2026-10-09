@@ -1,32 +1,130 @@
 {% extends "base.html" %}
 
-{% block title %}IQ Tests{% endblock %}
+{% block title %}IQ Test{% endblock %}
 
 {% block content %}
-<h1 class="mb-3">IQ Test Categories</h1>
-<p class="text-muted">
-  Take a free test in any open category. Your first result comes with a full
-  breakdown; after that, upgrade to Premium to keep seeing detailed scores and
-  unlock Premium-only categories.
+<h1 class="mb-2">Take the iQ Test</h1>
+<p class="lead text-muted mb-4">
+  A timed, 30-question test of how well you reason, not what you've memorised.
+  No account needed.
 </p>
 
-<div class="row g-3 mt-2">
-  {% for category in categories %}
+{% for category in paid_tests %}
+<div class="card iq-offer mb-4">
+  <div class="card-body p-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-3">
+      <div>
+        <h2 class="h3 mb-1">{{ category.name }}</h2>
+        <p class="text-muted mb-0">
+          {{ category.question_count }} questions{% if category.time_limit_minutes %} · {{ category.time_limit_minutes }} minutes{% endif %} · one attempt
+        </p>
+      </div>
+      <div class="text-end">
+        <div class="iq-offer-price">{{ category.price_display }}</div>
+        <div class="small text-muted">one-off payment</div>
+      </div>
+    </div>
+
+    {% if category.description %}<p>{{ category.description }}</p>{% endif %}
+
+    {% if category.ready_pass %}
+      <a href="{% url 'iqtest:pass_detail' category.ready_pass.token %}" class="btn btn-primary btn-lg">
+        You've paid. Go to your test
+      </a>
+    {% else %}
+      <form method="post" action="{% url 'iqtest:buy_pass' category.slug %}" class="d-inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary btn-lg">Pay {{ category.price_display }} and get started</button>
+      </form>
+      <p class="small text-muted mt-2 mb-0">Secure card payment through Stripe. You won't need to sign up.</p>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+
+{% if paid_tests %}
+<h2 class="h4 mt-5 mb-3">How it works</h2>
+<ol class="iq-steps">
+  <li>
+    <strong>Pay once.</strong>
+    Pay {{ paid_tests.0.price_display }} by card through Stripe. You don't need to create
+    an account. One payment covers one attempt at the test.
+  </li>
+  <li>
+    <strong>Save your private link.</strong>
+    After paying, you get a private link to your test. Bookmark it: you can use it
+    to start the test later or come back to your result on any device.
+  </li>
+  <li>
+    <strong>Take the test.</strong>
+    Answer 30 multiple-choice questions in {{ paid_tests.0.time_limit_minutes|default:30 }} minutes.
+    The questions start easy and get harder, and cover:
+    <ul class="mt-2 mb-0">
+      <li>pattern and matrix puzzles: find the shape, arrow or number that completes a grid</li>
+      <li>number problems: sequences, percentages and short word problems</li>
+      <li>word meaning: vocabulary, analogies and finding the odd one out</li>
+      <li>spatial thinking: folding paper, nets of cubes, rotations and mirror images</li>
+      <li>working memory: holding information in your head and re-ordering it</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Watch the clock.</strong>
+    The timer starts when you open the test and keeps running even if you leave the
+    page. When it reaches zero, your answers are submitted automatically, so answer
+    every question, even if you have to guess.
+  </li>
+  <li>
+    <strong>See your result.</strong>
+    You'll see your score, how long you took and an estimated IQ-style score. You'll also
+    get the correct answer and an explanation for every question.
+  </li>
+</ol>
+
+<div class="card bg-light border-0 mb-4">
+  <div class="card-body">
+    <h3 class="h6">Before you start</h3>
+    <p class="mb-0 small">
+      Find a quiet spot where you won't be interrupted for half an hour. Have a pen and
+      paper ready. You won't need a calculator. A laptop or tablet makes the grid
+      questions easier to read, but a phone works too.
+    </p>
+  </div>
+</div>
+{% endif %}
+
+{% if practice_tests %}
+<h2 class="h4 mt-5 mb-2">Practice tests</h2>
+<p class="text-muted">
+  Shorter tests on a single topic, for members. Log in to take one. Your first result
+  includes the full breakdown, and Premium unlocks detailed results after that.
+</p>
+<div class="row g-3">
+  {% for category in practice_tests %}
   <div class="col-md-6">
     <div class="card h-100">
       <div class="card-body">
-        <h5 class="card-title">
+        <h3 class="h5 card-title">
           {{ category.name }}
           {% if category.is_premium %}<span class="badge bg-warning text-dark">Premium</span>{% endif %}
-        </h5>
+        </h3>
         <p class="card-text">{{ category.description }}</p>
-        <p class="text-muted small">{{ category.question_count }} question{{ category.question_count|pluralize }}</p>
-        <a href="{% url 'iqtest:take_test' category.slug %}" class="btn btn-primary">Start Test</a>
+        <p class="text-muted small">
+          {{ category.question_count }} question{{ category.question_count|pluralize }}{% if category.time_limit_minutes %} · {{ category.time_limit_minutes }} minute time limit{% endif %}
+        </p>
+        <a href="{% url 'iqtest:take_test' category.slug %}" class="btn btn-outline-primary">Start test</a>
       </div>
     </div>
   </div>
-  {% empty %}
-  <p>No categories yet -- run <code>python manage.py seed_iqtest</code> to add sample questions.</p>
   {% endfor %}
 </div>
+{% endif %}
+
+{% if not paid_tests and not practice_tests %}
+<p class="text-muted">The test is being set up. Please check back soon.</p>
+{% endif %}
+
+<p class="text-muted small mt-5">
+  This is a self-assessment for practice and interest. It isn't a clinically validated
+  IQ test.
+</p>
 {% endblock %}

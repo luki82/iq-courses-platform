@@ -9,19 +9,34 @@
   <div class="card-body text-center">
     <h2 class="display-5">{{ attempt.score }} / {{ attempt.total_questions }}</h2>
     <p class="fs-5">{{ attempt.percentage }}% correct</p>
+    {% if attempt.time_taken_seconds is not None %}
+      <p class="text-muted mb-1">
+        Time taken: {{ attempt.time_taken_display }}{% if attempt.category.time_limit_minutes %} of {{ attempt.category.time_limit_minutes }}:00{% endif %}
+      </p>
+    {% endif %}
     {% if attempt.detail_unlocked %}
       <p class="fs-4">Estimated IQ score: <strong>{{ attempt.iq_score }}</strong></p>
     {% endif %}
   </div>
 </div>
 
+{% if private_link %}
+<div class="card mb-4">
+  <div class="card-body">
+    <h2 class="h6 mb-1">Come back to this result</h2>
+    <p class="small text-muted mb-2">Bookmark your private link to see this result again on any device.</p>
+    <input type="text" class="form-control" value="{{ private_link }}" readonly onclick="this.select()">
+  </div>
+</div>
+{% endif %}
+
 {% if attempt.detail_unlocked %}
   <h3>Answer breakdown</h3>
   {% for answer in answers %}
   <div class="card mb-2">
     <div class="card-body">
-      <p class="fw-semibold mb-1">
-        {{ answer.question.text }}
+      <p class="fw-semibold mb-1 question-text">{{ answer.question.text }}</p>
+      <p class="mb-1">
         {% if answer.is_correct %}
           <span class="badge bg-success">Correct</span>
         {% else %}
@@ -29,6 +44,11 @@
         {% endif %}
       </p>
       <p class="mb-1">Your answer: {{ answer.choice.text|default:"No answer" }}</p>
+      {% if not answer.is_correct %}
+        {% for choice in answer.question.choices.all %}{% if choice.is_correct %}
+        <p class="mb-1">Correct answer: <strong>{{ choice.text }}</strong></p>
+        {% endif %}{% endfor %}
+      {% endif %}
       {% if answer.question.explanation %}
         <p class="text-muted small mb-0">{{ answer.question.explanation }}</p>
       {% endif %}
