@@ -86,3 +86,369 @@ main {
 .iq-steps li {
   margin-bottom: 0.75rem;
 }
+
+/* ------------------------------------------------------------------ */
+/* Lessons: read-aloud and fill-in-the-gap exercises                   */
+/* ------------------------------------------------------------------ */
+.voice-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1010;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0 0 1.25rem;
+  padding: 0.6rem 0.75rem;
+  background: #F5F1E6;
+  border: 1px solid #DDD5BF;
+  border-radius: 0.75rem;
+}
+
+.voice-bar[hidden] {
+  display: none;
+}
+
+.voice-bar-title {
+  font-weight: 700;
+  color: #16301F;
+}
+
+.voice-bar-hint {
+  font-size: 0.875rem;
+  color: #5c5c5c;
+}
+
+.lesson-body {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.lesson-goal {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  background: #EEF5E0;
+  border-left: 4px solid #16301F;
+  border-radius: 0.5rem;
+}
+
+.lesson-goal-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8125rem;
+  color: #16301F;
+  margin-right: 0.25rem;
+}
+
+.lesson-heading {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #16301F;
+  margin: 1.75rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #DDD5BF;
+}
+
+.lesson-heading-sub {
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #333;
+}
+
+/* A line that can be read aloud: speaker button + text */
+.say-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.15s;
+}
+
+.say-row.is-speaking {
+  background: #FFF6D6;
+}
+
+.say-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0.75rem;
+}
+
+.say-list--numbered {
+  counter-reset: say;
+}
+
+.say-list--numbered > li::before {
+  counter-increment: say;
+  content: counter(say) ".";
+  min-width: 1.25rem;
+  font-weight: 600;
+  order: 1;
+}
+
+.say-list--numbered > li > .say-text {
+  order: 2;
+}
+
+.say-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-top: -0.1rem;
+  padding: 0;
+  border: 1px solid #C9D9AE;
+  border-radius: 50%;
+  background: #fff;
+  color: #16301F;
+  cursor: pointer;
+}
+
+.say-btn:hover,
+.say-btn:focus-visible {
+  background: #16301F;
+  border-color: #16301F;
+  color: #fff;
+}
+
+.no-speech .say-btn {
+  display: none;
+}
+
+/* Tap-a-word */
+.w {
+  cursor: pointer;
+  border-radius: 0.2rem;
+}
+
+.w:hover {
+  background: #EEF5E0;
+  text-decoration: underline dotted #16301F;
+  text-underline-offset: 0.2em;
+}
+
+.w.is-speaking {
+  background: #FFE38A;
+}
+
+/* Dialogue */
+.dialogue {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border: 1px solid #E6E1D3;
+  border-radius: 0.75rem;
+}
+
+.dialogue-speaker {
+  font-weight: 700;
+  color: #16301F;
+  margin-right: 0.25rem;
+}
+
+.dialogue-speaker::after {
+  content: ":";
+}
+
+.dialogue-play.is-playing {
+  background: #16301F;
+  color: #fff;
+}
+
+/* Hidden answers */
+.lesson-answers {
+  margin: 0.5rem 0 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px dashed #C9D9AE;
+  border-radius: 0.5rem;
+}
+
+.lesson-answers summary {
+  font-weight: 600;
+  color: #16301F;
+  cursor: pointer;
+}
+
+.lesson-answers[open] summary {
+  margin-bottom: 0.5rem;
+}
+
+/* Fill-in-the-gap exercise */
+.exercise {
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+  background: #fff;
+  border: 2px solid #16301F;
+  border-radius: 0.75rem;
+}
+
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #F5F1E6;
+  border-radius: 0.5rem;
+}
+
+.word-bank.is-empty {
+  display: none;
+}
+
+.word-chip {
+  padding: 0.4rem 0.9rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #16301F;
+  background: #fff;
+  border: 2px solid #16301F;
+  border-radius: 999px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.word-chip:focus-visible {
+  outline: 3px solid #C4DC7A;
+  outline-offset: 2px;
+}
+
+.word-chip.is-selected {
+  background: #16301F;
+  color: #fff;
+}
+
+.word-chip.is-dragging {
+  opacity: 0.35;
+}
+
+.word-chip.is-used {
+  display: none;
+}
+
+.word-chip--ghost {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  pointer-events: none;
+  cursor: grabbing;
+  background: #16301F;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.exercise-items {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0.75rem;
+  counter-reset: gap;
+}
+
+.exercise-item {
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.exercise-item::before {
+  counter-increment: gap;
+  content: counter(gap) ".";
+  order: 1;
+  min-width: 1.25rem;
+  font-weight: 600;
+}
+
+.exercise-sentence {
+  order: 2;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.blank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.5rem;
+  min-height: 2.25rem;
+  padding: 0.15rem 0.6rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #16301F;
+  background: #fff;
+  border: 2px dashed #8A9A7A;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.blank.is-target {
+  border-color: #16301F;
+  background: #F8FBF0;
+}
+
+.blank.is-over {
+  background: #EEF5E0;
+  border-style: solid;
+  transform: scale(1.05);
+}
+
+.blank.is-correct {
+  color: #fff;
+  background: #198754;
+  border: 2px solid #198754;
+  cursor: default;
+}
+
+.blank.is-wrong {
+  color: #fff;
+  background: #DC3545;
+  border: 2px solid #DC3545;
+  animation: iq-shake 0.45s ease-in-out;
+}
+
+.blank.is-revealed {
+  color: #16301F;
+  background: #E7F0FF;
+  border: 2px solid #8AB0E6;
+  cursor: default;
+}
+
+@keyframes iq-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blank.is-wrong {
+    animation: none;
+  }
+}
+
+.exercise-feedback {
+  min-height: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.exercise-feedback.is-correct,
+.exercise-feedback.is-done {
+  color: #198754;
+}
+
+.exercise-feedback.is-wrong {
+  color: #DC3545;
+}

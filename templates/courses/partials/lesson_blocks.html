@@ -1,0 +1,59 @@
+{% for block in blocks %}
+  {% if block.type == "goal" %}
+    <div class="lesson-goal say-row">
+      {% include "courses/partials/say_button.html" %}
+      <div><span class="lesson-goal-label">Goal</span> <span class="say-text">{{ block.text }}</span></div>
+    </div>
+
+  {% elif block.type == "heading" %}
+    <h2 class="lesson-heading">{{ block.title }}{% if block.subtitle %}<span class="lesson-heading-sub say-text"> {{ block.subtitle }}</span>{% endif %}</h2>
+
+  {% elif block.type == "exercise" %}
+    <div class="exercise" data-exercise>
+      {% if block.instruction %}
+      <div class="say-row mb-2">
+        {% include "courses/partials/say_button.html" %}
+        <p class="say-text fw-semibold mb-0">{{ block.instruction }}</p>
+      </div>
+      {% endif %}
+      <p class="exercise-help small text-muted mb-2">
+        Drag a word into each gap, or tap a word and then tap the gap.
+      </p>
+
+      <div class="word-bank" data-word-bank aria-label="Words to use">
+        {% for word in block.bank %}
+        <button type="button" class="word-chip" data-word="{{ word }}">{{ word }}</button>
+        {% endfor %}
+      </div>
+
+      <ol class="exercise-items">
+        {% for item in block.items %}
+        <li class="say-row exercise-item">
+          {% include "courses/partials/say_button.html" %}
+          <span class="exercise-sentence">
+            {% if item.before %}<span class="say-text">{{ item.before }}</span>{% endif %}
+            <button type="button" class="blank" data-answer="{{ item.answer }}" aria-label="Gap {{ item.number }}, empty"></button>
+            {% if item.after %}<span class="say-text">{{ item.after }}</span>{% endif %}
+          </span>
+        </li>
+        {% endfor %}
+      </ol>
+
+      <p class="exercise-feedback" data-feedback role="status" aria-live="polite"></p>
+
+      <div class="d-flex flex-wrap gap-2">
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-show-answers>Show answers</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-reset>Start again</button>
+      </div>
+    </div>
+
+  {% elif block.type == "answers" %}
+    <details class="lesson-answers">
+      <summary>Show {{ block.title|lower }}</summary>
+      {% for block in block.blocks %}{% include "courses/partials/text_block.html" %}{% endfor %}
+    </details>
+
+  {% else %}
+    {% include "courses/partials/text_block.html" %}
+  {% endif %}
+{% endfor %}

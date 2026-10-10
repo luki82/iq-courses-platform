@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}{{ lesson.title }}{% endblock %}
 
@@ -12,7 +13,29 @@
 </div>
 {% endif %}
 
-<div class="mb-4">{{ lesson.content|linebreaks }}</div>
+<div class="voice-bar" data-voice-bar hidden>
+  <span class="voice-bar-title">Listen</span>
+  <div class="btn-group btn-group-sm" role="group" aria-label="Voice">
+    <input type="radio" class="btn-check" name="voice-gender" id="voice-female" value="female" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="voice-female">Woman</label>
+    <input type="radio" class="btn-check" name="voice-gender" id="voice-male" value="male" autocomplete="off">
+    <label class="btn btn-outline-primary" for="voice-male">Man</label>
+  </div>
+  <div class="btn-group btn-group-sm" role="group" aria-label="Speed">
+    <input type="radio" class="btn-check" name="voice-speed" id="speed-normal" value="normal" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="speed-normal">Normal</label>
+    <input type="radio" class="btn-check" name="voice-speed" id="speed-slow" value="slow" autocomplete="off">
+    <label class="btn btn-outline-primary" for="speed-slow">Slow</label>
+  </div>
+  <span class="voice-bar-hint">Press a speaker button, or tap any word to hear it.</span>
+</div>
+<p class="small text-muted" data-voice-unsupported hidden>
+  Your browser can't read text aloud. Try Chrome, Edge or Safari to hear the words.
+</p>
+
+<div class="lesson-body mb-4" data-lesson-body>
+  {% include "courses/partials/lesson_blocks.html" %}
+</div>
 
 {% if progress.completed %}
   <span class="badge bg-success">Completed</span>
@@ -22,4 +45,8 @@
     <button type="submit" class="btn btn-success">Mark as complete</button>
   </form>
 {% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/lesson.js' %}" defer></script>
 {% endblock %}

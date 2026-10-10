@@ -1,0 +1,33 @@
+{% if block.type == "para" %}
+  <div class="say-row">
+    {% include "courses/partials/say_button.html" %}
+    <p class="say-text mb-0">{% for line in block.items %}{{ line }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</p>
+  </div>
+{% elif block.type == "list" %}
+  <ul class="say-list">
+    {% for item in block.items %}
+    <li class="say-row">{% include "courses/partials/say_button.html" %}<span class="say-text">{{ item }}</span></li>
+    {% endfor %}
+  </ul>
+{% elif block.type == "numbered" %}
+  <ol class="say-list say-list--numbered">
+    {% for item in block.items %}
+    <li class="say-row">{% include "courses/partials/say_button.html" %}<span class="say-text">{{ item }}</span></li>
+    {% endfor %}
+  </ol>
+{% elif block.type == "dialogue" %}
+  <div class="dialogue" data-dialogue>
+    <button type="button" class="btn btn-sm btn-outline-primary mb-2 dialogue-play" data-dialogue-play>
+      &#9654; Play the conversation
+    </button>
+    {% for turn in block.items %}
+    <div class="say-row dialogue-turn" data-speaker="{{ turn.speaker }}">
+      {% include "courses/partials/say_button.html" %}
+      <div>
+        <span class="dialogue-speaker">{{ turn.speaker }}</span>
+        <span class="say-text">{{ turn.text }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endif %}

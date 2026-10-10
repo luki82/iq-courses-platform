@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
+from .lesson_format import parse_lesson
 from .models import Course, Enrollment, Lesson, LessonProgress
 
 
@@ -67,7 +68,12 @@ def lesson_detail(request, course_slug, lesson_id):
     return render(
         request,
         "courses/lesson_detail.html",
-        {"course": course, "lesson": lesson, "progress": progress},
+        {
+            "course": course,
+            "lesson": lesson,
+            "progress": progress,
+            "blocks": parse_lesson(lesson.content, seed=lesson.slug),
+        },
     )
 
 
