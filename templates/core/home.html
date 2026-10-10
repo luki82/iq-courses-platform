@@ -3,41 +3,67 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="p-5 mb-4 bg-light rounded-3 text-center">
-  <h1 class="display-5 fw-bold">Test your mind. Grow your skills.</h1>
-  <p class="col-lg-8 mx-auto fs-5">
-    Take a free IQ-style test and start a course today. Upgrade to Premium
-    whenever you want full results and the complete course library.
-  </p>
-  <a href="{% url 'iqtest:test_list' %}" class="btn btn-primary btn-lg me-2">Take a free test</a>
-  <a href="{% url 'courses:course_list' %}" class="btn btn-outline-primary btn-lg">Browse courses</a>
+<div class="row g-4 mb-5 home-hero">
+  <div class="col-lg-7">
+    <section class="home-panel home-panel--challenge h-100">
+      <p class="home-kicker">The iQ Challenge</p>
+      <h1 class="home-title">How does your mind measure up?</h1>
+      <p class="home-lead">
+        30 questions. 30 minutes. One attempt. Patterns, numbers, words and
+        spatial puzzles that get harder as you go. Beat the clock and see how
+        you score.
+      </p>
+      <ul class="home-facts">
+        <li><strong>30</strong> questions</li>
+        <li><strong>30</strong> minutes</li>
+        <li><strong>1</strong> attempt</li>
+      </ul>
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <a href="{% url 'iqtest:test_list' %}" class="btn btn-challenge btn-lg">Take the challenge</a>
+        <span class="home-price">
+          {% if challenge %}{{ challenge.price_display }}{% else %}$10 AUD{% endif %} one-off
+          <span class="home-price-note">· no sign-up needed</span>
+        </span>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-lg-5">
+    <section class="home-panel home-panel--learn h-100">
+      <p class="home-kicker home-kicker--learn">Free English courses</p>
+      <h2 class="home-title home-title--small">Learn English, free</h2>
+      <p>
+        Short, friendly lessons for adults learning English. Hear every word
+        read aloud and practise with drag-and-drop exercises.
+      </p>
+      {% if free_course %}
+        <a href="{% url 'courses:course_detail' free_course.slug %}" class="btn btn-outline-primary btn-lg">
+          Browse free ESL courses
+        </a>
+      {% else %}
+        <a href="{% url 'courses:course_list' %}" class="btn btn-outline-primary btn-lg">Browse free ESL courses</a>
+      {% endif %}
+      <p class="small text-muted mt-3 mb-0">Free to join. Just create an account to start.</p>
+    </section>
+  </div>
 </div>
 
-<div class="row g-4">
-  <div class="col-md-6">
-    <h2 class="h4">Popular test categories</h2>
-    <ul class="list-group">
-      {% for category in categories %}
-      <li class="list-group-item d-flex justify-content-between">
-        <a href="{% url 'iqtest:take_test' category.slug %}">{{ category.name }}</a>
-        {% if category.is_premium %}<span class="badge bg-warning text-dark">Premium</span>{% endif %}
-      </li>
-      {% empty %}
-      <li class="list-group-item text-muted">No categories yet.</li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="col-md-6">
-    <h2 class="h4">Featured courses</h2>
-    <ul class="list-group">
-      {% for course in courses %}
-      <li class="list-group-item">
-        <a href="{% url 'courses:course_detail' course.slug %}">{{ course.title }}</a>
-      </li>
-      {% empty %}
-      <li class="list-group-item text-muted">No courses yet.</li>
-      {% endfor %}
-    </ul>
-  </div>
+<div class="d-flex flex-wrap justify-content-between align-items-baseline mb-2">
+  <h2 class="h4 mb-0">Courses</h2>
+  <a href="{% url 'courses:course_list' %}">See all courses</a>
 </div>
+<ul class="list-group mb-4">
+  {% for course in courses %}
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="{% url 'courses:course_detail' course.slug %}">{{ course.title }}</a>
+    {% if course.is_free %}
+      <span class="badge bg-success">Free</span>
+    {% else %}
+      <span class="badge bg-warning text-dark">Premium</span>
+    {% endif %}
+  </li>
+  {% empty %}
+  <li class="list-group-item text-muted">Courses are coming soon.</li>
+  {% endfor %}
+</ul>
 {% endblock %}
