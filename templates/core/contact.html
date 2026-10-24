@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+{% block meta_description %}Contact the iQ team with questions, suggestions or corrections.{% endblock %}
+
+{% block content %}
+<div class="mx-auto" style="max-width: 640px;">
+  <h1 class="mb-3">Contact us</h1>
+  <p>
+    Questions, suggestions, or spotted a mistake in a lesson? We'd love to hear from you.
+  </p>
+  {% if contact_email %}
+    <p class="fs-5">Email: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+    <p class="text-muted small">We usually reply within a few days.</p>
+  {% else %}
+    <p class="text-muted">Contact details are coming soon.</p>
+  {% endif %}
+
+  <h2 class="h5 mt-4">Advertising and sponsorship</h2>
+  <p>
+    If your organisation helps English learners or IELTS candidates and would like to
+    sponsor iQ, please get in touch.
+  </p>
+</div>
+{% endblock %}

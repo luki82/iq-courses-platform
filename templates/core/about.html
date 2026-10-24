@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}About iQ{% endblock %}
+{% block meta_description %}iQ offers free English courses, IELTS preparation and a timed IQ test at lorrank.com, kept online by donations.{% endblock %}
+
+{% block content %}
+<div class="mx-auto" style="max-width: 760px;">
+  <h1 class="mb-3">About iQ</h1>
+  <p class="lead">
+    iQ is a free learning site at lorrank.com. It has English courses for adults, IELTS
+    preparation lessons and a timed IQ test, all free to use.
+  </p>
+
+  <h2 class="h5 mt-4">What you'll find here</h2>
+  <ul>
+    <li><strong>English courses</strong> for beginners, the workplace and school students, with every word read aloud and drag-and-drop practice.</li>
+    <li><strong>IELTS preparation</strong> across Reading, Listening, Writing and Speaking, from foundation level to Band 9 model answers.</li>
+    <li><strong>The iQ Challenge</strong>, a 30-question, 30-minute reasoning test with a full answer breakdown.</li>
+  </ul>
+
+  <h2 class="h5 mt-4">The name</h2>
+  <p>
+    Our logo comes from the <em>lorrank</em>, a plant (its name is from the Bari language)
+    that sends thin runners between obstacles, then thickens into a canopy. Learning
+    works the same way: small steady steps that grow into something strong.
+  </p>
+
+  <h2 class="h5 mt-4">Why it's free</h2>
+  <p>
+    We want anyone, anywhere, to be able to learn English and prepare for IELTS without
+    paying. The site is kept online by <a href="{% url 'billing:donate' %}">donations</a>
+    and, in future, by advertising.
+  </p>
+
+  <p class="mt-4"><a href="{% url 'core:contact' %}">Get in touch</a> with questions or suggestions.</p>
+</div>
+{% endblock %}

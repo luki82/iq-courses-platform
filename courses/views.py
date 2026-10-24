@@ -48,16 +48,14 @@ def enroll(request, course_slug):
     return redirect("courses:course_detail", slug=course.slug)
 
 
-@login_required
 def lesson_detail(request, course_slug, lesson_id):
+    """Lessons are public so anyone (and Google) can read them; accounts just track progress."""
     course = get_object_or_404(Course, slug=course_slug, is_published=True)
     lesson = get_object_or_404(Lesson, id=lesson_id, module__course=course)
 
-    if not Enrollment.objects.filter(user=request.user, course=course).exists():
-        messages.info(request, "Enroll in this course first.")
-        return redirect("courses:course_detail", slug=course.slug)
-
-    progress, _ = LessonProgress.objects.get_or_create(user=request.user, lesson=lesson)
+    progress = None
+    if request.user.is_authenticated:
+        progress = LessonProgress.objects.filter(user=request.user, lesson=lesson).first()
 
     return render(
         request,
@@ -76,6 +74,7 @@ def mark_complete(request, course_slug, lesson_id):
     course = get_object_or_404(Course, slug=course_slug, is_published=True)
     lesson = get_object_or_404(Lesson, id=lesson_id, module__course=course)
 
+    Enrollment.objects.get_or_create(user=request.user, course=course)
     progress, _ = LessonProgress.objects.get_or_create(user=request.user, lesson=lesson)
     progress.completed = True
     progress.completed_at = timezone.now()

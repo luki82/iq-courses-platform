@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}{{ course.title }}{% endblock %}
+{% block title %}{{ course.title }} – free English course{% endblock %}
+{% block meta_description %}{{ course.description|striptags|truncatechars:155 }}{% endblock %}
 
 {% block content %}
 <h1>{{ course.title }}</h1>
 <p class="text-muted">{{ course.description }}</p>
 
-{% if not is_enrolled %}
+{% if user.is_authenticated and not is_enrolled %}
   <form method="post" action="{% url 'courses:enroll' course.slug %}">
     {% csrf_token %}
-    <button type="submit" class="btn btn-primary mb-4">Enroll for free</button>
+    <button type="submit" class="btn btn-primary mb-4">Add to my courses</button>
   </form>
 {% endif %}
 
@@ -25,11 +26,7 @@
         {% if lesson.id in completed_lesson_ids %}&check;{% endif %}
         {{ lesson.title }}
       </span>
-      {% if is_enrolled %}
-        <a href="{% url 'courses:lesson_detail' course.slug lesson.id %}" class="btn btn-sm btn-outline-primary">Open</a>
-      {% else %}
-        <span class="text-muted small">Enroll to access</span>
-      {% endif %}
+      <a href="{% url 'courses:lesson_detail' course.slug lesson.id %}" class="btn btn-sm btn-outline-primary">Open</a>
     </li>
     {% endfor %}
   </ul>

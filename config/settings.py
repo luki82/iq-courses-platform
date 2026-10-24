@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     # Local apps
     "accounts",
     "core",
@@ -72,6 +73,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "core.context_processors.site_settings",
             ],
         },
     },
@@ -134,6 +136,13 @@ STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY", default="")
 STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY", default="")
 STRIPE_WEBHOOK_SECRET = config("STRIPE_WEBHOOK_SECRET", default="")
 SITE_URL = config("SITE_URL", default="http://127.0.0.1:8000")
+
+# Google Search Console "HTML tag" verification code (just the content="..." value).
+# Not needed if you verify the domain with a DNS record in Cloudflare instead.
+GOOGLE_SITE_VERIFICATION = config("GOOGLE_SITE_VERIFICATION", default="")
+
+# Shown on the Contact and Privacy pages. Leave blank to hide it.
+CONTACT_EMAIL = config("CONTACT_EMAIL", default="")
 
 # --- Production hardening ---------------------------------------------------------
 

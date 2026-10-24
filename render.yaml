@@ -23,6 +23,10 @@ services:
         fromDatabase:
           name: iq-courses-db
           property: connectionString
+      - key: GOOGLE_SITE_VERIFICATION
+        sync: false
+      - key: CONTACT_EMAIL
+        sync: false
       - key: STRIPE_PUBLIC_KEY
         sync: false
       - key: STRIPE_SECRET_KEY
