@@ -5,6 +5,7 @@ from django.urls import reverse
 
 from courses.lesson_format import parse_lesson
 from courses.models import Course, Enrollment, Lesson
+from ielts.models import IELTSLesson
 
 GREETINGS = """
 GOAL: Say hello, give your name and ask someone's name.
@@ -122,3 +123,29 @@ class LessonPageTests(TestCase):
         self.assertContains(response, 'class="word-chip" data-word="Nice"')
         self.assertContains(response, "js/lesson.js")
         self.assertNotContains(response, "ANSWERS: 1. is")
+
+    def test_lessons_in_former_premium_modules_open_for_free(self):
+        call_command("seed_workplace_english", stdout=open("/dev/null", "w"))
+        user = get_user_model().objects.create_user("worker", "w@example.com", "pw-12345-x")
+        lesson = Lesson.objects.filter(module__is_free_preview=False).select_related("module__course").first()
+        self.assertIsNotNone(lesson)
+        course = lesson.module.course
+        Enrollment.objects.create(user=user, course=course)
+        self.client.force_login(user)
+
+        detail = self.client.get(reverse("courses:course_detail", args=[course.slug]))
+        self.assertNotContains(detail, "Premium")
+        self.assertContains(detail, reverse("courses:lesson_detail", args=[course.slug, lesson.id]))
+
+        page = self.client.get(reverse("courses:lesson_detail", args=[course.slug, lesson.id]))
+        self.assertEqual(page.status_code, 200)
+
+    def test_ielts_tier_3_lesson_is_free(self):
+        lesson = IELTSLesson.objects.create(
+            module_title="Advanced", tier="TIER_3", skill="WRITING_T2", title="Problem and solution essays",
+            passage_or_prompt="Write about traffic.",
+        )
+        user = get_user_model().objects.create_user("ielts", "i@example.com", "pw-12345-x")
+        self.client.force_login(user)
+        self.assertNotContains(self.client.get(reverse("ielts:lesson_list")), "Premium")
+        self.assertEqual(self.client.get(reverse("ielts:lesson_detail", args=[lesson.slug])).status_code, 200)

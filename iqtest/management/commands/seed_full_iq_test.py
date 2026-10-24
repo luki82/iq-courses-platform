@@ -5,7 +5,7 @@ from iqtest.models import Category, Choice, Question
 
 CATEGORY_SLUG = "full-iq-assessment"
 TIME_LIMIT_MINUTES = 30
-PRICE_CENTS = 1000  # $10 one-off, per attempt
+PRICE_CENTS = None  # free (it used to be a $10 one-off test)
 CURRENCY = "aud"
 
 # 30 items, ordered from easiest to hardest (as in Raven's and the Wechsler

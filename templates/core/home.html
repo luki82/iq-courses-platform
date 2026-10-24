@@ -9,19 +9,18 @@
       <p class="home-kicker">The iQ Challenge</p>
       <h1 class="home-title">How does your mind measure up?</h1>
       <p class="home-lead">
-        30 questions. 30 minutes. One attempt. Patterns, numbers, words and
-        spatial puzzles that get harder as you go. Beat the clock and see how
-        you score.
+        30 questions. 30 minutes. Patterns, numbers, words and spatial puzzles
+        that get harder as you go. Beat the clock and see how you score.
       </p>
       <ul class="home-facts">
         <li><strong>30</strong> questions</li>
         <li><strong>30</strong> minutes</li>
-        <li><strong>1</strong> attempt</li>
+        <li><strong>100%</strong> free</li>
       </ul>
       <div class="d-flex flex-wrap align-items-center gap-3">
         <a href="{% url 'iqtest:test_list' %}" class="btn btn-challenge btn-lg">Take the challenge</a>
         <span class="home-price">
-          {% if challenge %}{{ challenge.price_display }}{% else %}$10 AUD{% endif %} one-off
+          Free
           <span class="home-price-note">· no sign-up needed</span>
         </span>
       </div>
@@ -36,13 +35,7 @@
         Short, friendly lessons for adults learning English. Hear every word
         read aloud and practise with drag-and-drop exercises.
       </p>
-      {% if free_course %}
-        <a href="{% url 'courses:course_detail' free_course.slug %}" class="btn btn-outline-primary btn-lg">
-          Browse free ESL courses
-        </a>
-      {% else %}
-        <a href="{% url 'courses:course_list' %}" class="btn btn-outline-primary btn-lg">Browse free ESL courses</a>
-      {% endif %}
+      <a href="{% url 'courses:course_list' %}" class="btn btn-outline-primary btn-lg">Browse free courses</a>
       <p class="small text-muted mt-3 mb-0">Free to join. Just create an account to start.</p>
     </section>
   </div>
@@ -56,14 +49,17 @@
   {% for course in courses %}
   <li class="list-group-item d-flex justify-content-between align-items-center">
     <a href="{% url 'courses:course_detail' course.slug %}">{{ course.title }}</a>
-    {% if course.is_free %}
-      <span class="badge bg-success">Free</span>
-    {% else %}
-      <span class="badge bg-warning text-dark">Premium</span>
-    {% endif %}
+    <span class="badge bg-success">Free</span>
   </li>
   {% empty %}
   <li class="list-group-item text-muted">Courses are coming soon.</li>
   {% endfor %}
 </ul>
+
+<div class="card bg-light border-0">
+  <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-3">
+    <p class="mb-0">Everything on iQ is free. If it helps you, a small donation keeps it online.</p>
+    <a href="{% url 'billing:donate' %}" class="btn btn-outline-primary">&hearts; Donate</a>
+  </div>
+</div>
 {% endblock %}

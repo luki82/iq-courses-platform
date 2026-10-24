@@ -128,10 +128,8 @@ LOGOUT_REDIRECT_URL = "core:home"
 
 # --- App-specific settings ---------------------------------------------------------
 
-# How many full test attempts (in non-premium categories) a free user gets
-# before the detailed results (explanations, IQ score breakdown) are paywalled.
-FREE_TEST_ATTEMPTS_LIMIT = config("FREE_TEST_ATTEMPTS_LIMIT", default=1, cast=int)
-
+# Everything on the site is free. Stripe is only used for optional donations
+# (see billing/views.py).
 STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY", default="")
 STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY", default="")
 STRIPE_WEBHOOK_SECRET = config("STRIPE_WEBHOOK_SECRET", default="")

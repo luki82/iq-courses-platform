@@ -1,17 +1,15 @@
 """
-One-off Stripe payments for paid tests (e.g. the $10 Full IQ Assessment).
+Leftovers from when the Full IQ Assessment was a paid test.
 
-No account is needed. Paying creates a TestPass with a secret token; the
-token is saved in the buyer's browser session and shown to them as a private
-link they can bookmark to come back to the test or their result.
+Every test is free now, so nothing here sells anything. It stays so that
+people who already bought a pass keep access to their result through their
+private link, and so a payment that was still in flight when tests went free
+is recorded properly when Stripe's webhook arrives.
 """
 
 import logging
 
-import stripe
-from django.conf import settings
 from django.db import transaction
-from django.urls import reverse
 from django.utils import timezone
 
 from .models import TestPass
@@ -38,90 +36,6 @@ def remember_pass(request, test_pass: TestPass) -> None:
     if test_pass.token not in tokens:
         tokens.append(test_pass.token)
         request.session[SESSION_KEY] = tokens
-
-
-def passes_in_session(request):
-    tokens = request.session.get(SESSION_KEY, [])
-    if not tokens:
-        return TestPass.objects.none()
-    return TestPass.objects.filter(token__in=tokens, status=TestPass.STATUS_PAID)
-
-
-def unused_pass_for(request, category) -> TestPass | None:
-    """The oldest paid, not-yet-used pass this visitor holds for a category."""
-    qs = passes_in_session(request).filter(category=category, attempt__isnull=True).order_by("created_at")
-    test_pass = qs.first()
-    if test_pass is None and request.user.is_authenticated:
-        # A logged-in buyer can also use passes bought on another device.
-        test_pass = (
-            TestPass.objects.filter(
-                user=request.user, category=category, status=TestPass.STATUS_PAID, attempt__isnull=True
-            )
-            .order_by("created_at")
-            .first()
-        )
-        if test_pass:
-            remember_pass(request, test_pass)
-    return test_pass
-
-
-# --- Stripe ----------------------------------------------------------------
-
-class CheckoutUnavailable(Exception):
-    """Payments aren't configured, or Stripe refused to start a session."""
-
-
-def start_checkout(request, category) -> str:
-    """Create a pending TestPass and a Stripe Checkout session; return its URL."""
-    if not settings.STRIPE_SECRET_KEY or not category.price_cents:
-        raise CheckoutUnavailable("Payments aren't switched on yet. Please check back soon.")
-
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    user = request.user if request.user.is_authenticated else None
-    test_pass = TestPass.objects.create(
-        category=category,
-        user=user,
-        amount_cents=category.price_cents,
-        currency=category.currency,
-    )
-
-    success_url = request.build_absolute_uri(reverse("iqtest:pass_success"))
-    cancel_url = request.build_absolute_uri(reverse("iqtest:test_list"))
-    minutes = category.time_limit_minutes
-    description = f"One attempt: {category.question_count} questions"
-    if minutes:
-        description += f", {minutes} minutes"
-
-    try:
-        session = stripe.checkout.Session.create(
-            mode="payment",
-            line_items=[
-                {
-                    "price_data": {
-                        "currency": category.currency,
-                        "unit_amount": category.price_cents,
-                        "product_data": {"name": f"iQ -- {category.name}", "description": description},
-                    },
-                    "quantity": 1,
-                }
-            ],
-            customer_email=(user.email or None) if user else None,
-            # Stripe replaces {CHECKOUT_SESSION_ID} with the real ID on redirect.
-            success_url=f"{success_url}?session_id={{CHECKOUT_SESSION_ID}}",
-            cancel_url=cancel_url,
-            metadata={METADATA_KEY: test_pass.id, "category": category.slug},
-        )
-    except stripe.StripeError as exc:
-        logger.exception("Stripe checkout session creation failed for test pass %s", test_pass.id)
-        test_pass.status = TestPass.STATUS_FAILED
-        test_pass.save(update_fields=["status"])
-        raise CheckoutUnavailable(
-            f"We couldn't start checkout: {exc.user_message or 'please try again shortly.'}"
-        ) from exc
-
-    test_pass.stripe_checkout_session_id = session.id
-    test_pass.save(update_fields=["stripe_checkout_session_id"])
-    return session.url
 
 
 def is_test_pass_session(session) -> bool:

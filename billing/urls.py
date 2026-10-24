@@ -4,12 +4,11 @@ from . import views
 
 app_name = "billing"
 
-# Order matters: the fixed checkout/success/ and checkout/cancel/ routes must
-# come before checkout/<slug>/, or "success" would be treated as a plan slug.
 urlpatterns = [
+    path("donate/", views.donate, name="donate"),
+    path("donate/checkout/", views.donate_checkout, name="donate_checkout"),
+    path("donate/thanks/", views.donate_thanks, name="donate_thanks"),
+    # Old Premium page: redirects to Donate so existing links keep working.
     path("pricing/", views.pricing, name="pricing"),
-    path("checkout/success/", views.checkout_success, name="checkout_success"),
-    path("checkout/cancel/", views.checkout_cancel, name="checkout_cancel"),
-    path("checkout/<slug:slug>/", views.create_checkout_session, name="create_checkout_session"),
     path("webhook/", views.stripe_webhook, name="stripe_webhook"),
 ]
