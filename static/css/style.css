@@ -548,3 +548,91 @@ main {
     padding: 1.5rem;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Lesson quiz: "Check Your Understanding"                             */
+/* ------------------------------------------------------------------ */
+.quiz {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #F5F1E6;
+  border: 1px solid #DDD5BF;
+  border-radius: 1rem;
+}
+
+.quiz-question {
+  padding: 1rem 0;
+  border-top: 1px solid #DDD5BF;
+}
+
+.quiz-question-text {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.quiz-number {
+  color: #16301F;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quiz-option {
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #C9C0A6;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: inherit;
+}
+
+.quiz-option:hover:not(:disabled),
+.quiz-option:focus-visible {
+  border-color: #16301F;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(22, 48, 31, 0.15);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.quiz-option.is-correct {
+  opacity: 1;
+  border-color: #198754;
+  background: #D1E7DD;
+}
+
+.quiz-option.is-correct::before {
+  content: "\2713  ";
+  font-weight: 700;
+  color: #198754;
+}
+
+.quiz-option.is-wrong {
+  opacity: 1;
+  border-color: #B02A37;
+  background: #F8D7DA;
+}
+
+.quiz-option.is-wrong::before {
+  content: "\2717  ";
+  font-weight: 700;
+  color: #B02A37;
+}
+
+.quiz-feedback {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-left: 4px solid #16301F;
+  border-radius: 0.25rem;
+}
+
+.quiz-result {
+  padding-top: 1rem;
+  border-top: 1px solid #DDD5BF;
+}

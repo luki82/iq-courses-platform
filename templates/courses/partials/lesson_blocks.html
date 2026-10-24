@@ -47,6 +47,9 @@
       </div>
     </div>
 
+  {% elif block.type == "quiz" %}
+    {% include "courses/partials/quiz_block.html" %}
+
   {% elif block.type == "answers" %}
     <details class="lesson-answers">
       <summary>Show {{ block.title|lower }}</summary>
