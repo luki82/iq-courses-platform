@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Upper class lives mainly on wealth such as land, businesses and investments. Middle class has professional, managerial or skilled jobs and some savings. Working class earns wages from manual, routine or service work, with little savings or property.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Social class: a simple guide</text>
+<rect x="30" y="60" width="740" height="100" rx="14" fill="#d9c27a" opacity="0.55"/>
+<text x="50" y="100" font-size="22" font-weight="800" text-anchor="start" fill="#1F2A22" >Upper class</text>
+<text x="50" y="130" font-size="15" font-weight="700" text-anchor="start" fill="#6B7280" >owns wealth</text>
+<text x="300" y="102" font-size="16" font-weight="600" text-anchor="start" fill="#1F2A22" >Lives mainly on wealth: land, businesses,</text><text x="300" y="126" font-size="16" font-weight="600" text-anchor="start" fill="#1F2A22" >investments. Often inherited.</text>
+<g transform="translate(240,118) scale(0.55)"><path d="M-56,-18 L0,-50 L56,-18 Z" fill="#f0e2b6" stroke="#8a826e" stroke-width="2"/><rect x="-52" y="-18" width="104" height="44" fill="#f0e2b6" stroke="#8a826e" stroke-width="2"/><rect x="-40" y="-18" width="10" height="40" fill="#fff" stroke="#8a826e" stroke-width="1.5"/><rect x="-18" y="-18" width="10" height="40" fill="#fff" stroke="#8a826e" stroke-width="1.5"/><rect x="4" y="-18" width="10" height="40" fill="#fff" stroke="#8a826e" stroke-width="1.5"/><rect x="26" y="-18" width="10" height="40" fill="#fff" stroke="#8a826e" stroke-width="1.5"/><rect x="-58" y="26" width="116" height="8" fill="#8a826e"/><text x="0" y="-26" font-size="10" font-weight="800" text-anchor="middle" fill="#1F2A22" ></text></g><g transform="translate(274,138) scale(0.6)"><rect x="-26" y="-15" width="52" height="30" rx="4" fill="#9fd08a" stroke="#4f8a3c" stroke-width="2"/><circle cx="0" cy="0" r="9" fill="none" stroke="#4f8a3c" stroke-width="2"/><text x="0" y="5" font-size="12" font-weight="800" text-anchor="middle" fill="#2f5e22" >$</text></g>
+<rect x="30" y="175" width="740" height="100" rx="14" fill="#c8dca0" opacity="0.55"/>
+<text x="50" y="215" font-size="22" font-weight="800" text-anchor="start" fill="#1F2A22" >Middle class</text>
+<text x="50" y="245" font-size="15" font-weight="700" text-anchor="start" fill="#6B7280" >earns a salary</text>
+<text x="300" y="217" font-size="16" font-weight="600" text-anchor="start" fill="#1F2A22" >Professional, managerial or skilled jobs,</text><text x="300" y="241" font-size="16" font-weight="600" text-anchor="start" fill="#1F2A22" >some savings, often a home loan.</text>
+<g transform="translate(240,227)"><rect x="-30" y="-18" width="60" height="42" rx="6" fill="#6b4f2a"/><rect x="-12" y="-28" width="24" height="12" rx="3" fill="none" stroke="#6b4f2a" stroke-width="4"/><rect x="-30" y="-2" width="60" height="4" fill="#4a3720"/></g>
+<rect x="30" y="290" width="740" height="100" rx="14" fill="#b9d3e8" opacity="0.55"/>
+<text x="50" y="330" font-size="22" font-weight="800" text-anchor="start" fill="#1F2A22" >Working class</text>
+<text x="50" y="360" font-size="15" font-weight="700" text-anchor="start" fill="#6B7280" >earns a wage</text>
+<text x="300" y="332" font-size="16" font-weight="600" text-anchor="start" fill="#1F2A22" >Earns wages from manual, routine or</text><text x="300" y="356" font-size="16" font-weight="600" text-anchor="start" fill="#1F2A22" >service work. Little savings or property.</text>
+<g transform="translate(254,338) rotate(35) scale(0.8)"><rect x="-6" y="-8" width="12" height="52" rx="5" fill="#6b7a88"/><path d="M-18,-30 a18,18 0 1 0 36,0 l-10,0 l0,10 l-16,0 l0,-10 z" fill="#6b7a88"/></g>
+<text x="400" y="425" font-size="15" font-weight="700" text-anchor="middle" fill="#6B7280" >Class is about income, job, wealth and education together, not income alone</text>
+</svg>

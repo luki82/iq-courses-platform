@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">If your pay rises 5 percent but prices rise 8 percent, your money buys about 3 percent less than last year.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="21" font-weight="700" text-anchor="middle" fill="#1F2A22" >A pay rise smaller than inflation is really a pay cut</text>
+<rect x="155" y="230" width="110" height="150" rx="8" fill="#198754" opacity="0.85"/>
+<text x="210" y="218" font-size="26" font-weight="800" text-anchor="middle" fill="#198754" >+5%</text><text x="210" y="408" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2A22" >Pay rise</text>
+<rect x="355" y="140" width="110" height="240" rx="8" fill="#B02A37" opacity="0.85"/>
+<text x="410" y="128" font-size="26" font-weight="800" text-anchor="middle" fill="#B02A37" >+8%</text><text x="410" y="408" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2A22" >Prices rise</text>
+<line x1="120" y1="380" x2="520" y2="380" stroke="#1F2A22" stroke-width="2"/>
+<rect x="560" y="140" width="220" height="200" rx="14" fill="#F8D7DA" stroke="#B02A37" stroke-width="2"/>
+<text x="670" y="185.0" font-size="18" font-weight="600" text-anchor="middle" fill="#1F2A22" >Your money buys</text><text x="670" y="207.5" font-size="18" font-weight="600" text-anchor="middle" fill="#1F2A22" >about</text>
+<text x="670" y="260" font-size="34" font-weight="800" text-anchor="middle" fill="#B02A37" >3% LESS</text>
+<text x="670" y="300.0" font-size="18" font-weight="600" text-anchor="middle" fill="#1F2A22" >than last year</text>
+</svg>
