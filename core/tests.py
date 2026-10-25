@@ -55,6 +55,9 @@ class SearchReadinessTests(TestCase):
         self.assertIn("Sitemap: http://testserver/sitemap.xml", body)
         self.assertIn("Disallow: /admin/", body)
 
+    def test_contact_email_shown_by_default(self):
+        self.assertContains(self.client.get(reverse("core:contact")), "lukiapr9@gmail.com")
+
     def test_policy_pages(self):
         privacy = self.client.get(reverse("core:privacy"))
         self.assertContains(privacy, "Third-party vendors, including Google, use cookies")

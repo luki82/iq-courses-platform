@@ -141,8 +141,12 @@ SITE_URL = config("SITE_URL", default="http://127.0.0.1:8000")
 # Not needed if you verify the domain with a DNS record in Cloudflare instead.
 GOOGLE_SITE_VERIFICATION = config("GOOGLE_SITE_VERIFICATION", default="")
 
-# Shown on the Contact and Privacy pages. Leave blank to hide it.
-CONTACT_EMAIL = config("CONTACT_EMAIL", default="")
+# Shown on the Contact and Privacy pages. Set it to an empty value on the server to hide it.
+CONTACT_EMAIL = config("CONTACT_EMAIL", default="lukiapr9@gmail.com")
+
+# Online donations stay off (the Donate page says they're being set up) until
+# this is set to True on the server, even if Stripe keys are present.
+DONATIONS_ENABLED = config("DONATIONS_ENABLED", default=False, cast=bool)
 
 # Google AdSense publisher ID, e.g. ca-pub-1234567890123456 (from AdSense > Account).
 # When set, the AdSense code is added to every page and /ads.txt is published.

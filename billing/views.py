@@ -38,6 +38,11 @@ def _get(obj, key, default=None):
     return getattr(obj, key, default)
 
 
+def donations_enabled() -> bool:
+    """Donations need to be switched on (DONATIONS_ENABLED) and Stripe keys set."""
+    return settings.DONATIONS_ENABLED and bool(settings.STRIPE_SECRET_KEY)
+
+
 def donate(request):
     return render(
         request,
@@ -46,7 +51,7 @@ def donate(request):
             "preset_amounts": PRESET_AMOUNTS,
             "min_amount": MIN_AMOUNT,
             "max_amount": MAX_AMOUNT,
-            "donations_enabled": bool(settings.STRIPE_SECRET_KEY),
+            "donations_enabled": donations_enabled(),
         },
     )
 
@@ -64,7 +69,7 @@ def _parse_amount(raw) -> Decimal | None:
 
 @require_POST
 def donate_checkout(request):
-    if not settings.STRIPE_SECRET_KEY:
+    if not donations_enabled():
         messages.error(request, "Donations aren't switched on yet. Thank you for wanting to help!")
         return redirect("billing:donate")
 

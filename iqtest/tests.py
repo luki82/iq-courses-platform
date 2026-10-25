@@ -190,7 +190,7 @@ class PracticeTestTests(TestCase):
 
 
 @plain_static
-@override_settings(STRIPE_SECRET_KEY="sk_test_dummy")
+@override_settings(STRIPE_SECRET_KEY="sk_test_dummy", DONATIONS_ENABLED=True)
 class DonationTests(TestCase):
     def test_donate_page(self):
         response = self.client.get(reverse("billing:donate"))
@@ -227,6 +227,13 @@ class DonationTests(TestCase):
             create.assert_not_called()
 
     @override_settings(STRIPE_SECRET_KEY="")
+    @override_settings(DONATIONS_ENABLED=False)
+    def test_switched_off_even_with_stripe_key(self):
+        self.assertContains(self.client.get(reverse("billing:donate")), "Online donations are being set up")
+        response, create = self.donate({"amount": "10"})
+        self.assertRedirects(response, reverse("billing:donate"))
+        create.assert_not_called()
+
     def test_without_stripe_key_page_says_coming_soon(self):
         self.assertContains(self.client.get(reverse("billing:donate")), "being set up")
         response, create = self.donate({"amount": "10"})
