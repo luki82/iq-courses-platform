@@ -87,9 +87,10 @@ class ContactAndAdsTests(TestCase):
 
     def test_contact_form_saves_message(self):
         response = self.post()
-        self.assertRedirects(response, reverse("core:contact"))
+        self.assertRedirects(response, reverse("core:contact"), fetch_redirect_response=False)
         message = ContactMessage.objects.get()
         self.assertEqual((message.name, message.topic, message.is_read), ("Amina", "correction", False))
+        # The thank-you message shows on the next page load (a second load uses it up).
         self.assertContains(self.client.get(reverse("core:contact")), "Thanks for your message")
 
     def test_invalid_form_shows_errors(self):
