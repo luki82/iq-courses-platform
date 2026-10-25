@@ -1,3 +1,4 @@
+from io import StringIO
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
 from django.test import TestCase, override_settings
@@ -126,7 +127,7 @@ class ParseLessonTests(TestCase):
         from django.conf import settings
         for command in ("seed_english_esl", "seed_workplace_english", "seed_school_english",
                         "seed_practical_maths", "seed_science_health", "seed_economics", "seed_religion_culture"):
-            call_command(command, stdout=open("/dev/null", "w"))
+            call_command(command, stdout=StringIO())
         found = 0
         for lesson in Lesson.objects.all():
             for block in parse_lesson(lesson.content, seed=lesson.slug):
@@ -142,7 +143,7 @@ class ParseLessonTests(TestCase):
 
     def test_every_seeded_english_lesson_parses(self):
         for command in ("seed_english_esl", "seed_workplace_english", "seed_school_english", "seed_practical_maths", "seed_science_health", "seed_economics", "seed_religion_culture"):
-            call_command(command, stdout=open("/dev/null", "w"))
+            call_command(command, stdout=StringIO())
         exercises = 0
         for lesson in Lesson.objects.all():
             blocks = parse_lesson(lesson.content, seed=lesson.slug)
@@ -151,7 +152,7 @@ class ParseLessonTests(TestCase):
         self.assertGreaterEqual(exercises, 6)
 
     def test_every_practical_maths_lesson_has_practice_and_quiz(self):
-        call_command("seed_practical_maths", stdout=open("/dev/null", "w"))
+        call_command("seed_practical_maths", stdout=StringIO())
         lessons = Lesson.objects.filter(module__course__slug="practical-maths")
         self.assertGreaterEqual(lessons.count(), 5)
         for lesson in lessons:
@@ -170,7 +171,7 @@ class ParseLessonTests(TestCase):
 )
 class LessonPageTests(TestCase):
     def test_lesson_page_has_voice_bar_and_exercise(self):
-        call_command("seed_english_esl", stdout=open("/dev/null", "w"))
+        call_command("seed_english_esl", stdout=StringIO())
         user = get_user_model().objects.create_user("learner", "l@example.com", "pw-12345-x")
         course = Course.objects.get(slug="english-for-beginners")
         Enrollment.objects.create(user=user, course=course)
@@ -184,7 +185,7 @@ class LessonPageTests(TestCase):
         self.assertNotContains(response, "ANSWERS: 1. is")
 
     def test_lessons_in_former_premium_modules_open_for_free(self):
-        call_command("seed_workplace_english", stdout=open("/dev/null", "w"))
+        call_command("seed_workplace_english", stdout=StringIO())
         user = get_user_model().objects.create_user("worker", "w@example.com", "pw-12345-x")
         lesson = Lesson.objects.filter(module__is_free_preview=False).select_related("module__course").first()
         self.assertIsNotNone(lesson)
@@ -210,7 +211,7 @@ class LessonPageTests(TestCase):
         self.assertEqual(self.client.get(reverse("ielts:lesson_detail", args=[lesson.slug])).status_code, 200)
 
     def test_quiz_renders_on_lesson_page(self):
-        call_command("seed_practical_maths", stdout=open("/dev/null", "w"))
+        call_command("seed_practical_maths", stdout=StringIO())
         lesson = Lesson.objects.get(slug="how-to-calculate-discounts")
         response = self.client.get(reverse("courses:lesson_detail", args=["practical-maths", lesson.id]))
         self.assertContains(response, "Check Your Understanding")
@@ -218,7 +219,7 @@ class LessonPageTests(TestCase):
         self.assertContains(response, "answers: [2, 0, 1, 2, 0]")
 
     def test_conversion_lessons_render_with_quiz(self):
-        call_command("seed_practical_maths", stdout=open("/dev/null", "w"))
+        call_command("seed_practical_maths", stdout=StringIO())
         for slug in ("cooking-measurement-conversions", "metric-imperial-conversions", "temperature-and-time-conversions"):
             lesson = Lesson.objects.get(slug=slug)
             response = self.client.get(reverse("courses:lesson_detail", args=["practical-maths", lesson.id]))
@@ -226,7 +227,7 @@ class LessonPageTests(TestCase):
             self.assertContains(response, 'data-exercise')
 
     def test_science_health_lessons_have_practice_and_quiz(self):
-        call_command("seed_science_health", stdout=open("/dev/null", "w"))
+        call_command("seed_science_health", stdout=StringIO())
         lessons = Lesson.objects.filter(module__course__slug="science-and-health")
         self.assertGreaterEqual(lessons.count(), 4)
         for lesson in lessons:
@@ -240,14 +241,14 @@ class LessonPageTests(TestCase):
         self.assertContains(response, "Check Your Understanding")
 
     def test_diagram_renders_with_read_aloud_caption(self):
-        call_command("seed_science_health", stdout=open("/dev/null", "w"))
+        call_command("seed_science_health", stdout=StringIO())
         lesson = Lesson.objects.get(slug="mosquito-life-cycle")
         response = self.client.get(reverse("courses:lesson_detail", args=["science-and-health", lesson.id]))
         self.assertContains(response, "img/lessons/mosquito-life-cycle.svg")
         self.assertContains(response, '<figcaption class="say-row">')
 
     def test_economics_lessons_have_diagram_practice_and_quiz(self):
-        call_command("seed_economics", stdout=open("/dev/null", "w"))
+        call_command("seed_economics", stdout=StringIO())
         lessons = Lesson.objects.filter(module__course__slug="economics-and-money")
         self.assertEqual(lessons.count(), 5)
         for lesson in lessons:
@@ -263,7 +264,7 @@ class LessonPageTests(TestCase):
         self.assertContains(response, "Check Your Understanding")
 
     def test_religion_lessons_have_diagram_practice_and_quiz(self):
-        call_command("seed_religion_culture", stdout=open("/dev/null", "w"))
+        call_command("seed_religion_culture", stdout=StringIO())
         lessons = Lesson.objects.filter(module__course__slug="religion-and-culture-in-africa")
         self.assertEqual(lessons.count(), 4)
         for lesson in lessons:

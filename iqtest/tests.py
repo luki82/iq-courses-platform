@@ -1,3 +1,4 @@
+from io import StringIO
 import time
 from types import SimpleNamespace
 from unittest import mock
@@ -25,7 +26,7 @@ plain_static = override_settings(
 class FreeTestFlowTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("seed_full_iq_test", stdout=open("/dev/null", "w"))
+        call_command("seed_full_iq_test", stdout=StringIO())
         cls.category = Category.objects.get(slug=SLUG)
 
     def all_correct(self):
@@ -123,7 +124,7 @@ class OldPassHolderTests(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        call_command("seed_full_iq_test", stdout=open("/dev/null", "w"))
+        call_command("seed_full_iq_test", stdout=StringIO())
         cls.category = Category.objects.get(slug=SLUG)
 
     def make_pass(self, **kwargs):
@@ -180,7 +181,7 @@ class OldPassHolderTests(TestCase):
 @plain_static
 class PracticeTestTests(TestCase):
     def test_former_premium_category_is_open_to_guests(self):
-        call_command("seed_iqtest", stdout=open("/dev/null", "w"))
+        call_command("seed_iqtest", stdout=StringIO())
         for slug in ("logical-reasoning", "numerical-advanced"):
             category = Category.objects.get(slug=slug)
             Category.objects.filter(pk=category.pk).update(is_premium=True)

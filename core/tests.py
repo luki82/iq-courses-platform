@@ -1,3 +1,4 @@
+from io import StringIO
 from django.core.management import call_command
 from django.test import TestCase, override_settings
 from django.urls import reverse
@@ -17,7 +18,7 @@ plain_static = override_settings(
 class SearchReadinessTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        call_command("seed_english_esl", stdout=open("/dev/null", "w"))
+        call_command("seed_english_esl", stdout=StringIO())
         cls.course = Course.objects.get(slug="english-for-beginners")
         cls.lesson = Lesson.objects.filter(module__course=cls.course).first()
         cls.ielts = IELTSLesson.objects.create(
