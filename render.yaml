@@ -30,7 +30,7 @@ services:
       - key: ADSENSE_CLIENT_ID
         sync: false
       - key: DONATIONS_ENABLED
-        value: "False"
+        value: "True"
       - key: STRIPE_PUBLIC_KEY
         sync: false
       - key: STRIPE_SECRET_KEY

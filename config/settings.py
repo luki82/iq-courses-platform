@@ -144,9 +144,9 @@ GOOGLE_SITE_VERIFICATION = config("GOOGLE_SITE_VERIFICATION", default="")
 # Shown on the Contact and Privacy pages. Set it to an empty value on the server to hide it.
 CONTACT_EMAIL = config("CONTACT_EMAIL", default="lukiapr9@gmail.com")
 
-# Online donations stay off (the Donate page says they're being set up) until
-# this is set to True on the server, even if Stripe keys are present.
-DONATIONS_ENABLED = config("DONATIONS_ENABLED", default=False, cast=bool)
+# Online donations work whenever STRIPE_SECRET_KEY is set. Set DONATIONS_ENABLED
+# to False on the server to pause them (the Donate page then says they're being set up).
+DONATIONS_ENABLED = config("DONATIONS_ENABLED", default=True, cast=bool)
 
 # Google AdSense publisher ID, e.g. ca-pub-1234567890123456 (from AdSense > Account).
 # When set, the AdSense code is added to every page and /ads.txt is published.
