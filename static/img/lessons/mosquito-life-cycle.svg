@@ -12,7 +12,7 @@
 <rect width="800" height="450" fill="#fff"/>
 <text x="400" y="26" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Mosquito life cycle: 10 to 14 days</text>
 <rect x="20" y="90" width="175" height="300" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
-<path d="M22,240 h171 v148 a12,12 0 0 1 -12,12 h-147 a12,12 0 0 1 -12,-12 z" fill="#D6EAF5"/>
+<path d="M22,240 h171 v136 a12,12 0 0 1 -12,12 h-147 a12,12 0 0 1 -12,-12 z" fill="#D6EAF5"/>
 <path d="M22,240 q22,-6 43,0 t43,0 t43,0 t43,0" fill="none" stroke="#4A90C2" stroke-width="2.5"/>
 <circle cx="44" cy="114" r="16" fill="#16301F"/><text x="44" y="120" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >1</text>
 <text x="107.5" y="122" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Eggs</text>
@@ -20,7 +20,7 @@
 <ellipse cx="72.5" cy="236" rx="5.5" ry="10" fill="#3a3a3a"/><ellipse cx="86.5" cy="236" rx="5.5" ry="10" fill="#3a3a3a"/><ellipse cx="100.5" cy="236" rx="5.5" ry="10" fill="#3a3a3a"/><ellipse cx="114.5" cy="236" rx="5.5" ry="10" fill="#3a3a3a"/><ellipse cx="128.5" cy="236" rx="5.5" ry="10" fill="#3a3a3a"/><ellipse cx="142.5" cy="236" rx="5.5" ry="10" fill="#3a3a3a"/>
 <line x1="197" y1="200" x2="213" y2="200" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
 <rect x="215" y="90" width="175" height="300" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
-<path d="M217,240 h171 v148 a12,12 0 0 1 -12,12 h-147 a12,12 0 0 1 -12,-12 z" fill="#D6EAF5"/>
+<path d="M217,240 h171 v136 a12,12 0 0 1 -12,12 h-147 a12,12 0 0 1 -12,-12 z" fill="#D6EAF5"/>
 <path d="M217,240 q22,-6 43,0 t43,0 t43,0 t43,0" fill="none" stroke="#4A90C2" stroke-width="2.5"/>
 <circle cx="239" cy="114" r="16" fill="#16301F"/><text x="239" y="120" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >2</text>
 <text x="302.5" y="122" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Larva</text>
@@ -28,7 +28,7 @@
 <path d="M247.5,250 q14,-9 28,0 t28,0 t28,0" fill="none" stroke="#3a3a3a" stroke-width="8" stroke-linecap="round"/><circle cx="336.5" cy="250" r="8" fill="#3a3a3a"/>
 <line x1="392" y1="200" x2="408" y2="200" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
 <rect x="410" y="90" width="175" height="300" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
-<path d="M412,240 h171 v148 a12,12 0 0 1 -12,12 h-147 a12,12 0 0 1 -12,-12 z" fill="#D6EAF5"/>
+<path d="M412,240 h171 v136 a12,12 0 0 1 -12,12 h-147 a12,12 0 0 1 -12,-12 z" fill="#D6EAF5"/>
 <path d="M412,240 q22,-6 43,0 t43,0 t43,0 t43,0" fill="none" stroke="#4A90C2" stroke-width="2.5"/>
 <circle cx="434" cy="114" r="16" fill="#16301F"/><text x="434" y="120" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >3</text>
 <text x="497.5" y="122" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Pupa</text>
