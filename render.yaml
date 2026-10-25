@@ -16,7 +16,7 @@ services:
       - key: DEBUG
         value: "False"
       - key: ALLOWED_HOSTS
-        value: ".onrender.com"
+        value: "lorrank.com,www.lorrank.com,.onrender.com"
       - key: PYTHON_VERSION
         value: "3.12.4"
       - key: DATABASE_URL
