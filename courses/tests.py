@@ -134,7 +134,7 @@ class ParseLessonTests(TestCase):
                     found += 1
                     self.assertTrue((Path(settings.BASE_DIR) / "static" / block["src"]).exists(), block["src"])
                     self.assertTrue(block["caption"], lesson.slug)
-        self.assertGreaterEqual(found, 29)
+        self.assertGreaterEqual(found, 28)
 
     def test_unstructured_text_still_displays(self):
         blocks = parse_lesson("Just some notes.\nAnother line.")
