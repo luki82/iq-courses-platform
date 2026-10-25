@@ -124,7 +124,7 @@ class ParseLessonTests(TestCase):
     def test_every_practical_maths_lesson_has_practice_and_quiz(self):
         call_command("seed_practical_maths", stdout=open("/dev/null", "w"))
         lessons = Lesson.objects.filter(module__course__slug="practical-maths")
-        self.assertGreaterEqual(lessons.count(), 2)
+        self.assertGreaterEqual(lessons.count(), 5)
         for lesson in lessons:
             blocks = parse_lesson(lesson.content, seed=lesson.slug)
             self.assertIn("exercise", types(blocks), lesson.slug)
@@ -187,3 +187,11 @@ class LessonPageTests(TestCase):
         self.assertContains(response, "Check Your Understanding")
         self.assertContains(response, 'class="quiz-option"', count=18)
         self.assertContains(response, "answers: [2, 0, 1, 2, 0]")
+
+    def test_conversion_lessons_render_with_quiz(self):
+        call_command("seed_practical_maths", stdout=open("/dev/null", "w"))
+        for slug in ("cooking-measurement-conversions", "metric-imperial-conversions", "temperature-and-time-conversions"):
+            lesson = Lesson.objects.get(slug=slug)
+            response = self.client.get(reverse("courses:lesson_detail", args=["practical-maths", lesson.id]))
+            self.assertContains(response, "Check Your Understanding")
+            self.assertContains(response, 'data-exercise')
