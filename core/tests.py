@@ -3,6 +3,8 @@ from django.core.management import call_command
 from django.test import TestCase, override_settings
 from django.urls import reverse
 
+from core.models import ContactMessage
+
 from courses.models import Course, Lesson
 from ielts.models import IELTSLesson
 
@@ -57,7 +59,8 @@ class SearchReadinessTests(TestCase):
         privacy = self.client.get(reverse("core:privacy"))
         self.assertContains(privacy, "Third-party vendors, including Google, use cookies")
         self.assertEqual(self.client.get(reverse("core:about")).status_code, 200)
-        self.assertContains(self.client.get(reverse("core:contact")), "coming soon")
+        self.assertContains(self.client.get(reverse("core:contact")), "Send message")
+        self.assertContains(self.client.get(reverse("core:terms")), "Terms of use")
         home = self.client.get(reverse("core:home"))
         self.assertContains(home, reverse("core:privacy"))
 
@@ -69,3 +72,53 @@ class SearchReadinessTests(TestCase):
 
     def test_no_verification_tag_by_default(self):
         self.assertNotContains(self.client.get(reverse("core:home")), "google-site-verification")
+
+
+@plain_static
+class ContactAndAdsTests(TestCase):
+    def post(self, **overrides):
+        data = {"name": "Amina", "email": "amina@example.com", "topic": "correction",
+                "message": "There is a typo in the malaria lesson.", "website": ""}
+        data.update(overrides)
+        return self.client.post(reverse("core:contact"), data)
+
+    def test_contact_form_saves_message(self):
+        response = self.post()
+        self.assertRedirects(response, reverse("core:contact"))
+        message = ContactMessage.objects.get()
+        self.assertEqual((message.name, message.topic, message.is_read), ("Amina", "correction", False))
+        self.assertContains(self.client.get(reverse("core:contact")), "Thanks for your message")
+
+    def test_invalid_form_shows_errors(self):
+        response = self.post(email="not-an-email", message="hi")
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "at least 10 characters")
+        self.assertEqual(ContactMessage.objects.count(), 0)
+
+    def test_spam_trap_is_silently_dropped(self):
+        response = self.post(website="http://spam.example")
+        self.assertRedirects(response, reverse("core:contact"))
+        self.assertEqual(ContactMessage.objects.count(), 0)
+
+    def test_rate_limit(self):
+        for _ in range(4):
+            self.post()
+        self.assertEqual(ContactMessage.objects.count(), 3)
+
+    def test_ads_txt_missing_until_configured(self):
+        self.assertEqual(self.client.get("/ads.txt").status_code, 404)
+
+    @override_settings(ADSENSE_CLIENT_ID="ca-pub-1234567890123456")
+    def test_ads_txt_and_adsense_script(self):
+        body = self.client.get("/ads.txt").content.decode()
+        self.assertEqual(body, "google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0\n")
+        home = self.client.get(reverse("core:home"))
+        self.assertContains(home, "adsbygoogle.js?client=ca-pub-1234567890123456")
+
+    def test_no_adsense_script_by_default(self):
+        self.assertNotContains(self.client.get(reverse("core:home")), "adsbygoogle")
+
+    def test_navigation_links_to_policy_pages(self):
+        home = self.client.get(reverse("core:home")).content.decode()
+        for name in ("core:about", "core:contact", "core:privacy", "core:terms"):
+            self.assertIn(reverse(name), home)

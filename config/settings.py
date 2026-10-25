@@ -144,6 +144,10 @@ GOOGLE_SITE_VERIFICATION = config("GOOGLE_SITE_VERIFICATION", default="")
 # Shown on the Contact and Privacy pages. Leave blank to hide it.
 CONTACT_EMAIL = config("CONTACT_EMAIL", default="")
 
+# Google AdSense publisher ID, e.g. ca-pub-1234567890123456 (from AdSense > Account).
+# When set, the AdSense code is added to every page and /ads.txt is published.
+ADSENSE_CLIENT_ID = config("ADSENSE_CLIENT_ID", default="")
+
 # --- Production hardening ---------------------------------------------------------
 
 if not DEBUG:

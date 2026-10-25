@@ -27,6 +27,7 @@ class StaticPagesSitemap(HttpsSitemap):
             "core:about",
             "core:privacy",
             "core:contact",
+            "core:terms",
         ]
 
     def location(self, item):

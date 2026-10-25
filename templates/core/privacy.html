@@ -6,7 +6,7 @@
 {% block content %}
 <div class="mx-auto" style="max-width: 760px;">
   <h1 class="mb-1">Privacy policy</h1>
-  <p class="text-muted">Last updated: 24 October 2026</p>
+  <p class="text-muted">Last updated: 25 October 2026</p>
 
   <p>
     This policy explains what information iQ ("we", "us") collects when you use
@@ -16,6 +16,7 @@
   <h2 class="h5 mt-4">Information we collect</h2>
   <ul>
     <li><strong>Account details.</strong> If you sign up, we store your username, email address and a securely scrambled (hashed) version of your password. We never see or store your actual password.</li>
+    <li><strong>Messages you send us.</strong> If you use the contact form, we store your name, email address and message so we can reply. We don't use them for marketing.</li>
     <li><strong>Learning activity.</strong> The courses you add, lessons you mark complete, and your IQ test answers, scores and times, so we can show you your progress and results.</li>
     <li><strong>Cookies needed to run the site.</strong> A session cookie keeps you logged in and remembers your test timer and results in your browser, and a security cookie protects forms against misuse.</li>
     <li><strong>Server logs.</strong> Our hosting provider records basic technical information such as IP address, browser type and pages requested, to keep the site secure and working.</li>
@@ -61,6 +62,13 @@
     information without a parent's consent, please contact us and we will delete it.
   </p>
 
+  <h2 class="h5 mt-4">Visitors in Europe and the UK</h2>
+  <p>
+    Where the law requires it, for example in the European Economic Area and the United Kingdom,
+    we ask for your consent before personalised advertising cookies are used. You can change your
+    choice at any time through the privacy message shown on the site.
+  </p>
+
   <h2 class="h5 mt-4">Changes</h2>
   <p>We may update this policy from time to time. The date at the top shows when it last changed.</p>
 
@@ -69,7 +77,7 @@
     {% if contact_email %}
       Questions about privacy? Email <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.
     {% else %}
-      Questions about privacy? See our <a href="{% url 'core:contact' %}">contact page</a>.
+      Questions about privacy, or want your data deleted? Use our <a href="{% url 'core:contact' %}">contact form</a>.
     {% endif %}
   </p>
 </div>
