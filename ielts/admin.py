@@ -11,7 +11,7 @@ class IELTSQuestionInline(admin.TabularInline):
 
 @admin.register(IELTSLesson)
 class IELTSLessonAdmin(admin.ModelAdmin):
-    list_display = ("title", "tier", "skill", "diagram_type", "requires_premium", "created_at")
+    list_display = ("title", "tier", "skill", "diagram_type", "created_at")
     list_filter = ("tier", "skill", "diagram_type")
     search_fields = ("title", "module_title", "passage_or_prompt")
     prepopulated_fields = {"slug": ("title",)}

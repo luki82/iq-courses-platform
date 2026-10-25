@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Donate{% endblock %}
+
+{% block content %}
+<div class="mx-auto" style="max-width: 720px;">
+  <section class="home-panel home-panel--learn mb-4">
+    <p class="home-kicker home-kicker--learn">Support iQ</p>
+    <h1 class="home-title home-title--small">Help keep iQ free for everyone</h1>
+    <p class="mb-2">
+      Every English course, IELTS lesson and IQ test on iQ is free, with no paywalls
+      and no adverts. Running the site still costs money each month for hosting,
+      the database and the domain.
+    </p>
+    <p class="mb-0">
+      If iQ has helped you or someone you know, a small donation helps keep it online
+      for the next learner. Nothing is locked if you don't give.
+    </p>
+  </section>
+
+  {% if donations_enabled %}
+  <form method="post" action="{% url 'billing:donate_checkout' %}" class="card">
+    {% csrf_token %}
+    <div class="card-body p-4">
+      <h2 class="h5 mb-3">Choose an amount (AUD)</h2>
+      <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Donation amount">
+        {% for amount in preset_amounts %}
+          <input type="radio" class="btn-check" name="amount" id="amount-{{ amount }}" value="{{ amount }}"
+                 autocomplete="off" {% if forloop.counter == 2 %}checked{% endif %}>
+          <label class="btn btn-outline-primary btn-lg px-4" for="amount-{{ amount }}">${{ amount }}</label>
+        {% endfor %}
+      </div>
+
+      <label for="custom-amount" class="form-label small text-muted">Or enter your own amount</label>
+      <div class="input-group mb-4" style="max-width: 220px;">
+        <span class="input-group-text">$</span>
+        <input type="number" class="form-control" id="custom-amount" name="custom_amount"
+               min="{{ min_amount }}" max="{{ max_amount }}" step="0.01" inputmode="decimal" placeholder="Other">
+      </div>
+
+      <button type="submit" class="btn btn-challenge btn-lg">Donate</button>
+      <p class="small text-muted mt-3 mb-0">
+        Secure card payment through Stripe. You don't need an account, and Stripe emails
+        you a receipt. Donations are one-off and never repeat.
+      </p>
+    </div>
+  </form>
+  {% else %}
+  <div class="alert alert-info">
+    Online donations are being set up. Please check back soon, and thank you for wanting to help.
+  </div>
+  {% endif %}
+
+  <h2 class="h5 mt-5">Other ways to help</h2>
+  <ul>
+    <li>Share iQ with a friend who is learning English or getting ready for IELTS.</li>
+    <li>Take the <a href="{% url 'iqtest:test_list' %}">iQ test</a> and challenge someone to beat your score.</li>
+  </ul>
+</div>
+{% endblock %}

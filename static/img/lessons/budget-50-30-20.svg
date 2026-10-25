@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">The 50 30 20 budget: 50 percent of income for needs like rent, food and transport, 30 percent for wants, and 20 percent for savings and paying off debt.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >The 50 / 30 / 20 budget</text>
+<path d="M220,240 L220.0,80.0 A160,160 0 0 1 220.00000000000003,400.0 Z" fill="#16301F" stroke="#fff" stroke-width="4"/>
+<text x="316.0" y="250.0" font-size="28" font-weight="800" text-anchor="middle" fill="#fff" >50%</text>
+<path d="M220,240 L220.00000000000003,400.0 A160,160 0 0 1 67.83095739277542,190.55728090000844 Z" fill="#E08A1E" stroke="#fff" stroke-width="4"/>
+<text x="142.33436854000507" y="306.42738422007744" font-size="28" font-weight="800" text-anchor="middle" fill="#fff" >30%</text>
+<path d="M220,240 L67.83095739277542,190.55728090000844 A160,160 0 0 1 219.99999999999997,80.0 Z" fill="#198754" stroke="#fff" stroke-width="4"/>
+<text x="163.57261577992256" y="172.33436854000507" font-size="28" font-weight="800" text-anchor="middle" fill="#fff" >20%</text>
+<rect x="420" y="110" width="34" height="34" rx="8" fill="#16301F"/>
+<text x="470" y="126" font-size="22" font-weight="800" text-anchor="start" fill="#1F2A22" >50% Needs</text><text x="470" y="152" font-size="15" font-weight="600" text-anchor="start" fill="#6B7280" >rent, food, transport, school fees, bills</text>
+<rect x="420" y="210" width="34" height="34" rx="8" fill="#E08A1E"/>
+<text x="470" y="226" font-size="22" font-weight="800" text-anchor="start" fill="#1F2A22" >30% Wants</text><text x="470" y="252" font-size="15" font-weight="600" text-anchor="start" fill="#6B7280" >eating out, phone upgrades, entertainment</text>
+<rect x="420" y="310" width="34" height="34" rx="8" fill="#198754"/>
+<text x="470" y="326" font-size="22" font-weight="800" text-anchor="start" fill="#1F2A22" >20% Savings</text><text x="470" y="352" font-size="15" font-weight="600" text-anchor="start" fill="#6B7280" >emergency fund, paying off debt, goals</text>
+<rect x="420" y="395" width="360" height="44" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><text x="600" y="423" font-size="16" font-weight="700" text-anchor="middle" fill="#1F2A22" >Income $1,000 → $500 / $300 / $200</text>
+</svg>

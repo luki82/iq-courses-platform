@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     # Local apps
     "accounts",
     "core",
@@ -72,6 +73,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "core.context_processors.site_settings",
             ],
         },
     },
@@ -128,14 +130,27 @@ LOGOUT_REDIRECT_URL = "core:home"
 
 # --- App-specific settings ---------------------------------------------------------
 
-# How many full test attempts (in non-premium categories) a free user gets
-# before the detailed results (explanations, IQ score breakdown) are paywalled.
-FREE_TEST_ATTEMPTS_LIMIT = config("FREE_TEST_ATTEMPTS_LIMIT", default=1, cast=int)
-
+# Everything on the site is free. Stripe is only used for optional donations
+# (see billing/views.py).
 STRIPE_PUBLIC_KEY = config("STRIPE_PUBLIC_KEY", default="")
 STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY", default="")
 STRIPE_WEBHOOK_SECRET = config("STRIPE_WEBHOOK_SECRET", default="")
 SITE_URL = config("SITE_URL", default="http://127.0.0.1:8000")
+
+# Google Search Console "HTML tag" verification code (just the content="..." value).
+# Not needed if you verify the domain with a DNS record in Cloudflare instead.
+GOOGLE_SITE_VERIFICATION = config("GOOGLE_SITE_VERIFICATION", default="")
+
+# Shown on the Contact and Privacy pages. Set it to an empty value on the server to hide it.
+CONTACT_EMAIL = config("CONTACT_EMAIL", default="lukiapr9@gmail.com")
+
+# Online donations work whenever STRIPE_SECRET_KEY is set. Set DONATIONS_ENABLED
+# to False on the server to pause them (the Donate page then says they're being set up).
+DONATIONS_ENABLED = config("DONATIONS_ENABLED", default=True, cast=bool)
+
+# Google AdSense publisher ID, e.g. ca-pub-1234567890123456 (from AdSense > Account).
+# When set, the AdSense code is added to every page and /ads.txt is published.
+ADSENSE_CLIENT_ID = config("ADSENSE_CLIENT_ID", default="")
 
 # --- Production hardening ---------------------------------------------------------
 

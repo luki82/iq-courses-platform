@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Households spend money at businesses, businesses pay wages to households. Banks take savings and lend them to businesses, and government collects taxes and pays for services.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >How money flows round the economy</text>
+<rect x="30" y="150" width="210" height="150" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><g transform="translate(135,270) scale(0.7)">
+<rect x="-60" y="-50" width="120" height="80" fill="#e8d3a9" stroke="#8a6a43" stroke-width="2"/>
+<path d="M-78,-48 L0,-100 L78,-48 Z" fill="#b88a4a" stroke="#6b4f2a" stroke-width="2"/>
+<rect x="-14" y="-6" width="28" height="36" fill="#6b4f2a"/>
+<rect x="24" y="-30" width="24" height="20" fill="#D6EAF5" stroke="#6b4f2a" stroke-width="2"/></g><text x="135" y="175" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Households</text>
+<rect x="560" y="150" width="210" height="150" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><g transform="translate(665,255) scale(1.0)"><path d="M-50,30 V-10 L-25,-25 V-10 L0,-25 V-10 L25,-25 V-40 H40 V30 Z" fill="#9aa5ad" stroke="#5d666e" stroke-width="2"/><rect x="-40" y="5" width="14" height="12" fill="#fff"/><rect x="-16" y="5" width="14" height="12" fill="#fff"/><rect x="8" y="5" width="14" height="12" fill="#fff"/></g><text x="665" y="175" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Businesses</text>
+<path d="M240,175 C330,90 470,90 560,175" fill="none" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400" y="92" font-size="16" font-weight="700" text-anchor="middle" fill="#16301F" >spend money on goods and services</text><g transform="translate(400,118) scale(0.9)"><rect x="-26" y="-15" width="52" height="30" rx="4" fill="#9fd08a" stroke="#4f8a3c" stroke-width="2"/><circle cx="0" cy="0" r="9" fill="none" stroke="#4f8a3c" stroke-width="2"/><text x="0" y="5" font-size="12" font-weight="800" text-anchor="middle" fill="#2f5e22" >$</text></g>
+<path d="M560,280 C470,365 330,365 240,280" fill="none" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="400" y="375" font-size="16" font-weight="700" text-anchor="middle" fill="#16301F" >pay wages for work</text><g transform="translate(400,340) scale(0.9)"><rect x="-26" y="-15" width="52" height="30" rx="4" fill="#9fd08a" stroke="#4f8a3c" stroke-width="2"/><circle cx="0" cy="0" r="9" fill="none" stroke="#4f8a3c" stroke-width="2"/><text x="0" y="5" font-size="12" font-weight="800" text-anchor="middle" fill="#2f5e22" >$</text></g>
+<rect x="300" y="188" width="200" height="80" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><g transform="translate(345,233) scale(0.45)"><path d="M-56,-18 L0,-50 L56,-18 Z" fill="#e8e1cf" stroke="#8a826e" stroke-width="2"/><rect x="-52" y="-18" width="104" height="44" fill="#e8e1cf" stroke="#8a826e" stroke-width="2"/><rect x="-40" y="-18" width="10" height="40" fill="#fff" stroke="#8a826e" stroke-width="1.5"/><rect x="-18" y="-18" width="10" height="40" fill="#fff" stroke="#8a826e" stroke-width="1.5"/><rect x="4" y="-18" width="10" height="40" fill="#fff" stroke="#8a826e" stroke-width="1.5"/><rect x="26" y="-18" width="10" height="40" fill="#fff" stroke="#8a826e" stroke-width="1.5"/><rect x="-58" y="26" width="116" height="8" fill="#8a826e"/><text x="0" y="-26" font-size="10" font-weight="800" text-anchor="middle" fill="#1F2A22" ></text></g><text x="385" y="222" font-size="16" font-weight="700" text-anchor="start" fill="#1F2A22" >Banks</text><text x="385" y="244" font-size="13" font-weight="600" text-anchor="start" fill="#6B7280" >keep savings,</text><text x="385" y="260" font-size="13" font-weight="600" text-anchor="start" fill="#6B7280" >make loans</text>
+<rect x="270" y="398" width="260" height="46" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><text x="400" y="427" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2A22" >Government: taxes → services</text>
+<line x1="240" y1="225" x2="296" y2="225" stroke="#6B7280" stroke-width="2" marker-end="url(#arrow)"/><line x1="500" y1="225" x2="556" y2="225" stroke="#6B7280" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="268" y="216" font-size="12" font-weight="600" text-anchor="middle" fill="#6B7280" >save</text><text x="528" y="216" font-size="12" font-weight="600" text-anchor="middle" fill="#6B7280" >loans</text>
+</svg>

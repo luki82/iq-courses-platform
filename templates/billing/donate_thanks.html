@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Thank you{% endblock %}
+
+{% block content %}
+<div class="mx-auto text-center" style="max-width: 640px;">
+  <h1 class="mb-3">Thank you!</h1>
+  <p class="fs-5">
+    Your donation helps keep iQ's courses and tests free for everyone. It means a lot.
+  </p>
+  <p class="text-muted">Stripe has emailed you a receipt.</p>
+  <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+    <a href="{% url 'courses:course_list' %}" class="btn btn-primary">Back to the courses</a>
+    <a href="{% url 'iqtest:test_list' %}" class="btn btn-outline-primary">Take an IQ test</a>
+  </div>
+</div>
+{% endblock %}

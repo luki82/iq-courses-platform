@@ -7,15 +7,8 @@
 
 <div class="card mb-4">
   <div class="card-body">
-    {% if profile.has_premium_access %}
-      <p class="mb-0">
-        <span class="badge bg-success">Premium</span>
-        {% if profile.premium_until %}until {{ profile.premium_until|date:"M j, Y" }}{% else %}(unlimited){% endif %}
-      </p>
-    {% else %}
-      <p class="mb-2">You're on the free plan.</p>
-      <a href="{% url 'billing:pricing' %}" class="btn btn-warning btn-sm">Upgrade to Premium</a>
-    {% endif %}
+    <p class="mb-2">Every course, lesson and test on iQ is free for you.</p>
+    <a href="{% url 'billing:donate' %}" class="btn btn-outline-primary btn-sm">&hearts; Help keep iQ online</a>
   </div>
 </div>
 

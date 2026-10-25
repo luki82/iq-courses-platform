@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}{{ lesson.title }}{% endblock %}
+{% block title %}{{ lesson.title }} – {{ course.title }}{% endblock %}
+{% block meta_description %}{{ lesson.content|striptags|cut:"GOAL:"|truncatechars:155 }}{% endblock %}
 
 {% block content %}
 <p><a href="{% url 'courses:course_detail' course.slug %}">&larr; Back to {{ course.title }}</a></p>
@@ -37,7 +38,11 @@
   {% include "courses/partials/lesson_blocks.html" %}
 </div>
 
-{% if progress.completed %}
+{% if not user.is_authenticated %}
+  <p class="text-muted">
+    <a href="{% url 'accounts:signup' %}">Create a free account</a> to tick off lessons and keep track of your progress.
+  </p>
+{% elif progress.completed %}
   <span class="badge bg-success">Completed</span>
 {% else %}
   <form method="post" action="{% url 'courses:mark_complete' course.slug lesson.id %}">

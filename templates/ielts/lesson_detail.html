@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}{{ lesson.title }}{% endblock %}
+{% block title %}IELTS {{ lesson.get_skill_display }}: {{ lesson.title }}{% endblock %}
+{% block meta_description %}Free IELTS {{ lesson.get_skill_display }} practice: {{ lesson.passage_or_prompt|striptags|truncatechars:120 }}{% endblock %}
 
 {% block content %}
 <p class="text-muted small mb-1">{{ lesson.get_tier_display }} &middot; {{ lesson.get_skill_display }}</p>

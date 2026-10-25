@@ -1,24 +1,25 @@
 # MindGrowth -- IQ Tests & Courses Platform
 
-A Django site with two products behind a single freemium paywall:
+A Django site where **everything is free**, kept online by optional donations:
 
-- **IQ Tests** (`iqtest` app) -- category-based multiple-choice tests. Every
-  user gets a limited number of full-detail free attempts (score breakdown,
-  explanations, estimated IQ score); after that -- or for Premium-only
-  categories -- they need to upgrade.
-- **Courses** (`courses` app) -- courses made of modules and lessons. Each
-  course's first module is a free preview; the rest requires Premium.
+- **IQ Tests** (`iqtest` app) -- category-based multiple-choice tests,
+  including the timed 30-question Full IQ Assessment. Anyone can take any
+  test, with or without an account, and always gets the full breakdown
+  (estimated IQ score, correct answers, explanations).
+- **Courses** (`courses` app) -- courses made of modules and lessons, all
+  free once you enrol.
 - **IELTS Preparation** (`ielts` app) -- lesson modules across Reading,
-  Listening, Writing, and Speaking, split into three tiers. Tier 1 lessons
-  are free; Tier 2 and Tier 3 require Premium.
-- **Billing** (`billing` app) -- Stripe Checkout integration that unlocks
-  Premium access for a configurable number of days per purchase.
-- **Accounts** (`accounts` app) -- signup/login and a `Profile` model that
-  tracks each user's premium status and free-attempt usage.
+  Listening, Writing, and Speaking in three tiers, all free.
+- **Billing** (`billing` app) -- a Donate page using Stripe Checkout for
+  one-off donations (A$5 / 10 / 20 / 50 or a custom amount). Donating
+  unlocks nothing; it just helps pay for hosting.
+- **Accounts** (`accounts` app) -- signup/login, so learners can track their
+  courses and see their test results on any device.
 
-The freemium rule is centered on one property: `request.user.profile.has_premium_access`.
-All three content apps check it (plus their own free-preview/tier flags) before
-showing paid content.
+The old Premium plans, paid test passes and premium fields are still in the
+database (and in Django admin) as a record of past payments, but no code
+checks them any more. Old links (`/billing/pricing/`, paid-test private links)
+redirect to the right place.
 
 ---
 
@@ -48,10 +49,9 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 
-# Optional: sample IQ questions, plus the real plans, courses and IELTS lessons
+# Optional: sample IQ questions, plus the real courses and IELTS lessons
 # (build.sh runs all of these except seed_iqtest on every Render deploy)
 python manage.py seed_iqtest
-python manage.py seed_plans
 python manage.py seed_english_esl
 python manage.py seed_workplace_english
 python manage.py seed_school_english
@@ -66,51 +66,34 @@ Visit `http://127.0.0.1:8000/`. Admin is at `/admin/`.
 
 Use `/admin/` to add:
 - **IQ tests app > Categories / Questions / Choices** -- write your own test
-  bank. Mark a Category `is_premium` to make the whole category paid-only.
+  bank.
 - **Courses app > Courses / Modules / Lessons** -- build out your course
-  content. Tick a Module's `is_free_preview` to make it free; leave it
-  unticked to require Premium.
+  content.
 - **IELTS app > IELTS lessons / questions** -- add lessons directly in admin,
   or load them from JSON (see section 5 below).
-- **Billing app > Plans** -- create at least one Plan (name, price for
-  display, duration in days). You'll attach it to a real Stripe Price next.
 
 ---
 
-## 2. Stripe setup (payments)
+## 2. Stripe setup (donations)
 
-Plans are created automatically on deploy by `python manage.py seed_plans`
-(A$14.99 / 30 days, A$34.99 / 90 days, A$99 / 365 days). Checkout charges each
-plan's `price_cents` directly, so you do **not** need to create Products or
-Prices in Stripe. Change prices, wording or durations in Django admin >
-Billing > Plans -- redeploys won't overwrite your edits. (If you'd rather use a
-Stripe Price, paste its `price_...` ID into the plan and it takes priority.)
+Donations are charged directly from the amount the visitor picks, so you
+don't need to create Products or Prices in Stripe. Each donation appears in
+the Stripe dashboard under Payments with the description "iQ donation".
 
-To switch payments on, set three environment variables on Render (or in
+To switch donations on, set these environment variables on Render (or in
 `.env` locally):
 
 1. `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY` -- Stripe dashboard >
    Developers > API keys (`pk_...` / `sk_...`).
-2. Add a webhook endpoint in Stripe: Developers > Webhooks > Add endpoint,
-   URL `https://<your-domain>/billing/webhook/`, events
-   `checkout.session.completed` and `checkout.session.async_payment_succeeded`.
-   Copy its signing secret (`whsec_...`) into `STRIPE_WEBHOOK_SECRET`.
+2. Optional: `STRIPE_WEBHOOK_SECRET`. Donations don't need the webhook; it
+   only finishes off an IQ test pass bought just before tests went free. If
+   you already have a webhook pointed at `/billing/webhook/`, leave it as is.
 
-Use test-mode keys first and pay with card `4242 4242 4242 4242` (any future
-expiry, any CVC). Then swap in live keys and create a separate live-mode
-webhook -- test and live webhooks have different signing secrets.
+Until `STRIPE_SECRET_KEY` is set, the Donate page shows a friendly "being set
+up" note instead of the donation form.
 
-How access is granted: after payment, the success page confirms the session
-with Stripe and unlocks Premium immediately; the webhook is the backstop if
-the buyer closes the tab. Both paths are idempotent, so a purchase is never
-counted twice. In production (`DEBUG=False`) unsigned webhooks are rejected,
-so the webhook does nothing until `STRIPE_WEBHOOK_SECRET` is set.
-
-Until the keys are set, the "Upgrade" button shows a friendly "payments
-aren't switched on yet" message instead of erroring.
-
-To test locally, use the [Stripe CLI](https://stripe.com/docs/stripe-cli):
-`stripe listen --forward-to localhost:8000/billing/webhook/`.
+Use test-mode keys first and donate with card `4242 4242 4242 4242` (any
+future expiry, any CVC), then swap in live keys.
 
 ---
 
@@ -215,19 +198,17 @@ static/         CSS (Bootstrap 5 via CDN + a small custom stylesheet)
 ielts_content/  Example lesson JSON files for `load_ielts_lesson`
 ```
 
-## 7. Where the freemium rule lives
+## 7. Where the old paywall used to be
 
-- `accounts.models.Profile.has_premium_access` -- the single source of truth
-  for "is this user currently paying".
-- `iqtest.views.take_test` -- computes `detail_unlocked` per attempt from
-  `FREE_TEST_ATTEMPTS_LIMIT` (in `.env`) and the user's premium status;
-  `Category.is_premium` gates premium-only categories entirely.
-- `courses.views.lesson_detail` / `course_detail.html` -- a lesson is
-  visible if `lesson.is_free` (its module is a free preview) or the user has
-  premium access.
-- `ielts.models.IELTSLesson.requires_premium` -- TIER_1 lessons are always
-  free; TIER_2 and TIER_3 require premium (`ielts.views.lesson_detail`
-  redirects to the pricing page otherwise).
+Everything is free, so none of these block anyone any more:
 
-Adjust `FREE_TEST_ATTEMPTS_LIMIT`, which categories/modules/lessons are marked
-premium, and Plan pricing/duration to match whatever access model you want.
+- `iqtest.views.take_test` -- one free flow for every test, for guests and
+  members. Guests' results are tied to their browser session; members' to
+  their account. Results locked under the old rules unlock the next time
+  they're opened.
+- `courses.views.lesson_detail` -- any enrolled learner can open any lesson.
+- `ielts.views.lesson_detail` -- every tier is open to logged-in learners.
+- `billing.views` -- the Donate page and Stripe checkout for donations.
+
+If you ever want paid content again, `Profile.has_premium_access`, `Plan`,
+`Purchase` and `TestPass` are still in the models to build on.

@@ -1,0 +1,42 @@
+{# Multiple-choice "Check Your Understanding" quiz. Runs in the browser with Alpine.js (loaded in base.html). #}
+<section class="quiz" aria-labelledby="quiz-title-{{ forloop.counter }}"
+         x-data="{
+           picks: Array({{ block.total }}).fill(null),
+           answers: {{ block.answers_json }},
+           pick(q, o) { if (this.picks[q] === null) this.picks[q] = o },
+           get answered() { return this.picks.filter(p => p !== null).length },
+           get score() { return this.picks.filter((p, i) => p === this.answers[i]).length },
+           reset() { this.picks = Array({{ block.total }}).fill(null) }
+         }">
+  <h2 class="lesson-heading quiz-title" id="quiz-title-{{ forloop.counter }}">&#10003; {{ block.title }}</h2>
+  <p class="small text-muted">Pick one answer for each question. You'll see the explanation straight away.</p>
+
+  {% for question in block.questions %}
+  <div class="quiz-question">
+    <p class="quiz-question-text"><span class="quiz-number">{{ question.number }}.</span> {{ question.text }}</p>
+    <div class="quiz-options" role="group" aria-label="Answers for question {{ question.number }}">
+      {% for option in question.options %}
+      <button type="button" class="quiz-option"
+              @click="pick({{ question.index }}, {{ forloop.counter0 }})"
+              :disabled="picks[{{ question.index }}] !== null"
+              :class="{
+                'is-correct': picks[{{ question.index }}] !== null && {{ forloop.counter0 }} === answers[{{ question.index }}],
+                'is-wrong': picks[{{ question.index }}] === {{ forloop.counter0 }} && {{ forloop.counter0 }} !== answers[{{ question.index }}]
+              }">{{ option }}</button>
+      {% endfor %}
+    </div>
+    <div class="quiz-feedback" x-show="picks[{{ question.index }}] !== null" x-cloak role="status" aria-live="polite">
+      <strong x-text="picks[{{ question.index }}] === answers[{{ question.index }}] ? 'Correct!' : 'Not quite.'"></strong>
+      {{ question.explanation }}
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="quiz-result" x-show="answered === {{ block.total }}" x-cloak>
+    <p class="mb-2 fs-5">You got <strong x-text="score"></strong> out of {{ block.total }}.
+      <span x-show="score === {{ block.total }}">Excellent work!</span>
+      <span x-show="score < {{ block.total }}">Read the explanations above, then try again.</span>
+    </p>
+    <button type="button" class="btn btn-sm btn-outline-secondary" @click="reset()">Try again</button>
+  </div>
+</section>

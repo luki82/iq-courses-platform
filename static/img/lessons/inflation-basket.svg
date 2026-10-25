@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Inflation: in year 1, 100 dollars buys 8 items, in year 2 only 6 items, in year 3 only 4 items. When prices go up, each note is worth less.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Inflation: the same money buys less</text>
+<rect x="25" y="60" width="230" height="260" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<text x="140" y="92" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Year 1</text>
+<g transform="translate(140,130) scale(1.2)"><rect x="-26" y="-15" width="52" height="30" rx="4" fill="#9fd08a" stroke="#4f8a3c" stroke-width="2"/><text x="0" y="5" font-size="12" font-weight="800" text-anchor="middle" fill="#2f5e22" >$100</text></g>
+<text x="140" y="170" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >$100 buys</text>
+<g transform="translate(140,245) scale(1.1)"><circle cx="-36" cy="-30" r="12" fill="#B02A37"/><circle cx="-12" cy="-30" r="12" fill="#E08A1E"/><circle cx="12" cy="-30" r="12" fill="#F6C343"/><circle cx="36" cy="-30" r="12" fill="#198754"/><circle cx="-36" cy="-50" r="12" fill="#4A90C2"/><circle cx="-12" cy="-50" r="12" fill="#8a6a43"/><circle cx="12" cy="-50" r="12" fill="#B02A37"/><circle cx="36" cy="-50" r="12" fill="#E08A1E"/><path d="M-56,-24 h112 l-14,56 h-84 z" fill="#c99a5b" stroke="#8a6a43" stroke-width="2"/><path d="M-40,-24 q40,-60 80,0" fill="none" stroke="#8a6a43" stroke-width="4"/><line x1="-42" y1="-20" x2="-34" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="-28" y1="-20" x2="-22" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="-14" y1="-20" x2="-10" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="0" y1="-20" x2="2" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="14" y1="-20" x2="14" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="28" y1="-20" x2="26" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="42" y1="-20" x2="38" y2="28" stroke="#8a6a43" stroke-width="1.2"/></g>
+<text x="140" y="306" font-size="18" font-weight="700" text-anchor="middle" fill="#198754" >8 items</text>
+<line x1="257" y1="190" x2="283" y2="190" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="285" y="60" width="230" height="260" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<text x="400" y="92" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Year 2</text>
+<g transform="translate(400,130) scale(1.2)"><rect x="-26" y="-15" width="52" height="30" rx="4" fill="#9fd08a" stroke="#4f8a3c" stroke-width="2"/><text x="0" y="5" font-size="12" font-weight="800" text-anchor="middle" fill="#2f5e22" >$100</text></g>
+<text x="400" y="170" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >$100 buys</text>
+<g transform="translate(400,245) scale(1.1)"><circle cx="-36" cy="-30" r="12" fill="#B02A37"/><circle cx="-12" cy="-30" r="12" fill="#E08A1E"/><circle cx="12" cy="-30" r="12" fill="#F6C343"/><circle cx="36" cy="-30" r="12" fill="#198754"/><circle cx="-36" cy="-50" r="12" fill="#4A90C2"/><circle cx="-12" cy="-50" r="12" fill="#8a6a43"/><path d="M-56,-24 h112 l-14,56 h-84 z" fill="#c99a5b" stroke="#8a6a43" stroke-width="2"/><path d="M-40,-24 q40,-60 80,0" fill="none" stroke="#8a6a43" stroke-width="4"/><line x1="-42" y1="-20" x2="-34" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="-28" y1="-20" x2="-22" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="-14" y1="-20" x2="-10" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="0" y1="-20" x2="2" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="14" y1="-20" x2="14" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="28" y1="-20" x2="26" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="42" y1="-20" x2="38" y2="28" stroke="#8a6a43" stroke-width="1.2"/></g>
+<text x="400" y="306" font-size="18" font-weight="700" text-anchor="middle" fill="#E08A1E" >6 items</text>
+<line x1="517" y1="190" x2="543" y2="190" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="545" y="60" width="230" height="260" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<text x="660" y="92" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Year 3</text>
+<g transform="translate(660,130) scale(1.2)"><rect x="-26" y="-15" width="52" height="30" rx="4" fill="#9fd08a" stroke="#4f8a3c" stroke-width="2"/><text x="0" y="5" font-size="12" font-weight="800" text-anchor="middle" fill="#2f5e22" >$100</text></g>
+<text x="660" y="170" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >$100 buys</text>
+<g transform="translate(660,245) scale(1.1)"><circle cx="-36" cy="-30" r="12" fill="#B02A37"/><circle cx="-12" cy="-30" r="12" fill="#E08A1E"/><circle cx="12" cy="-30" r="12" fill="#F6C343"/><circle cx="36" cy="-30" r="12" fill="#198754"/><path d="M-56,-24 h112 l-14,56 h-84 z" fill="#c99a5b" stroke="#8a6a43" stroke-width="2"/><path d="M-40,-24 q40,-60 80,0" fill="none" stroke="#8a6a43" stroke-width="4"/><line x1="-42" y1="-20" x2="-34" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="-28" y1="-20" x2="-22" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="-14" y1="-20" x2="-10" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="0" y1="-20" x2="2" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="14" y1="-20" x2="14" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="28" y1="-20" x2="26" y2="28" stroke="#8a6a43" stroke-width="1.2"/><line x1="42" y1="-20" x2="38" y2="28" stroke="#8a6a43" stroke-width="1.2"/></g>
+<text x="660" y="306" font-size="18" font-weight="700" text-anchor="middle" fill="#B02A37" >4 items</text>
+<rect x="25" y="340" width="750" height="95" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/>
+<text x="400" y="375" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Prices go up → each note is worth less</text>
+<text x="400" y="410" font-size="16" font-weight="600" text-anchor="middle" fill="#6B7280" >Inflation rate = (new price − old price) ÷ old price × 100</text>
+</svg>

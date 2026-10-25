@@ -18,7 +18,6 @@ def course_detail(request, slug):
         request.user.is_authenticated
         and Enrollment.objects.filter(user=request.user, course=course).exists()
     )
-    has_premium = request.user.is_authenticated and request.user.profile.has_premium_access
     modules = course.modules.prefetch_related("lessons")
 
     completed_lesson_ids = set()
@@ -36,7 +35,6 @@ def course_detail(request, slug):
             "course": course,
             "modules": modules,
             "is_enrolled": is_enrolled,
-            "has_premium": has_premium,
             "completed_lesson_ids": completed_lesson_ids,
         },
     )
@@ -50,20 +48,14 @@ def enroll(request, course_slug):
     return redirect("courses:course_detail", slug=course.slug)
 
 
-@login_required
 def lesson_detail(request, course_slug, lesson_id):
+    """Lessons are public so anyone (and Google) can read them; accounts just track progress."""
     course = get_object_or_404(Course, slug=course_slug, is_published=True)
     lesson = get_object_or_404(Lesson, id=lesson_id, module__course=course)
 
-    if not Enrollment.objects.filter(user=request.user, course=course).exists():
-        messages.info(request, "Enroll in this course first.")
-        return redirect("courses:course_detail", slug=course.slug)
-
-    if not lesson.is_free and not request.user.profile.has_premium_access:
-        messages.info(request, "This lesson is part of Premium. Upgrade to keep going.")
-        return redirect("billing:pricing")
-
-    progress, _ = LessonProgress.objects.get_or_create(user=request.user, lesson=lesson)
+    progress = None
+    if request.user.is_authenticated:
+        progress = LessonProgress.objects.filter(user=request.user, lesson=lesson).first()
 
     return render(
         request,
@@ -82,9 +74,7 @@ def mark_complete(request, course_slug, lesson_id):
     course = get_object_or_404(Course, slug=course_slug, is_published=True)
     lesson = get_object_or_404(Lesson, id=lesson_id, module__course=course)
 
-    if not lesson.is_free and not request.user.profile.has_premium_access:
-        return redirect("billing:pricing")
-
+    Enrollment.objects.get_or_create(user=request.user, course=course)
     progress, _ = LessonProgress.objects.get_or_create(user=request.user, lesson=lesson)
     progress.completed = True
     progress.completed_at = timezone.now()

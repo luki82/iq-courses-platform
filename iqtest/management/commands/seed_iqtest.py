@@ -19,8 +19,8 @@ class Command(BaseCommand):
             slug="numerical-advanced",
             defaults={
                 "name": "Advanced Numerical",
-                "description": "Harder numerical reasoning -- Premium category.",
-                "is_premium": True,
+                "description": "Harder numerical reasoning.",
+                "is_premium": False,
             },
         )
 

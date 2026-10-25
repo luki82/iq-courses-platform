@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Thermometer: 0 °C is 32 °F, 20 °C is 68 °F, 37 °C is 98.6 °F, 100 °C is 212 °F. Fahrenheit equals Celsius times 1.8 plus 32; Celsius equals Fahrenheit minus 32, divided by 1.8</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="36" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >Celsius and Fahrenheit</text>
+<rect x="378" y="60" width="44" height="330" rx="22" fill="#fff" stroke="#16301F" stroke-width="4"/>
+<rect x="390" y="258.5833333333333" width="20" height="131.41666666666669" fill="#B02A37"/>
+<circle cx="400" cy="410" r="32" fill="#B02A37" stroke="#16301F" stroke-width="4"/>
+<line x1="360" y1="95.83333333333337" x2="440" y2="95.83333333333337" stroke="#1F2A22" stroke-width="2"/>
+<text x="348" y="103.83333333333337" font-size="24" font-weight="700" text-anchor="end" fill="#1F2A22" >100 °C</text>
+<text x="452" y="103.83333333333337" font-size="24" font-weight="700" text-anchor="start" fill="#E08A1E" >212 °F</text>
+<text x="240" y="103.83333333333337" font-size="15" font-weight="400" text-anchor="end" fill="#6B7280" >water boils</text>
+<line x1="360" y1="258.5833333333333" x2="440" y2="258.5833333333333" stroke="#1F2A22" stroke-width="2"/>
+<text x="348" y="266.5833333333333" font-size="24" font-weight="700" text-anchor="end" fill="#1F2A22" >37 °C</text>
+<text x="452" y="266.5833333333333" font-size="24" font-weight="700" text-anchor="start" fill="#E08A1E" >98.6 °F</text>
+<text x="575" y="266.5833333333333" font-size="15" font-weight="400" text-anchor="start" fill="#6B7280" >body temperature</text>
+<line x1="360" y1="302.5" x2="440" y2="302.5" stroke="#1F2A22" stroke-width="2"/>
+<text x="348" y="310.5" font-size="24" font-weight="700" text-anchor="end" fill="#1F2A22" >20 °C</text>
+<text x="452" y="310.5" font-size="24" font-weight="700" text-anchor="start" fill="#E08A1E" >68 °F</text>
+<text x="575" y="310.5" font-size="15" font-weight="400" text-anchor="start" fill="#6B7280" >room</text>
+<line x1="360" y1="354.1666666666667" x2="440" y2="354.1666666666667" stroke="#1F2A22" stroke-width="2"/>
+<text x="348" y="362.1666666666667" font-size="24" font-weight="700" text-anchor="end" fill="#1F2A22" >0 °C</text>
+<text x="452" y="362.1666666666667" font-size="24" font-weight="700" text-anchor="start" fill="#E08A1E" >32 °F</text>
+<text x="240" y="362.1666666666667" font-size="15" font-weight="400" text-anchor="end" fill="#6B7280" >water freezes</text>
+<rect x="20" y="395" width="300" height="48" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><text x="170" y="426" font-size="19" font-weight="700" text-anchor="middle" fill="#1F2A22" >°F = °C × 1.8 + 32</text>
+<rect x="480" y="395" width="300" height="48" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><text x="630" y="426" font-size="19" font-weight="700" text-anchor="middle" fill="#1F2A22" >°C = (°F − 32) ÷ 1.8</text>
+</svg>

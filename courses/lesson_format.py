@@ -18,13 +18,29 @@ commands), for example:
 
     ANSWERS: 1. is
 
+    QUIZ: Check Your Understanding
+    Q: A $80 jacket is 25% off. What do you pay?
+    - $55
+    * $60
+    - $75
+    Explanation: 25% of $80 is $20, and $80 - $20 = $60.
+
 parse_lesson() reads that layout and returns a list of blocks. A PRACTICE
 section whose numbered items each have one blank (___), with a matching
 numbered ANSWERS line, becomes an interactive drag-and-drop exercise; any
 other practice is shown as text with the answers hidden behind a button.
+A DIAGRAM section shows a picture from static/img/lessons/, for example
+"DIAGRAM: mosquito-life-cycle" shows mosquito-life-cycle.svg. The lines under
+it are the caption, which is also the picture's alt text and can be read
+aloud, so learners who struggle with reading still get the idea.
+A QUIZ section becomes an interactive multiple-choice quiz: each question
+starts with "Q:", options start with "- " (wrong) or "* " (correct, exactly
+one per question), and an optional "Explanation:" line is shown after the
+learner answers.
 Content that doesn't follow the layout still displays, as plain paragraphs.
 """
 
+import json
 import random
 import re
 from dataclasses import dataclass, field
@@ -45,6 +61,10 @@ SPEAKER_RE = re.compile(r"^([A-Z][A-Za-z']*(?: [A-Za-z']+){0,2}):\s+(.+)$")
 TRAILING_NOTE_RE = re.compile(r"\s*\([^)]*\)\s*$")
 
 DIALOGUE_SECTIONS = ("DIALOGUE", "CONVERSATION", "ROLE PLAY", "ROLE-PLAY")
+QUIZ_SECTIONS = ("QUIZ", "CHECK YOUR UNDERSTANDING")
+QUIZ_DEFAULT_TITLE = "Check Your Understanding"
+DIAGRAM_DIR = "img/lessons/"
+DIAGRAM_NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 ANSWER_SECTIONS = ("ANSWERS", "ANSWER", "SAMPLE ANSWERS", "SAMPLE ANSWER")
 
 
@@ -174,6 +194,45 @@ def _build_exercise(practice: Section, answers: Section | None, seed: str):
     }
 
 
+def _build_quiz(section: Section):
+    """Return a quiz block, or None if the section has no valid questions."""
+    questions = []
+    for line in section.lines:
+        if not line:
+            continue
+        if line.startswith("Q:"):
+            questions.append({"text": line[2:].strip(), "options": [], "explanation": "", "correct": 0})
+        elif not questions:
+            continue
+        elif line[:2] in ("- ", "* "):
+            questions[-1]["options"].append(line[2:].strip())
+            if line.startswith("*"):
+                questions[-1]["answer"] = len(questions[-1]["options"]) - 1
+                questions[-1]["correct"] += 1
+        elif line.lower().startswith("explanation:"):
+            questions[-1]["explanation"] = line.split(":", 1)[1].strip()
+        elif questions[-1]["explanation"]:
+            questions[-1]["explanation"] += " " + line  # a wrapped explanation line
+        else:
+            questions[-1]["text"] += " " + line  # a wrapped question line
+
+    # Every question needs at least two options and exactly one correct one;
+    # otherwise the section is shown as plain text so the mistake is visible.
+    if not questions or any(len(q["options"]) < 2 or q.pop("correct") != 1 for q in questions):
+        return None
+    valid = questions
+    for number, question in enumerate(valid, start=1):
+        question["number"] = number
+        question["index"] = number - 1
+    return {
+        "type": "quiz",
+        "title": section.subtitle or QUIZ_DEFAULT_TITLE,
+        "questions": valid,
+        "answers_json": json.dumps([q["answer"] for q in valid]),
+        "total": len(valid),
+    }
+
+
 def parse_lesson(content: str, seed: str = "") -> list:
     blocks = []
     sections = _sections(content or "")
@@ -206,6 +265,23 @@ def parse_lesson(content: str, seed: str = "") -> list:
                 index += 1
             index += 1
             continue
+
+        if base == "DIAGRAM" and DIAGRAM_NAME_RE.match(section.subtitle):
+            blocks.append({
+                "type": "diagram",
+                "name": section.subtitle,
+                "src": f"{DIAGRAM_DIR}{section.subtitle}.svg",
+                "caption": " ".join(line for line in section.lines if line),
+            })
+            index += 1
+            continue
+
+        if base in QUIZ_SECTIONS:
+            quiz = _build_quiz(section)
+            if quiz:
+                blocks.append(quiz)
+                index += 1
+                continue
 
         if section.title:
             blocks.append({"type": "heading", "title": section.title, "subtitle": section.subtitle})

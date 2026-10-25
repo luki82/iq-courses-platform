@@ -14,9 +14,7 @@
         Time taken: {{ attempt.time_taken_display }}{% if attempt.category.time_limit_minutes %} of {{ attempt.category.time_limit_minutes }}:00{% endif %}
       </p>
     {% endif %}
-    {% if attempt.detail_unlocked %}
-      <p class="fs-4">Estimated IQ score: <strong>{{ attempt.iq_score }}</strong></p>
-    {% endif %}
+    <p class="fs-4">Estimated IQ score: <strong>{{ attempt.iq_score }}</strong></p>
   </div>
 </div>
 
@@ -30,8 +28,7 @@
 </div>
 {% endif %}
 
-{% if attempt.detail_unlocked %}
-  <h3>Answer breakdown</h3>
+<h3>Answer breakdown</h3>
   {% for answer in answers %}
   <div class="card mb-2">
     <div class="card-body">
@@ -55,15 +52,18 @@
     </div>
   </div>
   {% endfor %}
-{% else %}
-  <div class="card border-warning">
-    <div class="card-body text-center">
-      <h3>Unlock your full breakdown</h3>
-      <p>Upgrade to Premium to see your estimated IQ score, correct answers, and explanations for every question.</p>
-      <a href="{% url 'billing:pricing' %}" class="btn btn-warning">See Premium plans</a>
-    </div>
+
+<div class="d-flex flex-wrap gap-2 mt-4">
+  <a href="{% url 'iqtest:take_test' attempt.category.slug %}" class="btn btn-primary">Try again</a>
+  <a href="{% url 'iqtest:test_list' %}" class="btn btn-outline-primary">More tests</a>
+</div>
+
+<div class="card bg-light border-0 mt-4">
+  <div class="card-body">
+    <p class="mb-2">iQ is free and kept online by donations. If you enjoyed the test, please consider chipping in.</p>
+    <a href="{% url 'billing:donate' %}" class="btn btn-sm btn-outline-primary">&hearts; Donate</a>
   </div>
-{% endif %}
+</div>
 
 <p class="text-muted small mt-4">
   This is a simplified self-assessment for entertainment and skill-practice purposes,

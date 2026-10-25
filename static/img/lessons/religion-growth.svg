@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">In sub-Saharan Africa there were about 7 million Christians and 11 million Muslims in 1900, when most people followed traditional religions. By 2010 there were about 470 million Christians and 234 million Muslims.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Sub-Saharan Africa: Christians and Muslims</text>
+<text x="400" y="56" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >number of people, in millions (Pew Research Center)</text>
+<rect x="123" y="375.8" width="64" height="4.2" rx="6" fill="#6b4c9a"/>
+<text x="155" y="365.8" font-size="18" font-weight="800" text-anchor="middle" fill="#6b4c9a" >7m</text>
+<rect x="213" y="373.4" width="64" height="6.6" rx="6" fill="#198754"/>
+<text x="245" y="363.4" font-size="18" font-weight="800" text-anchor="middle" fill="#198754" >11m</text>
+<text x="200" y="410" font-size="22" font-weight="800" text-anchor="middle" fill="#1F2A22" >1900</text>
+<rect x="423" y="98.0" width="64" height="282.0" rx="6" fill="#6b4c9a"/>
+<text x="455" y="88.0" font-size="18" font-weight="800" text-anchor="middle" fill="#6b4c9a" >470m</text>
+<rect x="513" y="239.6" width="64" height="140.4" rx="6" fill="#198754"/>
+<text x="545" y="229.6" font-size="18" font-weight="800" text-anchor="middle" fill="#198754" >234m</text>
+<text x="500" y="410" font-size="22" font-weight="800" text-anchor="middle" fill="#1F2A22" >2010</text>
+<line x1="80" y1="380" x2="620" y2="380" stroke="#1F2A22" stroke-width="2"/>
+<circle cx="640" cy="120" r="8" fill="#6b4c9a"/><text x="655" y="125" font-size="15" font-weight="700" text-anchor="start" fill="#1F2A22" >Christians</text>
+<circle cx="640" cy="148" r="8" fill="#198754"/><text x="655" y="153" font-size="15" font-weight="700" text-anchor="start" fill="#1F2A22" >Muslims</text>
+<rect x="630" y="190" width="160" height="150" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><text x="710" y="220.0" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >In 1900, most</text><text x="710" y="238.75" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >people followed</text><text x="710" y="257.5" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >traditional</text><text x="710" y="276.25" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >religions</text>
+</svg>

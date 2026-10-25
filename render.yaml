@@ -23,8 +23,14 @@ services:
         fromDatabase:
           name: iq-courses-db
           property: connectionString
-      - key: FREE_TEST_ATTEMPTS_LIMIT
-        value: "1"
+      - key: GOOGLE_SITE_VERIFICATION
+        sync: false
+      - key: CONTACT_EMAIL
+        sync: false
+      - key: ADSENSE_CLIENT_ID
+        sync: false
+      - key: DONATIONS_ENABLED
+        value: "True"
       - key: STRIPE_PUBLIC_KEY
         sync: false
       - key: STRIPE_SECRET_KEY

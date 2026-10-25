@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Breeding sites and fixes: empty buckets, cover drums, fill puddles and tyres with soil, every week</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="34" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Find standing water → fix it every week</text>
+<rect x="20" y="60" width="370" height="175" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<rect x="30" y="70" width="150" height="120" rx="10" fill="#F8D7DA"/>
+<rect x="230" y="70" width="150" height="120" rx="10" fill="#D1E7DD"/>
+<g transform="translate(105,135)"><g transform="translate(0,10) scale(1)"><path d="M-28,-28 L-22,20 H22 L28,-28 Z" fill="#9fb3c8" stroke="#55708a" stroke-width="2"/><ellipse cx="0" cy="-26" rx="24" ry="5" fill="#4A90C2"/>
+<path d="M-28,-28 q28,-28 56,0" fill="none" stroke="#55708a" stroke-width="2"/></g></g>
+<g transform="translate(305,135)"><g transform="translate(0,0) scale(1) rotate(180)"><path d="M-28,-28 L-22,20 H22 L28,-28 Z" fill="#9fb3c8" stroke="#55708a" stroke-width="2"/>
+<path d="M-28,-28 q28,-28 56,0" fill="none" stroke="#55708a" stroke-width="2"/></g></g>
+<g transform="translate(50,90) scale(0.8)"><circle r="16" fill="#B02A37"/><path d="M-6,-6 L6,6 M6,-6 L-6,6" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g><g transform="translate(250,90) scale(0.8)"><circle r="16" fill="#198754"/><path d="M-7,0 L-2,6 L8,-6" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<line x1="186" y1="130" x2="222" y2="130" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="105" y="215" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >Bucket with water</text><text x="305" y="215" font-size="15" font-weight="600" text-anchor="middle" fill="#198754" >Empty and turn over</text>
+<rect x="410" y="60" width="370" height="175" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<rect x="420" y="70" width="150" height="120" rx="10" fill="#F8D7DA"/>
+<rect x="620" y="70" width="150" height="120" rx="10" fill="#D1E7DD"/>
+<g transform="translate(495,135)"><g transform="translate(0,8) scale(0.9)"><rect x="-28" y="-36" width="56" height="62" rx="6" fill="#d9822b" stroke="#8a4f14" stroke-width="2"/>
+<line x1="-28" y1="-14" x2="28" y2="-14" stroke="#8a4f14" stroke-width="2"/><line x1="-28" y1="8" x2="28" y2="8" stroke="#8a4f14" stroke-width="2"/><ellipse cx="0" cy="-36" rx="28" ry="7" fill="#4A90C2" stroke="#55708a" stroke-width="2"/></g></g>
+<g transform="translate(695,135)"><g transform="translate(0,10) scale(0.9)"><rect x="-28" y="-36" width="56" height="62" rx="6" fill="#d9822b" stroke="#8a4f14" stroke-width="2"/>
+<line x1="-28" y1="-14" x2="28" y2="-14" stroke="#8a4f14" stroke-width="2"/><line x1="-28" y1="8" x2="28" y2="8" stroke="#8a4f14" stroke-width="2"/><rect x="-30" y="-46" width="60" height="10" rx="3" fill="#16301F"/></g></g>
+<g transform="translate(440,90) scale(0.8)"><circle r="16" fill="#B02A37"/><path d="M-6,-6 L6,6 M6,-6 L-6,6" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g><g transform="translate(640,90) scale(0.8)"><circle r="16" fill="#198754"/><path d="M-7,0 L-2,6 L8,-6" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<line x1="576" y1="130" x2="612" y2="130" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="495" y="215" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >Open water drum</text><text x="695" y="215" font-size="15" font-weight="600" text-anchor="middle" fill="#198754" >Cover with a lid</text>
+<rect x="20" y="250" width="370" height="175" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<rect x="30" y="260" width="150" height="120" rx="10" fill="#F8D7DA"/>
+<rect x="230" y="260" width="150" height="120" rx="10" fill="#D1E7DD"/>
+<g transform="translate(105,325)"><g transform="translate(0,0) scale(1.3)"><path d="M-40,0 q10,-14 30,-10 q20,-10 34,2 q16,6 6,14 q-30,10 -62,4 q-16,-2 -8,-10z" fill="#4A90C2" opacity="0.9"/></g></g>
+<g transform="translate(305,325)"><g transform="translate(0,0) scale(1.3)"><path d="M-40,0 q10,-14 30,-10 q20,-10 34,2 q16,6 6,14 q-30,10 -62,4 q-16,-2 -8,-10z" fill="#a3784b" opacity="0.9"/></g></g>
+<g transform="translate(50,280) scale(0.8)"><circle r="16" fill="#B02A37"/><path d="M-6,-6 L6,6 M6,-6 L-6,6" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g><g transform="translate(250,280) scale(0.8)"><circle r="16" fill="#198754"/><path d="M-7,0 L-2,6 L8,-6" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<line x1="186" y1="320" x2="222" y2="320" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="105" y="405" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >Puddle or hoof print</text><text x="305" y="405" font-size="15" font-weight="600" text-anchor="middle" fill="#198754" >Fill with soil</text>
+<rect x="410" y="250" width="370" height="175" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<rect x="420" y="260" width="150" height="120" rx="10" fill="#F8D7DA"/>
+<rect x="620" y="260" width="150" height="120" rx="10" fill="#D1E7DD"/>
+<g transform="translate(495,325)"><g transform="translate(0,0) scale(1.2)"><ellipse cx="0" cy="0" rx="34" ry="16" fill="#333"/><ellipse cx="0" cy="-2" rx="18" ry="7" fill="#4A90C2"/></g></g>
+<g transform="translate(695,325)"><g transform="translate(0,0) scale(1.2)"><ellipse cx="0" cy="0" rx="34" ry="16" fill="#333"/><ellipse cx="0" cy="-2" rx="18" ry="7" fill="#8a6a43"/></g></g>
+<g transform="translate(440,280) scale(0.8)"><circle r="16" fill="#B02A37"/><path d="M-6,-6 L6,6 M6,-6 L-6,6" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g><g transform="translate(640,280) scale(0.8)"><circle r="16" fill="#198754"/><path d="M-7,0 L-2,6 L8,-6" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<line x1="576" y1="320" x2="612" y2="320" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="495" y="405" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >Old tyre</text><text x="695" y="405" font-size="15" font-weight="600" text-anchor="middle" fill="#198754" >Fill with soil or cover</text>
+</svg>

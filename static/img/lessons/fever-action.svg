@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Fever: get tested today. If positive, take all the medicine. Danger signs such as fits, very sleepy, hard to breathe, cannot drink or dark urine mean go to a health facility now</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="34" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Fever? Act fast</text>
+<rect x="30" y="70" width="190" height="110" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><g transform="translate(80,165) scale(0.75)"><circle cx="0" cy="-58" r="14" fill="#8d5524"/>
+  <path d="M-20,-38 q20,-10 40,0 l6,40 h-52 z" fill="#E08A1E"/>
+  <rect x="-16" y="2" width="12" height="34" rx="5" fill="#3b3b3b"/>
+  <rect x="4" y="2" width="12" height="34" rx="5" fill="#3b3b3b"/><path d="M14,-62 q6,-8 0,-16 M20,-60 q8,-10 0,-20" stroke="#B02A37" stroke-width="2.5" fill="none"/></g><text x="160" y="120.0" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Fever</text><text x="160" y="150" font-size="13" font-weight="400" text-anchor="middle" fill="#6B7280" >chills, headache</text>
+<line x1="222" y1="125" x2="268" y2="125" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="270" y="70" width="230" height="110" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><g transform="translate(320,125)"><path d="M-10,20 q0,-30 10,-40 q10,10 10,40 a10,10 0 0 1 -20,0z" fill="#e0b48a"/><circle cx="0" cy="-26" r="5" fill="#B02A37"/></g><text x="420" y="118.0" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Test TODAY</text><text x="420" y="146" font-size="14" font-weight="400" text-anchor="middle" fill="#6B7280" >finger-prick test</text>
+<line x1="502" y1="125" x2="548" y2="125" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="550" y="70" width="220" height="110" rx="14" fill="#D1E7DD" stroke="#198754" stroke-width="2"/><text x="660" y="108.0" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Positive?</text><text x="660" y="136" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >Take ALL the medicine,</text><text x="660" y="156" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >even if you feel better</text>
+<rect x="588" y="166" width="20" height="10" rx="2" fill="#198754"/><rect x="616" y="166" width="20" height="10" rx="2" fill="#198754"/><rect x="644" y="166" width="20" height="10" rx="2" fill="#198754"/><rect x="672" y="166" width="20" height="10" rx="2" fill="#198754"/><rect x="700" y="166" width="20" height="10" rx="2" fill="#198754"/>
+<rect x="30" y="230" width="740" height="190" rx="14" fill="#F8D7DA" stroke="#B02A37" stroke-width="2"/>
+<text x="400" y="266" font-size="20" font-weight="700" text-anchor="middle" fill="#B02A37" >DANGER SIGNS: go to a health facility NOW</text>
+<circle cx="105" cy="320" r="32" fill="#fff" stroke="#B02A37" stroke-width="3"/>
+<path transform="translate(105,320)" d="M-14,-10 l8,8 l-8,8 l8,8" fill="none" stroke="#B02A37" stroke-width="4" stroke-linecap="round"/>
+<text x="105" y="375.0" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >fits /</text><text x="105" y="392.5" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >convulsions</text>
+<circle cx="253" cy="320" r="32" fill="#fff" stroke="#B02A37" stroke-width="3"/>
+<path transform="translate(253,320)" d="M-14,0 h28" fill="none" stroke="#B02A37" stroke-width="4" stroke-linecap="round"/>
+<text x="253" y="375.0" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >very sleepy,</text><text x="253" y="392.5" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >can&#x27;t wake</text>
+<circle cx="401" cy="320" r="32" fill="#fff" stroke="#B02A37" stroke-width="3"/>
+<path transform="translate(401,320)" d="M-14,0 q7,-12 14,0 t14,0" fill="none" stroke="#B02A37" stroke-width="4" stroke-linecap="round"/>
+<text x="401" y="375.0" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >hard to</text><text x="401" y="392.5" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >breathe</text>
+<circle cx="549" cy="320" r="32" fill="#fff" stroke="#B02A37" stroke-width="3"/>
+<path transform="translate(549,320)" d="M-10,-14 v28 M10,-14 v28" fill="none" stroke="#B02A37" stroke-width="4" stroke-linecap="round"/>
+<text x="549" y="375.0" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >can&#x27;t drink</text><text x="549" y="392.5" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >or feed</text>
+<circle cx="697" cy="320" r="32" fill="#fff" stroke="#B02A37" stroke-width="3"/>
+<path transform="translate(697,320)" d="M-12,0 a12,8 0 1 0 24,0 a12,8 0 1 0 -24,0" fill="none" stroke="#B02A37" stroke-width="4" stroke-linecap="round"/>
+<text x="697" y="375.0" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >dark urine /</text><text x="697" y="392.5" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >yellow eyes</text>
+</svg>

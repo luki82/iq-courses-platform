@@ -4,7 +4,7 @@ Seed the "English for School Students" course.
 Run with:  python manage.py seed_school_english
 
 Safe to run more than once (updates instead of duplicating).
-Module 1 is a free preview; the other modules require Premium.
+Every module is free.
 """
 from django.core.management.base import BaseCommand
 
@@ -556,7 +556,7 @@ MODULES = [
 
 
 class Command(BaseCommand):
-    help = "Creates or updates the 'English for School Students' course (module 1 free, the rest Premium)."
+    help = "Creates or updates the 'English for School Students' course (all modules free)."
 
     def handle(self, *args, **options):
         course, created, lessons = seed_course(COURSE, MODULES)

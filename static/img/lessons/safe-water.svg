@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Three ways to make water safe: boil for one minute, add chlorine and wait 30 minutes, or leave clear bottles in full sun for 6 hours. Store covered.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="34" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >3 ways to make drinking water safe</text>
+<rect x="20" y="60" width="245" height="330" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><circle cx="46" cy="86" r="16" fill="#16301F"/><text x="46" y="92" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >1</text>
+<g transform="translate(142,230)"><path d="M-60,-30 h120 v60 a20,20 0 0 1 -20,20 h-80 a20,20 0 0 1 -20,-20z" fill="#7d8790"/><rect x="-70" y="-38" width="140" height="10" rx="4" fill="#5d666e"/><circle cx="-30" cy="-48" r="5" fill="none" stroke="#4A90C2" stroke-width="2.5"/><circle cx="-10" cy="-60" r="7" fill="none" stroke="#4A90C2" stroke-width="2.5"/><circle cx="10" cy="-48" r="5" fill="none" stroke="#4A90C2" stroke-width="2.5"/><circle cx="30" cy="-60" r="7" fill="none" stroke="#4A90C2" stroke-width="2.5"/><path d="M-50,60 q10,-20 0,-30 M0,64 q12,-24 0,-36 M50,60 q10,-20 0,-30" transform="translate(0,26)" stroke="#E08A1E" stroke-width="5" fill="none"/></g>
+<text x="142" y="135" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >Boil</text><text x="142" y="345" font-size="16" font-weight="400" text-anchor="middle" fill="#1F2A22" >rolling boil</text><text x="142" y="372" font-size="22" font-weight="700" text-anchor="middle" fill="#198754" >1 minute</text>
+<rect x="278" y="60" width="245" height="330" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><circle cx="304" cy="86" r="16" fill="#16301F"/><text x="304" y="92" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >2</text>
+<g transform="translate(400,250)"><rect x="-34" y="-50" width="68" height="100" rx="12" fill="#4A90C2" opacity="0.35" stroke="#55708a" stroke-width="2"/><rect x="-14" y="-66" width="28" height="18" rx="4" fill="#55708a"/></g>
+<path transform="translate(400,170) scale(1.2)" d="M0,-18 C8,-6 12,0 12,6 A12,12 0 0 1 -12,6 C-12,0 -8,-6 0,-18Z" fill="#198754"/><path transform="translate(430,190) scale(0.9)" d="M0,-18 C8,-6 12,0 12,6 A12,12 0 0 1 -12,6 C-12,0 -8,-6 0,-18Z" fill="#198754"/>
+<text x="400" y="135" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >Chlorine</text><text x="400" y="345" font-size="16" font-weight="400" text-anchor="middle" fill="#1F2A22" >follow the packet, wait</text><text x="400" y="372" font-size="22" font-weight="700" text-anchor="middle" fill="#198754" >30 minutes</text>
+<rect x="536" y="60" width="245" height="330" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><circle cx="562" cy="86" r="16" fill="#16301F"/><text x="562" y="92" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >3</text>
+<circle cx="720" cy="190" r="18" fill="#F6C343"/><line x1="744.0" y1="190.0" x2="754.0" y2="190.0" stroke="#E08A1E" stroke-width="4" stroke-linecap="round"/><line x1="736.9705627484772" y1="206.97056274847714" x2="744.0416305603426" y2="214.0416305603426" stroke="#E08A1E" stroke-width="4" stroke-linecap="round"/><line x1="720.0" y1="214.0" x2="720.0" y2="224.0" stroke="#E08A1E" stroke-width="4" stroke-linecap="round"/><line x1="703.0294372515228" y1="206.97056274847714" x2="695.9583694396574" y2="214.0416305603426" stroke="#E08A1E" stroke-width="4" stroke-linecap="round"/><line x1="696.0" y1="190.0" x2="686.0" y2="190.0" stroke="#E08A1E" stroke-width="4" stroke-linecap="round"/><line x1="703.0294372515228" y1="173.02943725152286" x2="695.9583694396574" y2="165.9583694396574" stroke="#E08A1E" stroke-width="4" stroke-linecap="round"/><line x1="720.0" y1="166.0" x2="720.0" y2="156.0" stroke="#E08A1E" stroke-width="4" stroke-linecap="round"/><line x1="736.9705627484772" y1="173.02943725152286" x2="744.0416305603426" y2="165.9583694396574" stroke="#E08A1E" stroke-width="4" stroke-linecap="round"/>
+<g transform="translate(640,270) rotate(-90)"><rect x="-26" y="-60" width="52" height="120" rx="14" fill="#cfe7f7" stroke="#55708a" stroke-width="2"/><rect x="-10" y="-74" width="20" height="16" rx="3" fill="#55708a"/></g>
+<text x="658" y="135" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >Sunlight</text><text x="658" y="345" font-size="16" font-weight="400" text-anchor="middle" fill="#1F2A22" >clear bottle, full sun</text><text x="658" y="372" font-size="22" font-weight="700" text-anchor="middle" fill="#198754" >6 hours</text>
+<text x="400" y="425" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2A22" >Then store it covered, with a lid</text>
+</svg>

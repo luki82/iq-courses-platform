@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Terms of use{% endblock %}
+{% block meta_description %}The terms for using iQ (lorrank.com): free courses, IQ tests, user accounts, donations and acceptable use.{% endblock %}
+
+{% block content %}
+<div class="mx-auto" style="max-width: 760px;">
+  <h1 class="mb-1">Terms of use</h1>
+  <p class="text-muted">Last updated: 25 October 2026</p>
+
+  <p>
+    These terms apply to everyone who uses iQ at lorrank.com ("the site", "we", "us").
+    By using the site, you agree to them. If you don't agree, please don't use the site.
+  </p>
+
+  <h2 class="h5 mt-4">Using the site</h2>
+  <ul>
+    <li>The courses, lessons and IQ tests are free for personal, educational use.</li>
+    <li>You may share links to any page. Please don't copy whole lessons, diagrams or tests to publish elsewhere without our permission.</li>
+    <li>Don't misuse the site: no attempts to break it, overload it, collect other users' data, or send spam through the contact form.</li>
+  </ul>
+
+  <h2 class="h5 mt-4">Accounts</h2>
+  <ul>
+    <li>You don't need an account to read lessons or take the IQ test. An account lets you track your progress.</li>
+    <li>Keep your password private. You're responsible for activity on your account.</li>
+    <li>We may suspend accounts that break these terms.</li>
+  </ul>
+
+  <h2 class="h5 mt-4">Educational content, not professional advice</h2>
+  <ul>
+    <li>Our lessons are general educational information. We work hard to keep them accurate, but we can't guarantee they are complete or up to date.</li>
+    <li>Health lessons are not medical advice. If someone is sick, see a health worker.</li>
+    <li>Money and economics lessons are not financial advice. Decisions about your money are your own.</li>
+    <li>The iQ test is a self-assessment for practice and interest. It is not a clinically validated IQ test.</li>
+  </ul>
+
+  <h2 class="h5 mt-4">Donations</h2>
+  <ul>
+    <li>Donations are voluntary, one-off payments processed by Stripe. They help pay for running the site and don't buy any extra access or services.</li>
+    <li>If you donated by mistake, contact us within 14 days and we'll do our best to arrange a refund.</li>
+  </ul>
+
+  <h2 class="h5 mt-4">Advertising and links</h2>
+  <p>
+    The site may show advertising, including ads from Google, to help keep it free. We are
+    not responsible for the content of ads or of other websites we link to. How advertising
+    uses cookies is explained in our <a href="{% url 'core:privacy' %}">privacy policy</a>.
+  </p>
+
+  <h2 class="h5 mt-4">Our liability</h2>
+  <p>
+    The site is provided "as is". To the extent allowed by law, we are not liable for any
+    loss arising from using the site or relying on its content. Nothing in these terms
+    limits any rights you have under consumer law that can't be excluded.
+  </p>
+
+  <h2 class="h5 mt-4">Changes</h2>
+  <p>We may update these terms. The date at the top shows when they last changed.</p>
+
+  <h2 class="h5 mt-4">Contact</h2>
+  <p>Questions about these terms? <a href="{% url 'core:contact' %}">Contact us</a>.</p>
+</div>
+{% endblock %}
