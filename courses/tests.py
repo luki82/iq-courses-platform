@@ -112,7 +112,7 @@ class ParseLessonTests(TestCase):
         self.assertEqual(blocks, [{"type": "para", "items": ["Just some notes.", "Another line."]}])
 
     def test_every_seeded_english_lesson_parses(self):
-        for command in ("seed_english_esl", "seed_workplace_english", "seed_school_english", "seed_practical_maths"):
+        for command in ("seed_english_esl", "seed_workplace_english", "seed_school_english", "seed_practical_maths", "seed_science_health"):
             call_command(command, stdout=open("/dev/null", "w"))
         exercises = 0
         for lesson in Lesson.objects.all():
@@ -195,3 +195,17 @@ class LessonPageTests(TestCase):
             response = self.client.get(reverse("courses:lesson_detail", args=["practical-maths", lesson.id]))
             self.assertContains(response, "Check Your Understanding")
             self.assertContains(response, 'data-exercise')
+
+    def test_science_health_lessons_have_practice_and_quiz(self):
+        call_command("seed_science_health", stdout=open("/dev/null", "w"))
+        lessons = Lesson.objects.filter(module__course__slug="science-and-health")
+        self.assertGreaterEqual(lessons.count(), 4)
+        for lesson in lessons:
+            blocks = parse_lesson(lesson.content, seed=lesson.slug)
+            self.assertIn("exercise", types(blocks), lesson.slug)
+            quiz = next(b for b in blocks if b["type"] == "quiz")
+            self.assertGreaterEqual(quiz["total"], 3, lesson.slug)
+            self.assertTrue(all(q["explanation"] for q in quiz["questions"]), lesson.slug)
+        lesson = lessons.get(slug="typhoid-prevention-safe-water-and-food")
+        response = self.client.get(reverse("courses:lesson_detail", args=["science-and-health", lesson.id]))
+        self.assertContains(response, "Check Your Understanding")
