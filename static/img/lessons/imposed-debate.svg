@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Were Christianity and Islam imposed on Africa? Signs of imposition: conquest and colonial rule, mission schools as the only route to jobs, bans on traditional rituals, and Islamisation policies such as Sudan&#x27;s 1983 sharia laws. Signs of African choice: ancient African churches in Egypt, Ethiopia and Nubia, Islam spreading through trade, and most growth coming after independence, led by Africans. Historians find evidence for both sides.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Were Christianity and Islam imposed on Africa?</text>
+<polygon points="400,330 375,380 425,380" fill="#1F2A22"/>
+<line x1="400" y1="90" x2="400" y2="330" stroke="#1F2A22" stroke-width="5"/>
+<line x1="170" y1="100" x2="630" y2="100" stroke="#1F2A22" stroke-width="5"/>
+<line x1="170" y1="100" x2="110" y2="150" stroke="#6B7280" stroke-width="2"/><line x1="170" y1="100" x2="230" y2="150" stroke="#6B7280" stroke-width="2"/>
+<line x1="630" y1="100" x2="570" y2="150" stroke="#6B7280" stroke-width="2"/><line x1="630" y1="100" x2="690" y2="150" stroke="#6B7280" stroke-width="2"/>
+<rect x="30" y="150" width="290" height="230" rx="14" fill="#F8D7DA" stroke="#B02A37" stroke-width="2"/><text x="175" y="180" font-size="18" font-weight="800" text-anchor="middle" fill="#B02A37" >Signs of imposition</text>
+<rect x="480" y="150" width="290" height="230" rx="14" fill="#D1E7DD" stroke="#198754" stroke-width="2"/><text x="625" y="180" font-size="18" font-weight="800" text-anchor="middle" fill="#198754" >Signs of African choice</text>
+<text x="48" y="212" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >Conquest and colonial rule</text><text x="48" y="239" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >Mission schools: the only</text><text x="48" y="266" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >  way to jobs and education</text><text x="48" y="293" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >Bans on traditional rituals</text><text x="48" y="320" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >Islamisation policies, e.g.</text><text x="48" y="347" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >  Sudan&#x27;s 1983 sharia laws</text>
+<text x="498" y="212" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >Ancient African churches:</text><text x="498" y="239" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >  Egypt, Ethiopia, Nubia</text><text x="498" y="266" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >Islam spread by trade and</text><text x="498" y="293" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >  rulers&#x27; own choice</text><text x="498" y="320" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >Most growth came after</text><text x="498" y="347" font-size="14" font-weight="600" text-anchor="start" fill="#1F2A22" >  independence, led by Africans</text>
+<rect x="200" y="395" width="400" height="46" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><text x="400" y="424" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2A22" >Historians find evidence for both sides.</text>
+</svg>

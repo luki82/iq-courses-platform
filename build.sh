@@ -14,5 +14,6 @@ python manage.py seed_school_english
 python manage.py seed_practical_maths
 python manage.py seed_science_health
 python manage.py seed_economics
+python manage.py seed_religion_culture
 python manage.py load_ielts_lesson ielts_content/
 python manage.py seed_full_iq_test

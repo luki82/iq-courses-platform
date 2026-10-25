@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Two overlapping circles. Traditional beliefs: ancestors, spirits, healers and charms. Christianity or Islam: church or mosque, prayer, scripture and festivals. In the overlap, many people combine both, for example at funerals and in healing. In Senegal, 75 percent believe charms can protect them.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Faith today: many people blend old and new</text>
+<circle cx="300" cy="235" r="160" fill="#8a6a43" fill-opacity="0.25" stroke="#8a6a43" stroke-width="3"/>
+<circle cx="500" cy="235" r="160" fill="#6b4c9a" fill-opacity="0.2" stroke="#6b4c9a" stroke-width="3"/>
+<text x="230" y="160.0" font-size="20" font-weight="800" text-anchor="middle" fill="#6b4f2a" >Traditional</text><text x="230" y="185.0" font-size="20" font-weight="800" text-anchor="middle" fill="#6b4f2a" >beliefs</text>
+<text x="230" y="220" font-size="15" font-weight="600" text-anchor="middle" fill="#6b4f2a" >ancestors</text><text x="230" y="242" font-size="15" font-weight="600" text-anchor="middle" fill="#6b4f2a" >spirits</text><text x="230" y="264" font-size="15" font-weight="600" text-anchor="middle" fill="#6b4f2a" >healers</text><text x="230" y="286" font-size="15" font-weight="600" text-anchor="middle" fill="#6b4f2a" >charms</text>
+<text x="570" y="160.0" font-size="20" font-weight="800" text-anchor="middle" fill="#6b4c9a" >Christianity</text><text x="570" y="185.0" font-size="20" font-weight="800" text-anchor="middle" fill="#6b4c9a" >or Islam</text>
+<text x="570" y="220" font-size="15" font-weight="600" text-anchor="middle" fill="#6b4c9a" >church or mosque</text><text x="570" y="242" font-size="15" font-weight="600" text-anchor="middle" fill="#6b4c9a" >prayer</text><text x="570" y="264" font-size="15" font-weight="600" text-anchor="middle" fill="#6b4c9a" >scripture</text><text x="570" y="286" font-size="15" font-weight="600" text-anchor="middle" fill="#6b4c9a" >festivals</text>
+<text x="400" y="200.0" font-size="20" font-weight="800" text-anchor="middle" fill="#1F2A22" >Both</text>
+<text x="400" y="232" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >prayer at</text><text x="400" y="252" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >funerals,</text><text x="400" y="272" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >healing,</text><text x="400" y="292" font-size="14" font-weight="600" text-anchor="middle" fill="#1F2A22" >blessings</text>
+<rect x="60" y="400" width="680" height="44" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/><text x="400" y="428" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2A22" >In Senegal, 75% believe charms (juju) can protect them — Pew survey, 2008–09</text>
+</svg>

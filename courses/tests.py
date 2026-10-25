@@ -125,7 +125,7 @@ class ParseLessonTests(TestCase):
         from pathlib import Path
         from django.conf import settings
         for command in ("seed_english_esl", "seed_workplace_english", "seed_school_english",
-                        "seed_practical_maths", "seed_science_health", "seed_economics"):
+                        "seed_practical_maths", "seed_science_health", "seed_economics", "seed_religion_culture"):
             call_command(command, stdout=open("/dev/null", "w"))
         found = 0
         for lesson in Lesson.objects.all():
@@ -134,14 +134,14 @@ class ParseLessonTests(TestCase):
                     found += 1
                     self.assertTrue((Path(settings.BASE_DIR) / "static" / block["src"]).exists(), block["src"])
                     self.assertTrue(block["caption"], lesson.slug)
-        self.assertGreaterEqual(found, 23)
+        self.assertGreaterEqual(found, 29)
 
     def test_unstructured_text_still_displays(self):
         blocks = parse_lesson("Just some notes.\nAnother line.")
         self.assertEqual(blocks, [{"type": "para", "items": ["Just some notes.", "Another line."]}])
 
     def test_every_seeded_english_lesson_parses(self):
-        for command in ("seed_english_esl", "seed_workplace_english", "seed_school_english", "seed_practical_maths", "seed_science_health", "seed_economics"):
+        for command in ("seed_english_esl", "seed_workplace_english", "seed_school_english", "seed_practical_maths", "seed_science_health", "seed_economics", "seed_religion_culture"):
             call_command(command, stdout=open("/dev/null", "w"))
         exercises = 0
         for lesson in Lesson.objects.all():
@@ -261,3 +261,19 @@ class LessonPageTests(TestCase):
         response = self.client.get(reverse("courses:lesson_detail", args=["economics-and-money", lesson.id]))
         self.assertContains(response, "img/lessons/inflation-basket.svg")
         self.assertContains(response, "Check Your Understanding")
+
+    def test_religion_lessons_have_diagram_practice_and_quiz(self):
+        call_command("seed_religion_culture", stdout=open("/dev/null", "w"))
+        lessons = Lesson.objects.filter(module__course__slug="religion-and-culture-in-africa")
+        self.assertEqual(lessons.count(), 4)
+        for lesson in lessons:
+            blocks = parse_lesson(lesson.content, seed=lesson.slug)
+            kinds = types(blocks)
+            self.assertIn("diagram", kinds, lesson.slug)
+            self.assertIn("exercise", kinds, lesson.slug)
+            quiz = next(b for b in blocks if b["type"] == "quiz")
+            self.assertEqual(quiz["total"], 5, lesson.slug)
+        lesson = lessons.get(slug="were-christianity-and-islam-imposed-on-africa")
+        response = self.client.get(reverse("courses:lesson_detail", args=["religion-and-culture-in-africa", lesson.id]))
+        self.assertContains(response, "img/lessons/imposed-debate.svg")
+        self.assertContains(response, "PART 1")

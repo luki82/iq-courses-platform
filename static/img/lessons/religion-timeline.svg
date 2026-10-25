@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Timeline: traditional religions were always present. Christianity reached Egypt by AD 50 to 300, Aksum in Ethiopia in the 330s and the Nubian kingdoms of Sudan in the 540s. Islam reached North Africa in the 640s and spread by trade from 1000 to 1500. Missions and jihads came in the 1800s, colonial rule from 1885 to 1960, and the fastest growth came after independence, led by Africans.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >How faiths arrived in Africa: a timeline</text>
+<line x1="30" y1="225" x2="770" y2="225" stroke="#1F2A22" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="30" y="217" width="40" height="16" fill="#8a6a43"/>
+<circle cx="50" cy="225" r="10" fill="#8a6a43" stroke="#fff" stroke-width="3"/>
+<line x1="50" y1="213" x2="50" y2="143" stroke="#8a6a43" stroke-width="2"/>
+<text x="50" y="79" font-size="15" font-weight="800" text-anchor="middle" fill="#8a6a43" >Always</text><text x="50" y="101" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Traditional</text><text x="50" y="117" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >religions</text>
+<circle cx="140" cy="225" r="10" fill="#6b4c9a" stroke="#fff" stroke-width="3"/>
+<line x1="140" y1="237" x2="140" y2="273" stroke="#6b4c9a" stroke-width="2"/>
+<text x="140" y="295" font-size="15" font-weight="800" text-anchor="middle" fill="#6b4c9a" >AD 50–300</text><text x="140" y="317" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Christianity</text><text x="140" y="333" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >in Egypt</text>
+<circle cx="215" cy="225" r="10" fill="#6b4c9a" stroke="#fff" stroke-width="3"/>
+<line x1="215" y1="213" x2="215" y2="143" stroke="#6b4c9a" stroke-width="2"/>
+<text x="215" y="79" font-size="15" font-weight="800" text-anchor="middle" fill="#6b4c9a" >AD 330s</text><text x="215" y="101" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Aksum (Ethiopia)</text><text x="215" y="117" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >becomes Christian</text>
+<circle cx="290" cy="225" r="10" fill="#6b4c9a" stroke="#fff" stroke-width="3"/>
+<line x1="290" y1="237" x2="290" y2="273" stroke="#6b4c9a" stroke-width="2"/>
+<text x="290" y="295" font-size="15" font-weight="800" text-anchor="middle" fill="#6b4c9a" >AD 540s</text><text x="290" y="317" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Nubian kingdoms</text><text x="290" y="333" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >(Sudan) Christian</text>
+<circle cx="365" cy="225" r="10" fill="#198754" stroke="#fff" stroke-width="3"/>
+<line x1="365" y1="213" x2="365" y2="143" stroke="#198754" stroke-width="2"/>
+<text x="365" y="79" font-size="15" font-weight="800" text-anchor="middle" fill="#198754" >AD 640s</text><text x="365" y="101" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Islam reaches</text><text x="365" y="117" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >North Africa</text>
+<circle cx="440" cy="225" r="10" fill="#198754" stroke="#fff" stroke-width="3"/>
+<line x1="440" y1="237" x2="440" y2="273" stroke="#198754" stroke-width="2"/>
+<text x="440" y="295" font-size="15" font-weight="800" text-anchor="middle" fill="#198754" >1000–1500</text><text x="440" y="317" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Islam spreads by</text><text x="440" y="333" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >trade: West &amp; East</text>
+<circle cx="515" cy="225" r="10" fill="#E08A1E" stroke="#fff" stroke-width="3"/>
+<line x1="515" y1="213" x2="515" y2="143" stroke="#E08A1E" stroke-width="2"/>
+<text x="515" y="79" font-size="15" font-weight="800" text-anchor="middle" fill="#E08A1E" >1800s</text><text x="515" y="101" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Jihads; missions</text><text x="515" y="117" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >arrive in force</text>
+<circle cx="590" cy="225" r="10" fill="#B02A37" stroke="#fff" stroke-width="3"/>
+<line x1="590" y1="237" x2="590" y2="273" stroke="#B02A37" stroke-width="2"/>
+<text x="590" y="295" font-size="15" font-weight="800" text-anchor="middle" fill="#B02A37" >1885–1960</text><text x="590" y="317" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Colonial rule,</text><text x="590" y="333" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >mission schools</text>
+<circle cx="680" cy="225" r="10" fill="#16301F" stroke="#fff" stroke-width="3"/>
+<line x1="680" y1="213" x2="680" y2="143" stroke="#16301F" stroke-width="2"/>
+<text x="680" y="63" font-size="15" font-weight="800" text-anchor="middle" fill="#16301F" >1960–today</text><text x="680" y="85" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >Independence;</text><text x="680" y="101" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >fast growth led</text><text x="680" y="117" font-size="13" font-weight="600" text-anchor="middle" fill="#1F2A22" >by Africans</text>
+<circle cx="40" cy="420" r="7" fill="#8a6a43"/><text x="52" y="425" font-size="12" font-weight="600" text-anchor="start" fill="#1F2A22" >Traditional</text>
+<circle cx="150" cy="420" r="7" fill="#6b4c9a"/><text x="162" y="425" font-size="12" font-weight="600" text-anchor="start" fill="#1F2A22" >Early African Christianity</text>
+<circle cx="360" cy="420" r="7" fill="#198754"/><text x="372" y="425" font-size="12" font-weight="600" text-anchor="start" fill="#1F2A22" >Islam</text>
+<circle cx="450" cy="420" r="7" fill="#E08A1E"/><text x="462" y="425" font-size="12" font-weight="600" text-anchor="start" fill="#1F2A22" >1800s</text>
+<circle cx="545" cy="420" r="7" fill="#B02A37"/><text x="557" y="425" font-size="12" font-weight="600" text-anchor="start" fill="#1F2A22" >Colonial era</text>
+<circle cx="665" cy="420" r="7" fill="#16301F"/><text x="677" y="425" font-size="12" font-weight="600" text-anchor="start" fill="#1F2A22" >Independence</text>
+</svg>

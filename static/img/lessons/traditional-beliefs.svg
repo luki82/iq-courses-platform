@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Layers of the spiritual world in many African traditions: the Supreme God at the top, then spirits and divinities, then the ancestors, and the living community at the base. People offer prayers and offerings upward and receive protection and blessing in return.</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="30" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >The spiritual world in many African traditions</text>
+<rect x="230.0" y="70" width="340" height="72" rx="14" fill="#f0e2b6" stroke="#b8860b" stroke-width="2.5"/>
+<text x="400" y="100" font-size="19" font-weight="800" text-anchor="middle" fill="#b8860b" >Supreme God (creator)</text>
+<text x="400" y="125" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >Nhialic, Kwoth, Olodumare, Ngai, Onyame</text>
+<rect x="170.0" y="155" width="460" height="72" rx="14" fill="#e6dcf0" stroke="#6b4c9a" stroke-width="2.5"/>
+<text x="400" y="185" font-size="19" font-weight="800" text-anchor="middle" fill="#6b4c9a" >Spirits and divinities</text>
+<text x="400" y="210" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >rain, rivers, clan spirits: jak, orisha</text>
+<rect x="110.0" y="240" width="580" height="72" rx="14" fill="#e9dfcf" stroke="#8a6a43" stroke-width="2.5"/>
+<text x="400" y="270" font-size="19" font-weight="800" text-anchor="middle" fill="#8a6a43" >Ancestors: “the living dead”</text>
+<text x="400" y="295" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >family members who have died, still honoured</text>
+<rect x="60.0" y="325" width="680" height="72" rx="14" fill="#D1E7DD" stroke="#198754" stroke-width="2.5"/>
+<text x="400" y="355" font-size="19" font-weight="800" text-anchor="middle" fill="#16301F" >The living community</text>
+<text x="400" y="380" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >families, elders, diviners, healers, spear masters</text>
+
+<line x1="40" y1="380" x2="40" y2="90" stroke="#6B7280" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="54" y="80" font-size="13" font-weight="700" text-anchor="start" fill="#6B7280" >prayer and</text><text x="54" y="96" font-size="13" font-weight="700" text-anchor="start" fill="#6B7280" >offerings ↑</text>
+<line x1="760" y1="90" x2="760" y2="380" stroke="#6B7280" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="746" y="80" font-size="13" font-weight="700" text-anchor="end" fill="#6B7280" >protection and</text><text x="746" y="96" font-size="13" font-weight="700" text-anchor="end" fill="#6B7280" >blessing ↓</text>
+<text x="400" y="432" font-size="15" font-weight="700" text-anchor="middle" fill="#1F2A22" >Religion runs through daily life: farming, cattle, marriage, healing</text>
+</svg>
