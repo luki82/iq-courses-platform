@@ -1,3 +1,4 @@
+{% load static %}
 {% for block in blocks %}
   {% if block.type == "goal" %}
     <div class="lesson-goal say-row">
@@ -46,6 +47,17 @@
         <button type="button" class="btn btn-sm btn-outline-secondary" data-reset>Start again</button>
       </div>
     </div>
+
+  {% elif block.type == "diagram" %}
+    <figure class="lesson-diagram">
+      <img src="{% static block.src %}" alt="{{ block.caption }}" loading="lazy" width="800" height="450">
+      {% if block.caption %}
+      <figcaption class="say-row">
+        {% include "courses/partials/say_button.html" %}
+        <span class="say-text">{{ block.caption }}</span>
+      </figcaption>
+      {% endif %}
+    </figure>
 
   {% elif block.type == "quiz" %}
     {% include "courses/partials/quiz_block.html" %}

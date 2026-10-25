@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">3 teaspoons equal 1 tablespoon of 15 mL. 16 tablespoons equal 1 cup: 240 mL in the US, 250 mL metric. In Australia a tablespoon is 20 mL, so use 3 teaspoons for US recipes</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="38" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >Kitchen measures</text>
+<rect x="30" y="60" width="740" height="110" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/>
+<g transform="translate(90,115) scale(0.8)"><ellipse cx="0" cy="0" rx="18" ry="12" fill="#b8c2cc" stroke="#6b7a88" stroke-width="2"/><rect x="16" y="-3" width="50" height="6" rx="3" fill="#6b7a88"/></g><g transform="translate(175,115) scale(0.8)"><ellipse cx="0" cy="0" rx="18" ry="12" fill="#b8c2cc" stroke="#6b7a88" stroke-width="2"/><rect x="16" y="-3" width="50" height="6" rx="3" fill="#6b7a88"/></g><g transform="translate(260,115) scale(0.8)"><ellipse cx="0" cy="0" rx="18" ry="12" fill="#b8c2cc" stroke="#6b7a88" stroke-width="2"/><rect x="16" y="-3" width="50" height="6" rx="3" fill="#6b7a88"/></g><text x="175" y="160" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >3 teaspoons</text>
+<text x="370" y="125" font-size="40" font-weight="700" text-anchor="middle" fill="#6B7280" >=</text>
+<g transform="translate(470,115) scale(1.25)"><ellipse cx="0" cy="0" rx="18" ry="12" fill="#b8c2cc" stroke="#6b7a88" stroke-width="2"/><rect x="16" y="-3" width="50" height="6" rx="3" fill="#6b7a88"/></g><text x="500" y="160" font-size="15" font-weight="600" text-anchor="middle" fill="#1F2A22" >1 tablespoon (15 mL)</text>
+<text x="735" y="125" font-size="14" font-weight="400" text-anchor="end" fill="#6B7280" >5 mL each</text>
+<rect x="30" y="185" width="740" height="120" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/>
+<text x="150" y="255" font-size="26" font-weight="700" text-anchor="middle" fill="#1F2A22" >16 tablespoons</text>
+<text x="370" y="255" font-size="40" font-weight="700" text-anchor="middle" fill="#6B7280" >=</text>
+<g transform="translate(500,245)"><path d="M-36,-40 h72 l-8,72 h-56 z" fill="#fff" stroke="#16301F" stroke-width="3"/><path d="M36,-24 q24,6 0,30" fill="none" stroke="#16301F" stroke-width="3"/><rect x="-32" y="-10" width="64" height="38" fill="#D6EAF5"/></g>
+<text x="640" y="240" font-size="26" font-weight="700" text-anchor="middle" fill="#1F2A22" >1 cup</text><text x="640" y="268" font-size="14" font-weight="400" text-anchor="middle" fill="#6B7280" >US 240 mL</text><text x="640" y="288" font-size="14" font-weight="400" text-anchor="middle" fill="#6B7280" >metric 250 mL</text>
+<rect x="30" y="320" width="740" height="110" rx="14" fill="#F8D7DA" stroke="#B02A37" stroke-width="2"/>
+<g transform="translate(110,375) scale(1.4)"><ellipse cx="0" cy="0" rx="18" ry="12" fill="#e8b4ba" stroke="#6b7a88" stroke-width="2"/><rect x="16" y="-3" width="50" height="6" rx="3" fill="#6b7a88"/></g>
+<text x="200" y="360" font-size="18" font-weight="700" text-anchor="start" fill="#B02A37" >Australia: 1 tablespoon = 20 mL (4 teaspoons)</text>
+<text x="200" y="392" font-size="17" font-weight="600" text-anchor="start" fill="#1F2A22" >For US recipes, use 3 teaspoons instead</text>
+</svg>

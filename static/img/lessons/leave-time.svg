@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Timeline: leave 10:15 am, drive 3 hours, stop 30 minutes, 15 minute buffer, arrive 2:00 pm. Count back 3 hours 45 minutes from the arrival time</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="40" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >What time should I leave? Count back from arrival</text>
+<rect x="60.0" y="150" width="544.0" height="70" rx="8" fill="#D1E7DD" stroke="#198754" stroke-width="2"/>
+<text x="332.0" y="192" font-size="20" font-weight="700" text-anchor="middle" fill="#1F2A22" >Drive 3 h</text>
+<rect x="604.0" y="150" width="90.66666666666663" height="70" rx="8" fill="#fde8c8" stroke="#E08A1E" stroke-width="2"/>
+<rect x="694.6666666666666" y="150" width="45.33333333333337" height="70" rx="8" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/>
+<text x="649.3333333333334" y="250" font-size="15" font-weight="700" text-anchor="middle" fill="#E08A1E" >Stop</text><text x="649.3333333333334" y="268" font-size="15" font-weight="700" text-anchor="middle" fill="#E08A1E" >30 min</text>
+<text x="730.9333333333333" y="250" font-size="13" font-weight="700" text-anchor="end" fill="#6B7280" >Buffer</text><text x="730.9333333333333" y="268" font-size="13" font-weight="700" text-anchor="end" fill="#6B7280" >15 min</text>
+<line x1="60" y1="130" x2="60" y2="240" stroke="#16301F" stroke-width="4"/><text x="60" y="120" font-size="18" font-weight="800" text-anchor="start" fill="#16301F" >LEAVE 10:15 am</text>
+<line x1="740" y1="130" x2="740" y2="240" stroke="#B02A37" stroke-width="4"/><text x="740" y="120" font-size="18" font-weight="800" text-anchor="end" fill="#B02A37" >ARRIVE 2:00 pm</text>
+<path d="M730,300 Q400,370 70,300" fill="none" stroke="#B02A37" stroke-width="3" marker-end="url(#arrow-red)"/>
+<text x="400" y="362" font-size="18" font-weight="700" text-anchor="middle" fill="#B02A37" >count back 3 h 45 min</text>
+<text x="400" y="410" font-size="16" font-weight="400" text-anchor="middle" fill="#6B7280" >travel time + stops + buffer = total, then subtract from arrival time</text>
+</svg>

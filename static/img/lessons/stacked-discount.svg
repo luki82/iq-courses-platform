@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Bars: $100, then 20% off is $80, then 10% off $80 is $72. Total saving is $28, which is 28%, not 30%</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="40" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >20% off, then 10% more off ≠ 30% off</text>
+<text x="150" y="122" font-size="18" font-weight="700" text-anchor="end" fill="#1F2A22" >Start</text>
+<rect x="170" y="80" width="560.0" height="64" rx="10" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/>
+<text x="714.0" y="122" font-size="24" font-weight="700" text-anchor="end" fill="#1F2A22" >$100</text>
+<text x="150" y="217" font-size="18" font-weight="700" text-anchor="end" fill="#1F2A22" >− 20%</text>
+<rect x="170" y="175" width="448.0" height="64" rx="10" fill="#e6efcf" stroke="#9bb35a" stroke-width="2"/>
+<text x="602.0" y="217" font-size="24" font-weight="700" text-anchor="end" fill="#1F2A22" >$80</text>
+<text x="150" y="312" font-size="18" font-weight="700" text-anchor="end" fill="#1F2A22" >− 10% of $80</text>
+<rect x="170" y="270" width="403.2" height="64" rx="10" fill="#D1E7DD" stroke="#198754" stroke-width="2"/>
+<text x="557.2" y="312" font-size="24" font-weight="700" text-anchor="end" fill="#1F2A22" >$72</text>
+<rect x="573.2" y="270" width="156.79999999999998" height="64" rx="10" fill="#F8D7DA" stroke="#B02A37" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="651.5999999999999" y="310" font-size="18" font-weight="700" text-anchor="middle" fill="#B02A37" >saved $28</text>
+<text x="400" y="400" font-size="22" font-weight="700" text-anchor="middle" fill="#198754" >Total saving = 28%, not 30%</text>
+<text x="400" y="430" font-size="18" font-weight="400" text-anchor="middle" fill="#6B7280" >0.8 × 0.9 = 0.72 → you pay 72%</text>
+</svg>

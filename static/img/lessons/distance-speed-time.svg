@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Triangle with D on top and S times T below. Time equals distance divided by speed, speed equals distance divided by time, distance equals speed times time</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="38" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >Distance, Speed, Time</text>
+<path d="M200,380 L400,80 L600,380 Z" fill="#F5F1E6" stroke="#16301F" stroke-width="4"/>
+<line x1="267" y1="280" x2="533" y2="280" stroke="#16301F" stroke-width="4"/>
+<line x1="400" y1="280" x2="400" y2="380" stroke="#16301F" stroke-width="4"/>
+<text x="400" y="225" font-size="64" font-weight="800" text-anchor="middle" fill="#16301F" >D</text><text x="400" y="255" font-size="15" font-weight="600" text-anchor="middle" fill="#6B7280" >distance</text>
+<text x="330" y="345" font-size="56" font-weight="800" text-anchor="middle" fill="#16301F" >S</text><text x="330" y="370" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >speed</text>
+<text x="470" y="345" font-size="56" font-weight="800" text-anchor="middle" fill="#16301F" >T</text><text x="470" y="370" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >time</text>
+<text x="400" y="345" font-size="30" font-weight="700" text-anchor="middle" fill="#6B7280" >×</text>
+<rect x="630" y="110" width="155" height="60" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><text x="645" y="134" font-size="15" font-weight="600" text-anchor="start" fill="#6B7280" >Time =</text><text x="645" y="160" font-size="22" font-weight="700" text-anchor="start" fill="#1F2A22" >D ÷ S</text>
+<rect x="630" y="190" width="155" height="60" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><text x="645" y="214" font-size="15" font-weight="600" text-anchor="start" fill="#6B7280" >Speed =</text><text x="645" y="240" font-size="22" font-weight="700" text-anchor="start" fill="#1F2A22" >D ÷ T</text>
+<rect x="630" y="270" width="155" height="60" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><text x="645" y="294" font-size="15" font-weight="600" text-anchor="start" fill="#6B7280" >Distance =</text><text x="645" y="320" font-size="22" font-weight="700" text-anchor="start" fill="#1F2A22" >S × T</text>
+<text x="110" y="180.0" font-size="18" font-weight="700" text-anchor="middle" fill="#16301F" >Cover the</text><text x="110" y="202.5" font-size="18" font-weight="700" text-anchor="middle" fill="#16301F" >one you</text><text x="110" y="225.0" font-size="18" font-weight="700" text-anchor="middle" fill="#16301F" >want</text>
+<line x1="150" y1="215" x2="300" y2="215" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+</svg>

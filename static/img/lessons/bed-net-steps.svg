@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Mosquito net steps: hang it, tuck it under the mattress, sleep inside every night, sew up holes</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="34" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Use your mosquito net the right way</text>
+<rect x="15" y="60" width="180" height="300" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<circle cx="41" cy="86" r="16" fill="#16301F"/><text x="41" y="92" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >1</text>
+<g transform="translate(105,240)"><g transform="translate(0,30) scale(1.1)">
+<rect x="-56" y="0" width="112" height="14" rx="3" fill="#8a6a43"/>
+<rect x="-50" y="-6" width="100" height="8" rx="3" fill="#f0e6d2"/>
+
+<path d="M0,-90 L-58,4 M0,-90 L58,4" stroke="#9aa5ad" stroke-width="1.5"/>
+<path d="M0,-90 L-58,4 Q0,14 58,4 Z" fill="#e9f1f6" fill-opacity="0.55" stroke="#9aa5ad" stroke-width="1.5"/>
+<line x1="0" y1="-100" x2="0" y2="-90" stroke="#555" stroke-width="2"/></g></g>
+<text x="105" y="320.0" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >Hang the net</text>
+<line x1="197" y1="210" x2="211" y2="210" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="210" y="60" width="180" height="300" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<circle cx="236" cy="86" r="16" fill="#16301F"/><text x="236" y="92" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >2</text>
+<g transform="translate(300,240)"><g transform="translate(0,30) scale(1.1)">
+<rect x="-56" y="0" width="112" height="14" rx="3" fill="#8a6a43"/>
+<rect x="-50" y="-6" width="100" height="8" rx="3" fill="#f0e6d2"/>
+
+<path d="M0,-90 L-58,4 M0,-90 L58,4" stroke="#9aa5ad" stroke-width="1.5"/>
+<path d="M0,-90 L-58,4 Q0,14 58,4 Z" fill="#e9f1f6" fill-opacity="0.55" stroke="#9aa5ad" stroke-width="1.5"/>
+<line x1="0" y1="-100" x2="0" y2="-90" stroke="#555" stroke-width="2"/></g><path d="M-58,36 q-10,14 6,20 M58,36 q10,14 -6,20" stroke="#555" stroke-width="3" fill="none"/></g>
+<text x="300" y="320.0" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >Tuck it under</text>
+<line x1="392" y1="210" x2="406" y2="210" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="405" y="60" width="180" height="300" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<circle cx="431" cy="86" r="16" fill="#16301F"/><text x="431" y="92" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >3</text>
+<g transform="translate(495,240)"><g transform="translate(0,30) scale(1.1)">
+<rect x="-56" y="0" width="112" height="14" rx="3" fill="#8a6a43"/>
+<rect x="-50" y="-6" width="100" height="8" rx="3" fill="#f0e6d2"/>
+<circle cx="-30" cy="-8" r="9" fill="#8d5524"/><rect x="-22" y="-14" width="56" height="12" rx="6" fill="#16301F"/>
+<path d="M0,-90 L-58,4 M0,-90 L58,4" stroke="#9aa5ad" stroke-width="1.5"/>
+<path d="M0,-90 L-58,4 Q0,14 58,4 Z" fill="#e9f1f6" fill-opacity="0.55" stroke="#9aa5ad" stroke-width="1.5"/>
+<line x1="0" y1="-100" x2="0" y2="-90" stroke="#555" stroke-width="2"/></g><g transform="translate(52,-80)"><path transform="translate(0,0)" d="M8,-18 A18,18 0 1 0 8,18 A14,14 0 1 1 8,-18Z" fill="#F6C343"/></g></g>
+<text x="495" y="320.0" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >Sleep inside</text><text x="495" y="341.25" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >every night</text>
+<line x1="587" y1="210" x2="601" y2="210" stroke="#16301F" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="600" y="60" width="180" height="300" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<circle cx="626" cy="86" r="16" fill="#16301F"/><text x="626" y="92" font-size="17" font-weight="700" text-anchor="middle" fill="#fff" >4</text>
+<g transform="translate(690,240)"><g transform="translate(0,30) scale(1.1)">
+<rect x="-56" y="0" width="112" height="14" rx="3" fill="#8a6a43"/>
+<rect x="-50" y="-6" width="100" height="8" rx="3" fill="#f0e6d2"/>
+
+<path d="M0,-90 L-58,4 M0,-90 L58,4" stroke="#9aa5ad" stroke-width="1.5"/>
+<path d="M0,-90 L-58,4 Q0,14 58,4 Z" fill="#e9f1f6" fill-opacity="0.55" stroke="#9aa5ad" stroke-width="1.5"/>
+<line x1="0" y1="-100" x2="0" y2="-90" stroke="#555" stroke-width="2"/><circle cx="34" cy="-30" r="7" fill="#fff" stroke="#B02A37" stroke-width="2.5"/></g><path d="M50,-60 l26,-26" stroke="#555" stroke-width="3"/><circle cx="78" cy="-88" r="3" fill="none" stroke="#555" stroke-width="2"/></g>
+<text x="690" y="320.0" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >Sew up holes</text>
+<text x="400" y="405" font-size="18" font-weight="700" text-anchor="middle" fill="#198754" >Children under 5 and pregnant women first</text>
+<text x="400" y="432" font-size="16" font-weight="400" text-anchor="middle" fill="#6B7280" >Replace your net every 3 to 5 years</text>
+</svg>

@@ -60,6 +60,9 @@ This is faster, and it's the method that works best on a phone calculator.
 - 30% off → multiply by 0.7
 - 15% off → multiply by 0.85
 
+DIAGRAM: discount-bar
+A jacket costs 80 dollars. Split it into four quarters of 20 dollars. 25 percent off means you save one quarter, 20 dollars, and pay three quarters, 60 dollars.
+
 MENTAL MATHS TRICKS: no calculator needed
 - 10%: move the decimal point one place left. 10% of $64 = $6.40
 - 5%: half of 10%. 5% of $64 = $3.20
@@ -84,6 +87,9 @@ TRAP 1: STACKED DISCOUNTS DON'T ADD UP
 - After another 10% off: $80 × 0.9 = $72.
 - Total saving: $28, which is 28%, not 30%.
 Quick method: multiply the parts you pay. 0.8 × 0.9 = 0.72, so you pay 72%.
+
+DIAGRAM: stacked-discount
+100 dollars, then 20 percent off is 80 dollars, then another 10 percent off is 72 dollars. You save 28 dollars, which is 28 percent, not 30 percent.
 
 TRAP 2: "BUY 2, GET 1 FREE" VS "30% OFF"
 Buy 2, get 1 free means you get 3 items for the price of 2. You pay 2 ÷ 3 = 0.667, or about 66.7% of the normal price, which is a 33.3% discount on each item. That beats 30% off, but only if you actually need 3.
@@ -173,6 +179,9 @@ Memory trick: draw a triangle with D at the top, and S and T at the bottom. Cove
 
 Important: the units must match. If distance is in km and speed is in km/h, the time comes out in hours.
 
+DIAGRAM: distance-speed-time
+The distance, speed and time triangle. Cover the one you want. Time is distance divided by speed. Speed is distance divided by time. Distance is speed times time.
+
 TURNING HOURS INTO HOURS AND MINUTES
 Calculators give time as a decimal, like 2.75 hours. That does not mean 2 hours and 75 minutes.
 1. Keep the whole number: 2 hours.
@@ -187,6 +196,9 @@ Useful ones to remember:
 
 Going the other way, divide minutes by 60 to get hours: 45 minutes = 45 ÷ 60 = 0.75 hours.
 
+DIAGRAM: decimal-hours
+To change decimal hours into minutes, multiply by 60. A quarter of an hour, 0.25, is 15 minutes. Half an hour is 30 minutes. 0.75 hours is 45 minutes. 0.1 hours is 6 minutes.
+
 EXAMPLE 1: HOW LONG WILL IT TAKE?
 A town is 240 km away and you expect to average 80 km/h.
 Time = 240 ÷ 80 = 3 hours.
@@ -198,13 +210,16 @@ Speed = 50 ÷ 1.25 = 40 km/h.
 EXAMPLE 3: HOW FAR CAN YOU WALK?
 Most adults walk at about 5 km/h. In 36 minutes (0.6 hours) you can walk about 5 × 0.6 = 3 km.
 
-WHAT TIME SHOULD I LEAVE?
+WHAT TIME SHOULD I LEAVE
 1. Work out the travel time.
 2. Add time for stops (fuel, food, rest breaks).
 3. Add a safety buffer for traffic or delays, often 10 to 20 minutes.
 4. Count back from the time you need to arrive.
 
 Example: you need to arrive at 2:00 pm. The drive takes 3 hours, you plan one 30-minute rest stop, and you add a 15-minute buffer. Total: 3 hours 45 minutes. Counting back from 2:00 pm, leave by 10:15 am.
+
+DIAGRAM: leave-time
+To find when to leave, add the driving time, stops and a buffer, then count back from when you need to arrive. 3 hours driving, a 30 minute stop and a 15 minute buffer means leave at 10:15 to arrive at 2:00.
 
 TRAP: AVERAGE SPEED IS NOT THE SPEED LIMIT
 On a 100 km/h highway, your average speed is usually lower because of towns, roadworks, traffic and stops. In busy city traffic, 25 to 40 km/h is common. Use a realistic average, not the speed limit.
@@ -293,6 +308,9 @@ THE NUMBERS TO REMEMBER
 - 1 metric cup = 250 mL (used in Australia, New Zealand and Canada)
 - 1 US fluid ounce = about 30 mL (29.6 mL exactly)
 - 8 fluid ounces = 1 US cup
+
+DIAGRAM: kitchen-measures
+3 teaspoons make 1 tablespoon. 16 tablespoons make 1 cup. In Australia a tablespoon is bigger, 20 millilitres, so use 3 teaspoons for American recipes.
 
 WATCH OUT: THE AUSTRALIAN TABLESPOON
 In Australia, a tablespoon is 20 mL (4 teaspoons), not 15 mL. If you use an Australian tablespoon for an American recipe, you add a third more than intended. That matters for salt, baking powder and baking soda. For small amounts of strong ingredients, measure in teaspoons to be safe: 1 US tablespoon = 3 teaspoons.
@@ -419,6 +437,9 @@ Weight:
 - 1 lb = 0.454 kg
 - 1 stone = 14 lb = 6.35 kg
 
+DIAGRAM: metric-imperial
+Key pairs to remember: 1 inch is 2.54 centimetres, 5 miles is about 8 kilometres, 1 kilogram is about 2.2 pounds, and 1 foot is about 30.5 centimetres.
+
 WHICH WAY DO I MULTIPLY OR DIVIDE
 A simple check: when you change to a smaller unit, you get a bigger number. Centimetres are smaller than inches, so inches to centimetres means the number gets bigger: multiply by 2.54. Centimetres to inches means the number gets smaller: divide by 2.54.
 
@@ -536,6 +557,9 @@ TEMPERATURES WORTH KNOWING
 - 100 °C = 212 °F: water boils
 - 180 °C = 356 °F: a moderate oven (recipes usually round this to 350 °F)
 - −40 °C = −40 °F: the one temperature where both scales match
+
+DIAGRAM: thermometer
+Celsius and Fahrenheit side by side. Water freezes at 0 Celsius, 32 Fahrenheit. A room is 20 Celsius, 68 Fahrenheit. Body temperature is 37 Celsius, 98.6 Fahrenheit. Water boils at 100 Celsius, 212 Fahrenheit.
 
 TIME FACTS PEOPLE SEARCH FOR
 - 60 seconds = 1 minute, and 60 minutes = 1 hour

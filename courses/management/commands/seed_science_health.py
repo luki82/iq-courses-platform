@@ -54,6 +54,9 @@ THE FOUR STAGES
 
 From egg to flying adult usually takes 10 to 14 days for malaria mosquitoes, and can be faster in hot weather. That's why emptying or removing standing water once a week breaks the cycle: the young mosquitoes die before they can fly.
 
+DIAGRAM: mosquito-life-cycle
+The mosquito life cycle. Eggs are laid on water, hatch into larvae, become pupae, then fly away as adults in 10 to 14 days. Empty standing water every week to stop them.
+
 ONLY THE FEMALE BITES
 Male mosquitoes feed on plant juices and nectar. Only females bite, because they need the protein in blood to make their eggs. After a blood meal, a female rests for a few days in a dark, sheltered place while her eggs develop, then looks for water to lay them. She can repeat this many times in her life, and each time she bites, she can pick up or pass on a disease.
 
@@ -67,6 +70,9 @@ Scoop some water from a puddle into a clear cup or a white bowl and look closely
 - Anopheles larvae lie flat, parallel to the water surface, like a floating stick.
 - Most other mosquito larvae hang down at an angle from the surface, breathing through a tube at their tail.
 If you find larvae lying flat, malaria mosquitoes are breeding close to your home.
+
+DIAGRAM: larvae-position
+Look closely at larvae in a puddle. Malaria mosquito larvae lie flat along the water. Other mosquito larvae hang down at an angle.
 
 HOW FAR DO MOSQUITOES FLY
 Malaria mosquitoes usually stay within about 2 km of where they hatched. That's good news: if a whole village or neighbourhood removes breeding sites together, it can make a real difference. One household alone helps, but a community helps much more.
@@ -144,6 +150,9 @@ This is the single most important step against malaria, because malaria mosquito
 - Replace your net every three to five years, or sooner if it's badly damaged.
 - Never use treated nets for fishing or to protect crops. The insecticide harms fish and the net no longer protects your family.
 
+DIAGRAM: bed-net-steps
+Four steps for your mosquito net: hang it over the bed, tuck the edges under the mattress, sleep inside every night, and sew up any holes.
+
 METHOD 2: REMOVE BREEDING SITES EVERY WEEK
 Mosquitoes need standing water to breed. Walk around your home once a week, especially during the rainy season:
 - Empty, scrub and turn over buckets, basins, pots and old containers.
@@ -154,11 +163,17 @@ Mosquitoes need standing water to breed. Walk around your home once a week, espe
 - Change water in animal drinking troughs and flower vases at least once a week.
 - For ponds or water you can't drain, local fish such as tilapia eat mosquito larvae.
 
+DIAGRAM: breeding-sites-fixes
+Every week, fix standing water: empty and turn over buckets, cover water drums with a lid, and fill puddles, hoof prints and old tyres with soil.
+
 METHOD 3: KEEP MOSQUITOES OUT OF THE HOUSE
 - Close the eaves gap between the wall and roof with mud, wood or mesh.
 - Fit wire or plastic mesh screens on windows and vents.
 - Close doors and windows from dusk, when mosquitoes start looking for people.
 - Let health teams spray inside walls during indoor spraying campaigns, and don't repaint or plaster over the walls afterwards, or the insecticide stops working.
+
+DIAGRAM: home-protection
+Keep mosquitoes out of your home: close the gap under the roof, put screens on windows, close doors at dusk, and remove standing water.
 
 METHOD 4: PROTECT YOURSELF IN THE EVENING
 - Wear long sleeves and long trousers when sitting outside after dark.
@@ -246,6 +261,9 @@ HOW MALARIA SPREADS
 4. The parasites travel to the liver, multiply, then attack red blood cells.
 Malaria does not spread through the air, by touching, or by sharing food. It can pass from a mother to her unborn baby and, rarely, through blood transfusions.
 
+DIAGRAM: malaria-transmission
+How malaria spreads: a mosquito bites a person with malaria, the parasites grow inside the mosquito, it bites a healthy person, and that person gets sick 10 to 15 days later.
+
 SIGNS AND SYMPTOMS
 Early signs usually appear 10 to 15 days after an infected bite:
 - Fever, which may come and go
@@ -270,6 +288,9 @@ IF SOMEONE HAS A FEVER: TEST, THEN TREAT
 - If the test is positive, take the full course of the medicine the health worker gives you, even if you feel better after a day or two. Stopping early can let the malaria come back and helps the parasites become resistant to medicine.
 - Don't use leftover tablets, share medicine or buy unlabelled medicine from the market. The wrong dose or fake medicine can be deadly.
 - Keep a child with fever cool with light clothes, and give plenty of fluids or breastfeed more often on the way to the clinic.
+
+DIAGRAM: fever-action
+If someone has a fever, get a malaria test today. If it is positive, take all the medicine. Danger signs such as fits, being very sleepy, hard breathing, not drinking or dark urine mean go to a health facility now.
 
 PROTECTING THOSE MOST AT RISK
 - Children under five: sleep under a treated net every night. In South Sudan, the R21 malaria vaccine is now part of routine childhood vaccinations. Babies get three doses at 5, 6 and 7 months, and a fourth at 18 months. Take children to the clinic for every dose.
@@ -353,6 +374,9 @@ Typhoid follows a simple path, sometimes called the "faecal-oral" route: from on
 - Flies can carry germs from faeces to food.
 - Someone eats or drinks the contaminated food or water, and the germs multiply in their body.
 
+DIAGRAM: typhoid-routes
+Typhoid germs travel from faeces to the mouth through fingers, flies, water and food. Block each path: wash hands with soap, use a latrine and cover food, boil or treat water, and cook, peel or wash food.
+
 SIGNS AND SYMPTOMS
 Typhoid usually starts slowly, often 1 to 3 weeks after swallowing the germs:
 - A high fever that keeps rising over several days and lasts a long time
@@ -378,6 +402,9 @@ Water from rivers, ponds, open wells and even some taps can carry typhoid germs.
 - Chlorine: use water treatment tablets or liquid chlorine sold for drinking water. Follow the instructions on the packet exactly, and wait at least 30 minutes before drinking.
 - Sunlight (solar disinfection): fill clear plastic bottles of 2 litres or less with clear water and leave them lying in full sunlight for at least 6 hours, or for two days if it's cloudy. This works only with clear water, so let cloudy water settle and pour it through a clean cloth first.
 - Safe storage: keep treated water in a container with a lid and a tap or narrow opening, so hands and cups don't go into the water.
+
+DIAGRAM: safe-water
+Three ways to make water safe to drink: boil it for one minute, add chlorine and wait 30 minutes, or leave clear bottles in full sun for 6 hours. Then keep it covered.
 
 HANDWASHING: THE SIMPLEST MEDICINE
 Wash hands with soap and water:

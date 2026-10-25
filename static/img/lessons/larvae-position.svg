@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Malaria mosquito larvae lie flat along the water surface; other mosquito larvae hang down at an angle with a breathing tube</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="34" font-size="22" font-weight="700" text-anchor="middle" fill="#1F2A22" >Look in a puddle: how do the larvae lie?</text>
+<rect x="0" y="110" width="800" height="340" fill="#D6EAF5"/>
+<line x1="0" y1="110" x2="800" y2="110" stroke="#4A90C2" stroke-width="4"/>
+<text x="20" y="100" font-size="14" font-weight="600" text-anchor="start" fill="#4A90C2" >water surface</text>
+<line x1="400" y1="125" x2="400" y2="430" stroke="#DDD5BF" stroke-width="2" stroke-dasharray="6 6"/>
+<g transform="translate(200,122)"><rect x="-80" y="-6" width="150" height="12" rx="6" fill="#3a3a3a"/><circle cx="76" cy="0" r="9" fill="#3a3a3a"/><line x1="-70" y1="-6" x2="-74" y2="-14" stroke="#3a3a3a" stroke-width="2"/><line x1="-50" y1="-6" x2="-54" y2="-14" stroke="#3a3a3a" stroke-width="2"/><line x1="-30" y1="-6" x2="-34" y2="-14" stroke="#3a3a3a" stroke-width="2"/><line x1="-10" y1="-6" x2="-14" y2="-14" stroke="#3a3a3a" stroke-width="2"/><line x1="10" y1="-6" x2="6" y2="-14" stroke="#3a3a3a" stroke-width="2"/><line x1="30" y1="-6" x2="26" y2="-14" stroke="#3a3a3a" stroke-width="2"/><line x1="50" y1="-6" x2="46" y2="-14" stroke="#3a3a3a" stroke-width="2"/></g>
+<text x="200" y="200" font-size="26" font-weight="800" text-anchor="middle" fill="#1F2A22" >Lies FLAT</text>
+<text x="200" y="240.0" font-size="20" font-weight="700" text-anchor="middle" fill="#B02A37" >Malaria mosquito</text><text x="200" y="265.0" font-size="20" font-weight="700" text-anchor="middle" fill="#B02A37" >(Anopheles)</text>
+<g transform="translate(200,330) scale(1.6)"><circle r="16" fill="#B02A37"/><path d="M-6,-6 L6,6 M6,-6 L-6,6" stroke="#fff" stroke-width="4" stroke-linecap="round"/></g><text x="200" y="390" font-size="18" font-weight="700" text-anchor="middle" fill="#B02A37" >Danger: malaria</text><text x="200" y="416" font-size="15" font-weight="600" text-anchor="middle" fill="#B02A37" >remove this water now</text>
+<g transform="translate(560,114) rotate(50)"><rect x="0" y="-6" width="110" height="12" rx="6" fill="#3a3a3a"/><circle cx="116" cy="0" r="9" fill="#3a3a3a"/><rect x="-14" y="-3" width="16" height="6" fill="#3a3a3a"/></g>
+<text x="690" y="150" font-size="14" font-weight="600" text-anchor="middle" fill="#6B7280" >breathing tube</text><line x1="640" y1="146" x2="568" y2="118" stroke="#6B7280" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="600" y="260" font-size="26" font-weight="800" text-anchor="middle" fill="#1F2A22" >Hangs DOWN</text>
+<text x="600" y="300.0" font-size="18" font-weight="600" text-anchor="middle" fill="#1F2A22" >Other mosquitoes</text><text x="600" y="322.5" font-size="18" font-weight="600" text-anchor="middle" fill="#1F2A22" >(dengue, filariasis)</text>
+<text x="600" y="390" font-size="16" font-weight="600" text-anchor="middle" fill="#6B7280" >Still remove the water</text>
+</svg>

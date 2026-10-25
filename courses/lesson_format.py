@@ -29,6 +29,10 @@ parse_lesson() reads that layout and returns a list of blocks. A PRACTICE
 section whose numbered items each have one blank (___), with a matching
 numbered ANSWERS line, becomes an interactive drag-and-drop exercise; any
 other practice is shown as text with the answers hidden behind a button.
+A DIAGRAM section shows a picture from static/img/lessons/, for example
+"DIAGRAM: mosquito-life-cycle" shows mosquito-life-cycle.svg. The lines under
+it are the caption, which is also the picture's alt text and can be read
+aloud, so learners who struggle with reading still get the idea.
 A QUIZ section becomes an interactive multiple-choice quiz: each question
 starts with "Q:", options start with "- " (wrong) or "* " (correct, exactly
 one per question), and an optional "Explanation:" line is shown after the
@@ -59,6 +63,8 @@ TRAILING_NOTE_RE = re.compile(r"\s*\([^)]*\)\s*$")
 DIALOGUE_SECTIONS = ("DIALOGUE", "CONVERSATION", "ROLE PLAY", "ROLE-PLAY")
 QUIZ_SECTIONS = ("QUIZ", "CHECK YOUR UNDERSTANDING")
 QUIZ_DEFAULT_TITLE = "Check Your Understanding"
+DIAGRAM_DIR = "img/lessons/"
+DIAGRAM_NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 ANSWER_SECTIONS = ("ANSWERS", "ANSWER", "SAMPLE ANSWERS", "SAMPLE ANSWER")
 
 
@@ -257,6 +263,16 @@ def parse_lesson(content: str, seed: str = "") -> list:
                     {"type": "answers", "title": answers.title.title(), "blocks": _text_blocks(lines)}
                 )
                 index += 1
+            index += 1
+            continue
+
+        if base == "DIAGRAM" and DIAGRAM_NAME_RE.match(section.subtitle):
+            blocks.append({
+                "type": "diagram",
+                "name": section.subtitle,
+                "src": f"{DIAGRAM_DIR}{section.subtitle}.svg",
+                "caption": " ".join(line for line in section.lines if line),
+            })
             index += 1
             continue
 

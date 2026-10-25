@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Ruler: 1 inch equals 2.54 cm. Key pairs: 5 miles is about 8 km, 1 kg is about 2.2 lb, 1 foot is 30.5 cm</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="38" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >Metric and imperial: the key pairs</text>
+<rect x="30" y="60" width="740" height="120" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/>
+<rect x="60" y="90" width="680" height="60" fill="#f7e7b4" stroke="#b9a15a" stroke-width="2"/>
+<line x1="60" y1="90" x2="60" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="60" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >0</text>
+<line x1="128" y1="90" x2="128" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="128" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >1</text>
+<line x1="196" y1="90" x2="196" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="196" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >2</text>
+<line x1="264" y1="90" x2="264" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="264" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >3</text>
+<line x1="332" y1="90" x2="332" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="332" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >4</text>
+<line x1="400" y1="90" x2="400" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="400" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >5</text>
+<line x1="468" y1="90" x2="468" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="468" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >6</text>
+<line x1="536" y1="90" x2="536" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="536" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >7</text>
+<line x1="604" y1="90" x2="604" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="604" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >8</text>
+<line x1="672" y1="90" x2="672" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="672" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >9</text>
+<line x1="740" y1="90" x2="740" y2="115" stroke="#1F2A22" stroke-width="2"/>
+<text x="740" y="128" font-size="11" font-weight="700" text-anchor="middle" fill="#1F2A22" >10</text>
+<line x1="60.0" y1="150" x2="60.0" y2="130" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="86.77165354330708" y1="150" x2="86.77165354330708" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="113.54330708661416" y1="150" x2="113.54330708661416" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="140.31496062992125" y1="150" x2="140.31496062992125" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="167.08661417322833" y1="150" x2="167.08661417322833" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="193.85826771653544" y1="150" x2="193.85826771653544" y2="130" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="220.62992125984252" y1="150" x2="220.62992125984252" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="247.4015748031496" y1="150" x2="247.4015748031496" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="274.17322834645665" y1="150" x2="274.17322834645665" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="300.9448818897638" y1="150" x2="300.9448818897638" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="327.7165354330709" y1="150" x2="327.7165354330709" y2="130" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="354.48818897637796" y1="150" x2="354.48818897637796" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="381.25984251968504" y1="150" x2="381.25984251968504" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="408.0314960629921" y1="150" x2="408.0314960629921" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="434.8031496062992" y1="150" x2="434.8031496062992" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="461.5748031496063" y1="150" x2="461.5748031496063" y2="130" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="488.34645669291336" y1="150" x2="488.34645669291336" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="515.1181102362204" y1="150" x2="515.1181102362204" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="541.8897637795276" y1="150" x2="541.8897637795276" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="568.6614173228346" y1="150" x2="568.6614173228346" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="595.4330708661417" y1="150" x2="595.4330708661417" y2="130" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="622.2047244094488" y1="150" x2="622.2047244094488" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="648.9763779527559" y1="150" x2="648.9763779527559" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="675.7480314960629" y1="150" x2="675.7480314960629" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="702.5196850393701" y1="150" x2="702.5196850393701" y2="138" stroke="#6B7280" stroke-width="1.5"/>
+<line x1="729.2913385826771" y1="150" x2="729.2913385826771" y2="130" stroke="#6B7280" stroke-width="1.5"/>
+<text x="50" y="108" font-size="12" font-weight="700" text-anchor="end" fill="#1F2A22" >in</text><text x="50" y="150" font-size="12" font-weight="700" text-anchor="end" fill="#1F2A22" >cm</text>
+<text x="400" y="172" font-size="18" font-weight="700" text-anchor="middle" fill="#16301F" >1 inch = 2.54 cm</text>
+<rect x="30" y="200" width="240" height="230" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/>
+<rect x="90" y="225" width="120" height="70" rx="8" fill="#198754"/><rect x="146" y="295" width="8" height="30" fill="#777"/><text x="150" y="268" font-size="26" font-weight="800" text-anchor="middle" fill="#fff" >8 km</text>
+<text x="150" y="360" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >5 miles</text><text x="150" y="395" font-size="24" font-weight="700" text-anchor="middle" fill="#198754" >≈ 8 km</text>
+<rect x="280" y="200" width="240" height="230" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/>
+<rect x="345" y="285" width="110" height="34" rx="6" fill="#9aa5ad"/><circle cx="400" cy="262" r="28" fill="#fff" stroke="#6b7a88" stroke-width="3"/><line x1="400" y1="262" x2="416" y2="248" stroke="#B02A37" stroke-width="3"/>
+<text x="400" y="360" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >1 kg</text><text x="400" y="395" font-size="24" font-weight="700" text-anchor="middle" fill="#198754" >≈ 2.2 lb</text>
+<rect x="530" y="200" width="240" height="230" rx="14" fill="#F5F1E6" stroke="#DDD5BF" stroke-width="2"/>
+<path d="M630,230 h30 v60 q30,0 30,20 v12 h-60 z" fill="#e0b48a" stroke="#8d5524" stroke-width="2"/>
+<text x="650" y="360" font-size="24" font-weight="700" text-anchor="middle" fill="#1F2A22" >1 foot</text><text x="650" y="395" font-size="24" font-weight="700" text-anchor="middle" fill="#198754" >= 30.5 cm</text>
+</svg>

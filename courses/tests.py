@@ -107,6 +107,35 @@ class ParseLessonTests(TestCase):
         text = "QUIZ\nQ: Pick one\n* A\n* B\n"
         self.assertNotIn("quiz", types(parse_lesson(text)))
 
+    def test_diagram_section(self):
+        text = "DIAGRAM: mosquito-life-cycle\nEggs, larva, pupa, adult.\n\nKEY WORDS\n- Larva"
+        blocks = parse_lesson(text)
+        self.assertEqual(blocks[0], {
+            "type": "diagram",
+            "name": "mosquito-life-cycle",
+            "src": "img/lessons/mosquito-life-cycle.svg",
+            "caption": "Eggs, larva, pupa, adult.",
+        })
+        self.assertEqual(blocks[1]["title"], "KEY WORDS")
+
+    def test_diagram_with_bad_name_is_not_an_image(self):
+        self.assertNotIn("diagram", types(parse_lesson("DIAGRAM: ../../secret\nhello")))
+
+    def test_every_lesson_diagram_file_exists(self):
+        from pathlib import Path
+        from django.conf import settings
+        for command in ("seed_english_esl", "seed_workplace_english", "seed_school_english",
+                        "seed_practical_maths", "seed_science_health"):
+            call_command(command, stdout=open("/dev/null", "w"))
+        found = 0
+        for lesson in Lesson.objects.all():
+            for block in parse_lesson(lesson.content, seed=lesson.slug):
+                if block["type"] == "diagram":
+                    found += 1
+                    self.assertTrue((Path(settings.BASE_DIR) / "static" / block["src"]).exists(), block["src"])
+                    self.assertTrue(block["caption"], lesson.slug)
+        self.assertGreaterEqual(found, 17)
+
     def test_unstructured_text_still_displays(self):
         blocks = parse_lesson("Just some notes.\nAnother line.")
         self.assertEqual(blocks, [{"type": "para", "items": ["Just some notes.", "Another line."]}])
@@ -209,3 +238,10 @@ class LessonPageTests(TestCase):
         lesson = lessons.get(slug="typhoid-prevention-safe-water-and-food")
         response = self.client.get(reverse("courses:lesson_detail", args=["science-and-health", lesson.id]))
         self.assertContains(response, "Check Your Understanding")
+
+    def test_diagram_renders_with_read_aloud_caption(self):
+        call_command("seed_science_health", stdout=open("/dev/null", "w"))
+        lesson = Lesson.objects.get(slug="mosquito-life-cycle")
+        response = self.client.get(reverse("courses:lesson_detail", args=["science-and-health", lesson.id]))
+        self.assertContains(response, "img/lessons/mosquito-life-cycle.svg")
+        self.assertContains(response, '<figcaption class="say-row">')

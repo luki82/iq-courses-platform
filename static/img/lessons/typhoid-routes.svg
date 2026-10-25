@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="t">
+<title id="t">Typhoid germs travel from faeces to the mouth through fingers, flies, water and food. Barriers: wash hands, cover food and use a latrine, boil or treat water, cook and peel food</title>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#16301F"/>
+  </marker>
+  <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#B02A37"/>
+  </marker>
+</defs>
+<style>text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}</style>
+<rect width="800" height="450" fill="#fff"/>
+<text x="400" y="32" font-size="21" font-weight="700" text-anchor="middle" fill="#1F2A22" >How typhoid germs travel, and how to stop them</text>
+<rect x="20" y="170" width="130" height="110" rx="14" fill="#efe3cf" stroke="#8a6a43" stroke-width="2"/><text x="85" y="215.0" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2A22" >Faeces</text><text x="85" y="237.5" font-size="18" font-weight="700" text-anchor="middle" fill="#1F2A22" >(poo)</text>
+<rect x="680" y="170" width="110" height="110" rx="14" fill="#F8D7DA" stroke="#B02A37" stroke-width="2"/><g transform="translate(735,268) scale(0.55)"><circle cx="0" cy="-58" r="14" fill="#8d5524"/>
+  <path d="M-20,-38 q20,-10 40,0 l6,40 h-52 z" fill="#B02A37"/>
+  <rect x="-16" y="2" width="12" height="34" rx="5" fill="#3b3b3b"/>
+  <rect x="4" y="2" width="12" height="34" rx="5" fill="#3b3b3b"/><path d="M14,-62 q6,-8 0,-16 M20,-60 q8,-10 0,-20" stroke="#B02A37" stroke-width="2.5" fill="none"/></g><text x="735" y="195" font-size="16" font-weight="700" text-anchor="middle" fill="#B02A37" >Mouth</text>
+<path d="M150,225 C200,225 200,80 240,80" fill="none" stroke="#6B7280" stroke-width="3"/>
+<rect x="240" y="56" width="110" height="48" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><text x="295" y="86" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >Fingers</text>
+<line x1="350" y1="80" x2="400" y2="80" stroke="#6B7280" stroke-width="3"/>
+<rect x="400" y="54" width="14" height="52" rx="4" fill="#198754"/>
+<text x="424" y="86" font-size="15" font-weight="700" text-anchor="start" fill="#198754" >Wash hands with soap</text>
+<path d="M610,80 C640,80 650,225 680,225" fill="none" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M150,225 C200,225 200,165 240,165" fill="none" stroke="#6B7280" stroke-width="3"/>
+<rect x="240" y="141" width="110" height="48" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><text x="295" y="171" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >Flies</text>
+<line x1="350" y1="165" x2="400" y2="165" stroke="#6B7280" stroke-width="3"/>
+<rect x="400" y="139" width="14" height="52" rx="4" fill="#198754"/>
+<text x="424" y="171" font-size="15" font-weight="700" text-anchor="start" fill="#198754" >Cover food, use latrine</text>
+<path d="M610,165 C640,165 650,225 680,225" fill="none" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M150,225 C200,225 200,290 240,290" fill="none" stroke="#6B7280" stroke-width="3"/>
+<rect x="240" y="266" width="110" height="48" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><text x="295" y="296" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >Water</text>
+<line x1="350" y1="290" x2="400" y2="290" stroke="#6B7280" stroke-width="3"/>
+<rect x="400" y="264" width="14" height="52" rx="4" fill="#198754"/>
+<text x="424" y="296" font-size="15" font-weight="700" text-anchor="start" fill="#198754" >Boil or treat water</text>
+<path d="M610,290 C640,290 650,225 680,225" fill="none" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M150,225 C200,225 200,375 240,375" fill="none" stroke="#6B7280" stroke-width="3"/>
+<rect x="240" y="351" width="110" height="48" rx="14" fill="#fff" stroke="#DDD5BF" stroke-width="2"/><text x="295" y="381" font-size="17" font-weight="700" text-anchor="middle" fill="#1F2A22" >Food</text>
+<line x1="350" y1="375" x2="400" y2="375" stroke="#6B7280" stroke-width="3"/>
+<rect x="400" y="349" width="14" height="52" rx="4" fill="#198754"/>
+<text x="424" y="381" font-size="15" font-weight="700" text-anchor="start" fill="#198754" >Cook, peel, wash food</text>
+<path d="M610,375 C640,375 650,225 680,225" fill="none" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 5"/>
+<text x="407" y="430" font-size="14" font-weight="600" text-anchor="middle" fill="#198754" >green bar = a barrier that blocks the germs</text>
+<text x="85" y="300" font-size="14" font-weight="700" text-anchor="middle" fill="#198754" >use a latrine</text>
+</svg>
